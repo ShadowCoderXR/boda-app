@@ -1,0 +1,24 @@
+{
+    "agents": [
+        "gemini",
+        "junie"
+    ],
+    "guidelines": true,
+    "herd_mcp": false,
+    "mcp": true,
+    "packages": [
+        "laravel/folio",
+        "laravel/fortify",
+        "livewire/volt"
+    ],
+    "sail": false,
+    "skills": [
+        "folio-routing",
+        "fluxui-development",
+        "livewire-development",
+        "volt-development",
+        "pest-testing",
+        "tailwindcss-development",
+        "fortify-development"
+    ]
+}
