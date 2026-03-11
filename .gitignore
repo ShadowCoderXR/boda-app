@@ -21,3 +21,9 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+
+# Wedding App specific ignores
+/database/*.sqlite
+/database/*.sqlite-journal
+/storage/*.sqlite
+/storage/*.sqlite-journal
