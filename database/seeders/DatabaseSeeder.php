@@ -56,8 +56,8 @@ class DatabaseSeeder extends Seeder
         }
 
         // 5. Inspiration Items
-        InspirationItem::create(['type' => 'color', 'category' => 'Paleta', 'content' => '#A3B18A', 'description' => 'Verde Sage', 'user_id' => $admin->id]);
-        InspirationItem::create(['type' => 'color', 'category' => 'Paleta', 'content' => '#D4AF37', 'description' => 'Oro Metálico', 'user_id' => $admin->id]);
+        InspirationItem::create(['type' => 'color', 'category' => 'Paleta', 'content' => json_encode(['#A3B18A']), 'description' => 'Verde Sage', 'user_id' => $admin->id]);
+        InspirationItem::create(['type' => 'color', 'category' => 'Paleta', 'content' => json_encode(['#D4AF37']), 'description' => 'Oro Metálico', 'user_id' => $admin->id]);
         InspirationItem::create(['type' => 'link', 'category' => 'Vestido', 'content' => 'https://pinterest.com/example', 'description' => 'Idea de vestido novia', 'user_id' => $admin->id]);
     }
 }

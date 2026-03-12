@@ -8,6 +8,15 @@
             @endif
             <flux:navlist.item :href="route('appearance.edit')" wire:navigate>{{ __('Appearance') }}</flux:navlist.item>
         </flux:navlist>
+
+        <flux:separator class="my-4" />
+
+        <form method="POST" action="{{ route('logout') }}" class="w-full">
+            @csrf
+            <flux:button type="submit" variant="ghost" icon="arrow-right-start-on-rectangle" class="w-full justify-start text-red-500 hover:text-red-600">
+                {{ __('Logout') }}
+            </flux:button>
+        </form>
     </div>
 
     <flux:separator class="md:hidden" />

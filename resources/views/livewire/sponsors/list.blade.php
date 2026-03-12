@@ -14,6 +14,7 @@ new class extends Component {
     // Assign Sponsor State
     public $newGuestId = '';
     public $newRole = '';
+    public $newNotes = '';
 
     public function with()
     {
@@ -62,6 +63,7 @@ new class extends Component {
         $this->validate([
             'newGuestId' => 'required|exists:guests,id',
             'newRole' => 'required|string|max:255',
+            'newNotes' => 'nullable|string|max:500',
         ]);
 
         Sponsor::create([
@@ -69,11 +71,11 @@ new class extends Component {
             'role' => $this->newRole,
             'details' => [
                 'status' => 'Tentativo',
-                'notes' => ''
+                'notes' => $this->newNotes
             ]
         ]);
 
-        $this->reset(['newGuestId', 'newRole']);
+        $this->reset(['newGuestId', 'newRole', 'newNotes']);
         $this->js("Flux.modal('assign-sponsor').close()");
     }
 }
@@ -149,6 +151,8 @@ new class extends Component {
                 </flux:select>
 
                 <flux:input wire:model="newRole" label="Rol del Padrino" placeholder="Ej: Anillos, Arras, Lazo..." />
+
+                <flux:textarea wire:model="newNotes" label="Notas o Recordatorios (Opcional)" rows="2" placeholder="Agrega detalles iniciales..." />
             </div>
             
             <div class="flex gap-2">

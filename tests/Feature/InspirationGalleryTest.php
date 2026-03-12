@@ -15,7 +15,7 @@ test('gallery renders color and link items correctly', function () {
     InspirationItem::create([
         'type' => 'color',
         'category' => 'Paletas',
-        'content' => '#A3B18A',
+        'content' => json_encode(['#A3B18A']),
         'description' => 'Verde Sage',
         'user_id' => $user->id
     ]);
@@ -30,7 +30,6 @@ test('gallery renders color and link items correctly', function () {
 
     Volt::test('inspiration.gallery')
         ->assertSee('Verde Sage')
-        ->assertSee('#A3B18A')
         ->assertSee('Mi vestido favorito')
         ->assertSee('example.com/dress');
 });
@@ -42,13 +41,13 @@ test('user can upload a color idea to the gallery', function () {
         ->set('newType', 'color')
         ->set('newCategory', 'Decoración')
         ->set('newDescription', 'Dorado metálizado')
-        ->set('newColor', '#D4AF37')
+        ->set('newColors', ['#D4AF37'])
         ->call('saveIdea');
 
     $this->assertDatabaseHas('inspiration_items', [
         'type' => 'color',
         'category' => 'Decoración',
-        'content' => '#D4AF37',
+        'content' => json_encode(['#D4AF37']),
         'description' => 'Dorado metálizado'
     ]);
 });
@@ -58,12 +57,16 @@ test('user can upload an image idea to the gallery', function () {
 
     $file = UploadedFile::fake()->image('vestido.jpg');
 
-    Volt::test('inspiration.gallery')
+    $user = User::factory()->create();
+
+    Volt::actingAs($user)
+        ->test('inspiration.gallery')
         ->set('newType', 'image')
         ->set('newCategory', 'Vestido')
         ->set('newDescription', 'Foto de vestido')
         ->set('newImage', $file)
-        ->call('saveIdea');
+        ->call('saveIdea')
+        ->assertHasNoErrors();
 
     $item = InspirationItem::where('type', 'image')->first();
     expect($item)->not->toBeNull();

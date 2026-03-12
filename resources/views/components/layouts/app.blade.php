@@ -24,6 +24,7 @@
         <flux:spacer />
 
         <flux:navlist variant="outline">
+            <flux:navlist.item icon="table-cells" href="/settings/categories" :current="request()->is('settings/categories')">Datos</flux:navlist.item>
             <flux:navlist.item icon="cog-6-tooth" href="/settings">Ajustes</flux:navlist.item>
         </flux:navlist>
     </flux:sidebar>
@@ -35,7 +36,7 @@
 
     {{-- Bottom Tab Bar for Mobile --}}
     <div class="fixed bottom-0 left-0 z-50 w-full h-20 bg-white/80 backdrop-blur-md border-t border-stone-200 dark:bg-stone-900/80 dark:border-stone-800 lg:hidden safe-area-bottom">
-        <div class="grid h-full w-full grid-cols-4 mx-auto font-medium">
+        <div class="grid h-full w-full grid-cols-5 mx-auto font-medium">
             <a href="/dashboard" class="inline-flex flex-col items-center justify-center px-2 hover:bg-stone-50 dark:hover:bg-stone-800 group {{ request()->is('dashboard') ? 'text-sage-600 dark:text-sage-500' : 'text-stone-500 dark:text-stone-400' }}">
                 <flux:icon.home class="w-6 h-6 mb-1" />
                 <span class="text-[9px] uppercase tracking-tighter sm:tracking-wider">Inicio</span>
@@ -51,6 +52,10 @@
             <a href="/inspiracion" class="inline-flex flex-col items-center justify-center px-2 hover:bg-stone-50 dark:hover:bg-stone-800 group {{ request()->is('inspiracion') ? 'text-sage-600 dark:text-sage-500' : 'text-stone-500 dark:text-stone-400' }}">
                 <flux:icon.photo class="w-6 h-6 mb-1 group-hover:text-gold-500 transition-colors" />
                 <span class="text-[9px] uppercase tracking-tighter sm:tracking-wider">Inspir.</span>
+            </a>
+            <a href="/settings" class="inline-flex flex-col items-center justify-center px-2 hover:bg-stone-50 dark:hover:bg-stone-800 group {{ request()->is('settings*') ? 'text-sage-600 dark:text-sage-500' : 'text-stone-500 dark:text-stone-400' }}">
+                <flux:icon.cog-6-tooth class="w-6 h-6 mb-1 group-hover:text-sage-500 transition-colors" />
+                <span class="text-[9px] uppercase tracking-tighter sm:tracking-wider">Ajustes</span>
             </a>
         </div>
     </div>

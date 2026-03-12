@@ -3,6 +3,8 @@
 use Livewire\Volt\Component;
 use App\Models\Guest;
 use App\Models\Category;
+use App\Models\Group;
+use Illuminate\Support\Facades\DB;
 
 new class extends Component {
     public $categories;
@@ -13,6 +15,11 @@ new class extends Component {
     public string $editRsvpStatus = 'pending';
     public string $editMenu = '';
     public string $editAllergies = '';
+
+    // New Guest State
+    public $newGuestName = '';
+    public $newGuestGroupId = '';
+    public $newGuestCategoryIds = [];
 
     public function mount()
     {
@@ -47,7 +54,8 @@ new class extends Component {
         })->sortKeys();
 
         return [
-            'groupedGuests' => $groupedGuests
+            'groupedGuests' => $groupedGuests,
+            'groups' => Group::orderBy('name')->get(),
         ];
     }
 
@@ -88,6 +96,39 @@ new class extends Component {
         // Flux Toast notification (Assuming we fix the layout missing component!)
         // flux()->toast('RSVP Actualizado')->success();
     }
+
+    public function saveGuest()
+    {
+        $this->validate([
+            'newGuestName' => 'required|string|max:255',
+            'newGuestGroupId' => 'nullable|exists:groups,id',
+            'newGuestCategoryIds' => 'nullable|array',
+            'newGuestCategoryIds.*' => 'exists:categories,id',
+        ]);
+
+        try {
+            DB::beginTransaction();
+            
+            $guest = Guest::create([
+                'name' => $this->newGuestName,
+                'group_id' => $this->newGuestGroupId ?: null,
+                'rsvp_status' => 'pending',
+                'user_id' => auth()->id(),
+            ]);
+
+            if (!empty($this->newGuestCategoryIds)) {
+                $guest->categories()->sync($this->newGuestCategoryIds);
+            }
+
+            DB::commit();
+
+            $this->reset(['newGuestName', 'newGuestGroupId', 'newGuestCategoryIds']);
+            $this->js("Flux.modal('add-guest').close()");
+        } catch (\Exception $e) {
+            DB::rollBack();
+            throw $e;
+        }
+    }
 }
 ?>
 
@@ -102,7 +143,9 @@ new class extends Component {
             </flux:select>
         </div>
         
-        <flux:button icon="plus" class="bg-sage-600 hover:bg-sage-700 text-white w-full sm:w-auto">Nuevo Invitado</flux:button>
+        <flux:modal.trigger name="add-guest">
+            <flux:button icon="plus" class="bg-sage-600 hover:bg-sage-700 text-white w-full sm:w-auto">Nuevo Invitado</flux:button>
+        </flux:modal.trigger>
     </div>
 
     {{-- Guest List Grouped --}}
@@ -118,10 +161,10 @@ new class extends Component {
                     @foreach($guests as $guest)
                         <flux:card class="relative flex flex-col pt-4 pb-4 px-5">
                             <div class="flex justify-between items-start mb-2">
-                                <div>
-                                    <h3 class="font-medium text-lg leading-tight">{{ $guest->name }}</h3>
+                                <a href="/invitados/{{ $guest->slug }}" wire:navigate class="group">
+                                    <h3 class="font-medium text-lg leading-tight group-hover:text-sage-600 transition-colors">{{ $guest->name }}</h3>
                                     <p class="text-xs text-stone-500 mt-0.5">{{ '@'.$guest->slug }}</p>
-                                </div>
+                                </a>
                                 <flux:button wire:click="editRsvp('{{ $guest->id }}')" size="sm" variant="ghost" icon="pencil" class="text-stone-400 hover:text-stone-700 -mr-2" />
                             </div>
                             
@@ -152,6 +195,40 @@ new class extends Component {
             </div>
         @endforelse
     </div>
+
+    {{-- Add Guest Modal --}}
+    <flux:modal name="add-guest" class="min-w-[22rem]">
+        <form wire:submit="saveGuest" class="space-y-6">
+            <div>
+                <flux:heading size="lg">Nuevo Invitado</flux:heading>
+                <flux:subheading>Añade un invitado rápidamente a la lista base.</flux:subheading>
+            </div>
+            
+            <div class="space-y-4">
+                <flux:input wire:model="newGuestName" label="Nombre completo" placeholder="Ej: Juan Pérez" />
+
+                <flux:select wire:model="newGuestGroupId" label="Grupo / Familia" placeholder="Opcional...">
+                    @foreach($groups as $group)
+                        <flux:select.option value="{{ $group->id }}">{{ $group->name }}</flux:select.option>
+                    @endforeach
+                </flux:select>
+
+                <flux:select wire:model="newGuestCategoryIds" label="Categorías" multiple placeholder="Opcional...">
+                    @foreach($categories as $category)
+                        <flux:select.option value="{{ $category->id }}">{{ $category->name }}</flux:select.option>
+                    @endforeach
+                </flux:select>
+            </div>
+            
+            <div class="flex gap-2">
+                <flux:spacer />
+                <flux:modal.close>
+                    <flux:button variant="ghost">Cancelar</flux:button>
+                </flux:modal.close>
+                <flux:button type="submit" variant="primary" class="bg-sage-600 hover:bg-sage-700 border-0">Guardar Invitado</flux:button>
+            </div>
+        </form>
+    </flux:modal>
 
     {{-- Edit RSVP Modal --}}
     <flux:modal name="edit-rsvp" class="min-w-[22rem]">

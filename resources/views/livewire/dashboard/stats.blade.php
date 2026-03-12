@@ -3,6 +3,7 @@
 use Livewire\Volt\Component;
 use App\Models\Guest;
 use App\Models\Category;
+use Illuminate\Support\Facades\DB;
 
 new class extends Component {
     public int $totalGuests = 0;
@@ -48,21 +49,32 @@ new class extends Component {
             'newGuestCategoryIds.*' => 'exists:categories,id',
         ]);
 
-        $guest = Guest::create([
-            'name' => $this->newGuestName,
-            'group_id' => $this->newGuestGroupId ?: null,
-            'rsvp_status' => 'pending',
-            'user_id' => auth()->id(),
-        ]);
+        try {
+            DB::beginTransaction();
+            
+            $guest = Guest::create([
+                'name' => $this->newGuestName,
+                'group_id' => $this->newGuestGroupId ?: null,
+                'rsvp_status' => 'pending',
+                'user_id' => auth()->id(),
+                // Slug is handled by Guest model's booted method
+            ]);
 
-        if (!empty($this->newGuestCategoryIds)) {
-            $guest->categories()->attach($this->newGuestCategoryIds);
+            if (!empty($this->newGuestCategoryIds)) {
+                $guest->categories()->sync($this->newGuestCategoryIds);
+            }
+
+            DB::commit();
+
+            $this->loadStats();
+            $this->reset(['newGuestName', 'newGuestGroupId', 'newGuestCategoryIds']);
+            
+            $this->js("Flux.modal('add-guest').close()");
+        } catch (\Exception $e) {
+            DB::rollBack();
+            // We'll show an error if something goes wrong
+            throw $e;
         }
-
-        $this->loadStats();
-        $this->reset(['newGuestName', 'newGuestGroupId', 'newGuestCategoryIds']);
-        
-        $this->js("Flux.modal('add-guest').close()");
     }
 }
 ?>

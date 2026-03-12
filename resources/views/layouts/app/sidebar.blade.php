@@ -7,14 +7,29 @@
     <body class="min-h-screen bg-white dark:bg-zinc-800">
         <flux:sidebar sticky collapsible="mobile" class="border-e border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900">
             <flux:sidebar.header>
-                <x-app-logo :sidebar="true" href="{{ route('dashboard') }}" wire:navigate />
+                <x-app-logo :sidebar="true" href="/dashboard" wire:navigate />
                 <flux:sidebar.collapse class="lg:hidden" />
             </flux:sidebar.header>
 
             <flux:sidebar.nav>
-                <flux:sidebar.group :heading="__('Platform')" class="grid">
-                    <flux:sidebar.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
+                <flux:sidebar.group :heading="__('Boda')" class="grid">
+                    <flux:sidebar.item icon="home" href="/dashboard" :current="request()->is('dashboard')" wire:navigate>
                         {{ __('Dashboard') }}
+                    </flux:sidebar.item>
+                    <flux:sidebar.item icon="users" href="/invitados" :current="request()->is('invitados*')" wire:navigate>
+                        {{ __('Invitados') }}
+                    </flux:sidebar.item>
+                    <flux:sidebar.item icon="sparkles" href="/padrinos" :current="request()->is('padrinos*')" wire:navigate>
+                        {{ __('Padrinos') }}
+                    </flux:sidebar.item>
+                    <flux:sidebar.item icon="light-bulb" href="/inspiracion" :current="request()->is('inspiracion*')" wire:navigate>
+                        {{ __('Inspiración') }}
+                    </flux:sidebar.item>
+                </flux:sidebar.group>
+
+                <flux:sidebar.group :heading="__('Configuración')" class="grid">
+                    <flux:sidebar.item icon="cog-6-tooth" href="/settings/categories" :current="request()->is('settings/categories')" wire:navigate>
+                        {{ __('Datos') }}
                     </flux:sidebar.item>
                 </flux:sidebar.group>
             </flux:sidebar.nav>
@@ -66,7 +81,7 @@
                     <flux:menu.separator />
 
                     <flux:menu.radio.group>
-                        <flux:menu.item :href="route('profile.edit')" icon="cog" wire:navigate>
+                        <flux:menu.item href="/settings" icon="cog" wire:navigate>
                             {{ __('Settings') }}
                         </flux:menu.item>
                     </flux:menu.radio.group>
