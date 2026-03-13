@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('inspiration_items', function (Blueprint $table) {
             $table->id();
             $table->string('type');
-            $table->string('category')->nullable();
+            $table->string('category_name')->nullable();
             $table->string('content');
             $table->text('description')->nullable();
             $table->boolean('is_favorite')->default(false);

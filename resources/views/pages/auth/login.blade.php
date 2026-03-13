@@ -1,6 +1,6 @@
-<x-layouts::auth :title="__('Iniciar sesión')">
+<x-layouts.auth :title="__('Iniciar sesión')">
     <div class="flex flex-col gap-6">
-        <x-auth-header :title="__('Bienvenido a BodaApp')" :description="__('Ingresa tu correo y contraseña para gestionar tu gran día')" />
+        <x-auth-header :title="__('Bienvenido a BodaApp')" :description="__('Ingresa tu usuario y contraseña para gestionar tu gran día')" />
 
         <!-- Session Status -->
         <x-auth-session-status class="text-center" :status="session('status')" />
@@ -8,16 +8,15 @@
         <form method="POST" action="{{ route('login.store') }}" class="flex flex-col gap-6">
             @csrf
 
-            <!-- Email Address -->
+            <!-- Username -->
             <flux:input
-                name="email"
-                :label="__('Correo electrónico')"
-                :value="old('email')"
-                type="email"
+                name="username"
+                :label="__('Usuario')"
+                :value="old('username')"
+                type="text"
                 required
                 autofocus
-                autocomplete="email"
-                placeholder="correo@ejemplo.com"
+                placeholder="Nombre de usuario"
             />
 
             <!-- Password -->
@@ -48,12 +47,5 @@
                 </flux:button>
             </div>
         </form>
-
-        @if (Route::has('register'))
-            <div class="space-x-1 text-sm text-center rtl:space-x-reverse text-zinc-600 dark:text-zinc-400">
-                <span>{{ __('¿No tienes una cuenta?') }}</span>
-                <flux:link :href="route('register')" class="text-gold-600 hover:text-gold-700" wire:navigate>{{ __('Regístrate gratis') }}</flux:link>
-            </div>
-        @endif
     </div>
-</x-layouts::auth>
+</x-layouts.auth>

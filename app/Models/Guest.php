@@ -2,17 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
 class Guest extends Model
 {
-    use HasUuids;
+    use HasUuids, \Illuminate\Database\Eloquent\Factories\HasFactory;
 
     protected $fillable = [
-        'name', 'slug', 'email', 'phone', 'group_id', 'rsvp_status', 'rsvp_details', 'user_id'
+        'name', 'slug', 'email', 'phone', 'group_id', 'rsvp_status', 'rsvp_details', 'user_id',
+        'is_representative', 'representative_id', 'extra_spots', 'seating_table_id',
     ];
 
     public function newUniqueId(): string
@@ -24,7 +24,22 @@ class Guest extends Model
     {
         static::creating(function (Guest $guest) {
             if (empty($guest->slug)) {
-                $guest->slug = Str::slug($guest->name);
+                $baseSlug = Str::slug($guest->name);
+                $slug = $baseSlug;
+                $counter = 1;
+
+                while (static::where('slug', $slug)->exists()) {
+                    $slug = $baseSlug.'-'.$counter++;
+                }
+
+                $guest->slug = $slug;
+            }
+        });
+
+        static::deleting(function (Guest $guest) {
+            // Cascade delete members if this is a representative
+            if ($guest->is_representative) {
+                $guest->members()->delete();
             }
         });
     }
@@ -33,7 +48,19 @@ class Guest extends Model
     {
         return [
             'rsvp_details' => 'array',
+            'is_representative' => 'boolean',
+            'extra_spots' => 'integer',
         ];
+    }
+
+    public function members()
+    {
+        return $this->hasMany(Guest::class, 'representative_id');
+    }
+
+    public function representative()
+    {
+        return $this->belongsTo(Guest::class, 'representative_id');
     }
 
     public function group()
@@ -55,4 +82,10 @@ class Guest extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function seatingTable()
+    {
+        return $this->belongsTo(SeatingTable::class);
+    }
+
 }

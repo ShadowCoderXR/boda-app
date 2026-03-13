@@ -11,10 +11,12 @@ uses(RefreshDatabase::class);
 
 test('gallery renders color and link items correctly', function () {
     $user = User::factory()->create();
+    $cat1 = App\Models\Category::factory()->create(['type' => 'inspiration', 'name' => 'Paletas']);
+    $cat2 = App\Models\Category::factory()->create(['type' => 'inspiration', 'name' => 'Vestidos']);
 
     InspirationItem::create([
         'type' => 'color',
-        'category' => 'Paletas',
+        'category_id' => $cat1->id,
         'content' => json_encode(['#A3B18A']),
         'description' => 'Verde Sage',
         'user_id' => $user->id
@@ -22,7 +24,7 @@ test('gallery renders color and link items correctly', function () {
 
     InspirationItem::create([
         'type' => 'link',
-        'category' => 'Vestidos',
+        'category_id' => $cat2->id,
         'content' => 'https://example.com/dress',
         'description' => 'Mi vestido favorito',
         'user_id' => $user->id
@@ -37,19 +39,25 @@ test('gallery renders color and link items correctly', function () {
 test('user can upload a color idea to the gallery', function () {
     $user = User::factory()->create();
 
-    Volt::test('inspiration.gallery')
+    Volt::actingAs($user)
+        ->test('inspiration.gallery')
         ->set('newType', 'color')
-        ->set('newCategory', 'Decoración')
+        ->set('newCategoryId', 'Decoración')
         ->set('newDescription', 'Dorado metálizado')
         ->set('newColors', ['#D4AF37'])
         ->call('saveIdea');
 
-    $this->assertDatabaseHas('inspiration_items', [
-        'type' => 'color',
-        'category' => 'Decoración',
-        'content' => json_encode(['#D4AF37']),
-        'description' => 'Dorado metálizado'
-    ]);
+    $item = InspirationItem::where('type', 'color')->latest()->first();
+    expect($item)->not->toBeNull();
+    expect($item->category_id)->not->toBeNull();
+    
+    $cat = App\Models\Category::find($item->category_id);
+    expect($cat)->not->toBeNull();
+    expect($cat->name)->toBe('Decoración');
+    
+    expect($item->category->name)->toBe('Decoración');
+    expect($item->content)->toBe(json_encode(['#D4AF37']));
+    expect($item->description)->toBe('Dorado metálizado');
 });
 
 test('user can upload an image idea to the gallery', function () {
@@ -62,7 +70,7 @@ test('user can upload an image idea to the gallery', function () {
     Volt::actingAs($user)
         ->test('inspiration.gallery')
         ->set('newType', 'image')
-        ->set('newCategory', 'Vestido')
+        ->set('newCategoryId', 'Vestido')
         ->set('newDescription', 'Foto de vestido')
         ->set('newImage', $file)
         ->call('saveIdea')
@@ -70,7 +78,7 @@ test('user can upload an image idea to the gallery', function () {
 
     $item = InspirationItem::where('type', 'image')->first();
     expect($item)->not->toBeNull();
-    expect($item->category)->toBe('Vestido');
+    expect($item->category->name)->toBe('Vestido');
     expect($item->content)->toContain('/storage/inspiration/');
     
     // Check if file actually exists on fake disk
@@ -80,9 +88,12 @@ test('user can upload an image idea to the gallery', function () {
 test('user can toggle favorite status', function () {
     $item = InspirationItem::create([
         'type' => 'color',
-        'category' => 'Paletas',
+        // 'category' => 'Paletas',  // Need to adjust this since 'category' is likely a relationship now, or we provide category_id instead.
+        // Let's create a category first.
+        'category_id' => App\Models\Category::factory()->create(['type' => 'inspiration'])->id,
         'content' => '#A3B18A',
         'is_favorite' => false,
+        'user_id' => User::factory()->create()->id, // Add user_id so it passes DB constraints
     ]);
 
     Volt::test('inspiration.gallery')

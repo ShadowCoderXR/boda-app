@@ -1,0 +1,385 @@
+﻿
+  ....s..........ssss...........Ô¿»Ô¿».Ô¿»Ô¿»Ô¿»Ô¿»Ô¿»Ô¿»Ô¿»Ô¿»
+  Ô¿»Ô¿»Ô¿»Ô¿»Ô¿»Ô¿»Ô¿»Ô¿».......ssssÔ¿»Ô¿»Ô¿»
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILEDÔÇª   VoltDirectiveMissingException   
+  The [@volt] directive is required when using Volt anonymous components in Folio pages. The directive is missing in [C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\resources\views\pages\settings\equipo.blade.php].
+
+  at vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+    112Ôûò         }
+    113Ôûò 
+    114Ôûò         foreach (Folio::paths() as $path) {
+    115Ôûò             if (str_starts_with($bladePath = Blade::getPath(), $path)) {
+  Ô×£ 116Ôûò                 throw new VoltDirectiveMissingException($bladePath);
+    117Ôûò             }
+    118Ôûò         }
+    119Ôûò     }
+    120Ôûò
+
+  1   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+  2   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:29
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILEDÔÇª   VoltDirectiveMissingException   
+  The [@volt] directive is required when using Volt anonymous components in Folio pages. The directive is missing in [C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\resources\views\pages\settings\equipo.blade.php].
+
+  at vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+    112Ôûò         }
+    113Ôûò 
+    114Ôûò         foreach (Folio::paths() as $path) {
+    115Ôûò             if (str_starts_with($bladePath = Blade::getPath(), $path)) {
+  Ô×£ 116Ôûò                 throw new VoltDirectiveMissingException($bladePath);
+    117Ôûò             }
+    118Ôûò         }
+    119Ôûò     }
+    120Ôûò
+
+  1   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+  2   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:29
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILEDÔÇª   VoltDirectiveMissingException   
+  The [@volt] directive is required when using Volt anonymous components in Folio pages. The directive is missing in [C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\resources\views\pages\settings\equipo.blade.php].
+
+  at vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+    112Ôûò         }
+    113Ôûò 
+    114Ôûò         foreach (Folio::paths() as $path) {
+    115Ôûò             if (str_starts_with($bladePath = Blade::getPath(), $path)) {
+  Ô×£ 116Ôûò                 throw new VoltDirectiveMissingException($bladePath);
+    117Ôûò             }
+    118Ôûò         }
+    119Ôûò     }
+    120Ôûò
+
+  1   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+  2   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:29
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILEDÔÇª   VoltDirectiveMissingException   
+  The [@volt] directive is required when using Volt anonymous components in Folio pages. The directive is missing in [C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\resources\views\pages\settings\equipo.blade.php].
+
+  at vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+    112Ôûò         }
+    113Ôûò 
+    114Ôûò         foreach (Folio::paths() as $path) {
+    115Ôûò             if (str_starts_with($bladePath = Blade::getPath(), $path)) {
+  Ô×£ 116Ôûò                 throw new VoltDirectiveMissingException($bladePath);
+    117Ôûò             }
+    118Ôûò         }
+    119Ôûò     }
+    120Ôûò
+
+  1   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+  2   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:29
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILEDÔÇª   VoltDirectiveMissingException   
+  The [@volt] directive is required when using Volt anonymous components in Folio pages. The directive is missing in [C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\resources\views\pages\settings\equipo.blade.php].
+
+  at vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+    112Ôûò         }
+    113Ôûò 
+    114Ôûò         foreach (Folio::paths() as $path) {
+    115Ôûò             if (str_starts_with($bladePath = Blade::getPath(), $path)) {
+  Ô×£ 116Ôûò                 throw new VoltDirectiveMissingException($bladePath);
+    117Ôûò             }
+    118Ôûò         }
+    119Ôûò     }
+    120Ôûò
+
+  1   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+  2   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:29
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILEDÔÇª   VoltDirectiveMissingException   
+  The [@volt] directive is required when using Volt anonymous components in Folio pages. The directive is missing in [C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\resources\views\pages\settings\equipo.blade.php].
+
+  at vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+    112Ôûò         }
+    113Ôûò 
+    114Ôûò         foreach (Folio::paths() as $path) {
+    115Ôûò             if (str_starts_with($bladePath = Blade::getPath(), $path)) {
+  Ô×£ 116Ôûò                 throw new VoltDirectiveMissingException($bladePath);
+    117Ôûò             }
+    118Ôûò         }
+    119Ôûò     }
+    120Ôûò
+
+  1   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+  2   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:29
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILEDÔÇª   VoltDirectiveMissingException   
+  The [@volt] directive is required when using Volt anonymous components in Folio pages. The directive is missing in [C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\resources\views\pages\settings\equipo.blade.php].
+
+  at vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+    112Ôûò         }
+    113Ôûò 
+    114Ôûò         foreach (Folio::paths() as $path) {
+    115Ôûò             if (str_starts_with($bladePath = Blade::getPath(), $path)) {
+  Ô×£ 116Ôûò                 throw new VoltDirectiveMissingException($bladePath);
+    117Ôûò             }
+    118Ôûò         }
+    119Ôûò     }
+    120Ôûò
+
+  1   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+  2   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:29
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILEDÔÇª   VoltDirectiveMissingException   
+  The [@volt] directive is required when using Volt anonymous components in Folio pages. The directive is missing in [C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\resources\views\pages\settings\equipo.blade.php].
+
+  at vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+    112Ôûò         }
+    113Ôûò 
+    114Ôûò         foreach (Folio::paths() as $path) {
+    115Ôûò             if (str_starts_with($bladePath = Blade::getPath(), $path)) {
+  Ô×£ 116Ôûò                 throw new VoltDirectiveMissingException($bladePath);
+    117Ôûò             }
+    118Ôûò         }
+    119Ôûò     }
+    120Ôûò
+
+  1   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+  2   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:29
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILEDÔÇª   VoltDirectiveMissingException   
+  The [@volt] directive is required when using Volt anonymous components in Folio pages. The directive is missing in [C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\resources\views\pages\settings\equipo.blade.php].
+
+  at vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+    112Ôûò         }
+    113Ôûò 
+    114Ôûò         foreach (Folio::paths() as $path) {
+    115Ôûò             if (str_starts_with($bladePath = Blade::getPath(), $path)) {
+  Ô×£ 116Ôûò                 throw new VoltDirectiveMissingException($bladePath);
+    117Ôûò             }
+    118Ôûò         }
+    119Ôûò     }
+    120Ôûò
+
+  1   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+  2   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:29
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILEDÔÇª   VoltDirectiveMissingException   
+  The [@volt] directive is required when using Volt anonymous components in Folio pages. The directive is missing in [C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\resources\views\pages\settings\equipo.blade.php].
+
+  at vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+    112Ôûò         }
+    113Ôûò 
+    114Ôûò         foreach (Folio::paths() as $path) {
+    115Ôûò             if (str_starts_with($bladePath = Blade::getPath(), $path)) {
+  Ô×£ 116Ôûò                 throw new VoltDirectiveMissingException($bladePath);
+    117Ôûò             }
+    118Ôûò         }
+    119Ôûò     }
+    120Ôûò
+
+  1   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+  2   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:29
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILEDÔÇª   VoltDirectiveMissingException   
+  The [@volt] directive is required when using Volt anonymous components in Folio pages. The directive is missing in [C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\resources\views\pages\settings\equipo.blade.php].
+
+  at vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+    112Ôûò         }
+    113Ôûò 
+    114Ôûò         foreach (Folio::paths() as $path) {
+    115Ôûò             if (str_starts_with($bladePath = Blade::getPath(), $path)) {
+  Ô×£ 116Ôûò                 throw new VoltDirectiveMissingException($bladePath);
+    117Ôûò             }
+    118Ôûò         }
+    119Ôûò     }
+    120Ôûò
+
+  1   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+  2   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:29
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILEDÔÇª   VoltDirectiveMissingException   
+  The [@volt] directive is required when using Volt anonymous components in Folio pages. The directive is missing in [C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\resources\views\pages\settings\equipo.blade.php].
+
+  at vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+    112Ôûò         }
+    113Ôûò 
+    114Ôûò         foreach (Folio::paths() as $path) {
+    115Ôûò             if (str_starts_with($bladePath = Blade::getPath(), $path)) {
+  Ô×£ 116Ôûò                 throw new VoltDirectiveMissingException($bladePath);
+    117Ôûò             }
+    118Ôûò         }
+    119Ôûò     }
+    120Ôûò
+
+  1   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+  2   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:29
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILEDÔÇª   VoltDirectiveMissingException   
+  The [@volt] directive is required when using Volt anonymous components in Folio pages. The directive is missing in [C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\resources\views\pages\settings\equipo.blade.php].
+
+  at vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+    112Ôûò         }
+    113Ôûò 
+    114Ôûò         foreach (Folio::paths() as $path) {
+    115Ôûò             if (str_starts_with($bladePath = Blade::getPath(), $path)) {
+  Ô×£ 116Ôûò                 throw new VoltDirectiveMissingException($bladePath);
+    117Ôûò             }
+    118Ôûò         }
+    119Ôûò     }
+    120Ôûò
+
+  1   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+  2   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:29
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILEDÔÇª   VoltDirectiveMissingException   
+  The [@volt] directive is required when using Volt anonymous components in Folio pages. The directive is missing in [C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\resources\views\pages\settings\equipo.blade.php].
+
+  at vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+    112Ôûò         }
+    113Ôûò 
+    114Ôûò         foreach (Folio::paths() as $path) {
+    115Ôûò             if (str_starts_with($bladePath = Blade::getPath(), $path)) {
+  Ô×£ 116Ôûò                 throw new VoltDirectiveMissingException($bladePath);
+    117Ôûò             }
+    118Ôûò         }
+    119Ôûò     }
+    120Ôûò
+
+  1   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+  2   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:29
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILEDÔÇª   VoltDirectiveMissingException   
+  The [@volt] directive is required when using Volt anonymous components in Folio pages. The directive is missing in [C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\resources\views\pages\settings\equipo.blade.php].
+
+  at vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+    112Ôûò         }
+    113Ôûò 
+    114Ôûò         foreach (Folio::paths() as $path) {
+    115Ôûò             if (str_starts_with($bladePath = Blade::getPath(), $path)) {
+  Ô×£ 116Ôûò                 throw new VoltDirectiveMissingException($bladePath);
+    117Ôûò             }
+    118Ôûò         }
+    119Ôûò     }
+    120Ôûò
+
+  1   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+  2   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:29
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILEDÔÇª   VoltDirectiveMissingException   
+  The [@volt] directive is required when using Volt anonymous components in Folio pages. The directive is missing in [C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\resources\views\pages\settings\equipo.blade.php].
+
+  at vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+    112Ôûò         }
+    113Ôûò 
+    114Ôûò         foreach (Folio::paths() as $path) {
+    115Ôûò             if (str_starts_with($bladePath = Blade::getPath(), $path)) {
+  Ô×£ 116Ôûò                 throw new VoltDirectiveMissingException($bladePath);
+    117Ôûò             }
+    118Ôûò         }
+    119Ôûò     }
+    120Ôûò
+
+  1   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+  2   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:29
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILEDÔÇª   VoltDirectiveMissingException   
+  The [@volt] directive is required when using Volt anonymous components in Folio pages. The directive is missing in [C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\resources\views\pages\settings\equipo.blade.php].
+
+  at vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+    112Ôûò         }
+    113Ôûò 
+    114Ôûò         foreach (Folio::paths() as $path) {
+    115Ôûò             if (str_starts_with($bladePath = Blade::getPath(), $path)) {
+  Ô×£ 116Ôûò                 throw new VoltDirectiveMissingException($bladePath);
+    117Ôûò             }
+    118Ôûò         }
+    119Ôûò     }
+    120Ôûò
+
+  1   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+  2   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:29
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILEDÔÇª   VoltDirectiveMissingException   
+  The [@volt] directive is required when using Volt anonymous components in Folio pages. The directive is missing in [C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\resources\views\pages\settings\equipo.blade.php].
+
+  at vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+    112Ôûò         }
+    113Ôûò 
+    114Ôûò         foreach (Folio::paths() as $path) {
+    115Ôûò             if (str_starts_with($bladePath = Blade::getPath(), $path)) {
+  Ô×£ 116Ôûò                 throw new VoltDirectiveMissingException($bladePath);
+    117Ôûò             }
+    118Ôûò         }
+    119Ôûò     }
+    120Ôûò
+
+  1   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+  2   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:29
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILEDÔÇª   VoltDirectiveMissingException   
+  The [@volt] directive is required when using Volt anonymous components in Folio pages. The directive is missing in [C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\resources\views\pages\settings\equipo.blade.php].
+
+  at vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+    112Ôûò         }
+    113Ôûò 
+    114Ôûò         foreach (Folio::paths() as $path) {
+    115Ôûò             if (str_starts_with($bladePath = Blade::getPath(), $path)) {
+  Ô×£ 116Ôûò                 throw new VoltDirectiveMissingException($bladePath);
+    117Ôûò             }
+    118Ôûò         }
+    119Ôûò     }
+    120Ôûò
+
+  1   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+  2   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:29
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILEDÔÇª   VoltDirectiveMissingException   
+  The [@volt] directive is required when using Volt anonymous components in Folio pages. The directive is missing in [C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\resources\views\pages\settings\equipo.blade.php].
+
+  at vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+    112Ôûò         }
+    113Ôûò 
+    114Ôûò         foreach (Folio::paths() as $path) {
+    115Ôûò             if (str_starts_with($bladePath = Blade::getPath(), $path)) {
+  Ô×£ 116Ôûò                 throw new VoltDirectiveMissingException($bladePath);
+    117Ôûò             }
+    118Ôûò         }
+    119Ôûò     }
+    120Ôûò
+
+  1   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+  2   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:29
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILEDÔÇª   VoltDirectiveMissingException   
+  The [@volt] directive is required when using Volt anonymous components in Folio pages. The directive is missing in [C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\resources\views\pages\settings\equipo.blade.php].
+
+  at vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+    112Ôûò         }
+    113Ôûò 
+    114Ôûò         foreach (Folio::paths() as $path) {
+    115Ôûò             if (str_starts_with($bladePath = Blade::getPath(), $path)) {
+  Ô×£ 116Ôûò                 throw new VoltDirectiveMissingException($bladePath);
+    117Ôûò             }
+    118Ôûò         }
+    119Ôûò     }
+    120Ôûò
+
+  1   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:116
+  2   vendor\livewire\volt\src\Precompilers\ExtractFragments.php:29
+
+
+  Tests:    21 failed, 9 skipped, 33 passed (84 assertions)
+  Duration: 30.95s
+

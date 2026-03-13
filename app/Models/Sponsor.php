@@ -24,4 +24,19 @@ class Sponsor extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function roleCategory()
+    {
+        return $this->belongsTo(Category::class, 'role_category_id');
+    }
+
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
+
+    public function vendors()
+    {
+        return $this->hasMany(Vendor::class);
+    }
 }

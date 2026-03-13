@@ -15,17 +15,26 @@
         <flux:brand href="/dashboard" logo="https://fluxui.com/img/demo/logo-dark.png" name="BodaApp" class="px-2 hidden dark:flex" />
 
         <flux:navlist variant="outline">
-            <flux:navlist.item icon="home" href="/dashboard" :current="request()->is('dashboard')">Dashboard</flux:navlist.item>
-            <flux:navlist.item icon="users" href="/invitados" :current="request()->is('invitados')">Invitados</flux:navlist.item>
-            <flux:navlist.item icon="star" href="/padrinos" :current="request()->is('padrinos')">Padrinos</flux:navlist.item>
-            <flux:navlist.item icon="photo" href="/inspiracion" :current="request()->is('inspiracion')">Inspiración</flux:navlist.item>
+            <flux:navlist.item icon="home" href="/dashboard" :current="request()->is('dashboard')" wire:navigate>Dashboard</flux:navlist.item>
+            <flux:navlist.item icon="users" href="/invitados" :current="request()->is('invitados*')" wire:navigate>Invitados</flux:navlist.item>
+            <flux:navlist.item icon="table-cells" href="/mesas" :current="request()->is('mesas*')" wire:navigate>Mesas</flux:navlist.item>
+            <flux:navlist.item icon="star" href="/padrinos" :current="request()->is('padrinos*')" wire:navigate>Padrinos</flux:navlist.item>
+            <flux:navlist.item icon="photo" href="/inspiracion" :current="request()->is('inspiracion*')" wire:navigate>Inspiración</flux:navlist.item>
+        </flux:navlist>
+
+        <flux:heading size="xs" class="px-3 mt-6 mb-2 text-stone-400 uppercase tracking-widest font-bold">Planificación</flux:heading>
+        <flux:navlist variant="outline">
+            <flux:navlist.item icon="clipboard-document-list" href="/pendientes" :current="request()->is('pendientes*')" wire:navigate>Pendientes</flux:navlist.item>
+            <flux:navlist.item icon="building-storefront" href="/proveedores" :current="request()->is('proveedores*')" wire:navigate>Proveedores</flux:navlist.item>
+            <flux:navlist.item icon="ticket" href="/invitacion" :current="request()->is('invitacion*')" wire:navigate>Invitación</flux:navlist.item>
         </flux:navlist>
 
         <flux:spacer />
 
         <flux:navlist variant="outline">
-            <flux:navlist.item icon="table-cells" href="/settings/categories" :current="request()->is('settings/categories')">Datos</flux:navlist.item>
-            <flux:navlist.item icon="cog-6-tooth" href="/settings">Ajustes</flux:navlist.item>
+            <flux:navlist.item icon="users" href="/settings/equipo" :current="request()->is('settings/equipo*')" wire:navigate>Equipo</flux:navlist.item>
+            <flux:navlist.item icon="adjustments-horizontal" href="/settings/categories" :current="request()->is('settings/categories')" wire:navigate>Datos</flux:navlist.item>
+            <flux:navlist.item icon="cog-6-tooth" href="/settings" wire:navigate>Ajustes</flux:navlist.item>
         </flux:navlist>
     </flux:sidebar>
 
@@ -35,27 +44,23 @@
     </flux:main>
 
     {{-- Bottom Tab Bar for Mobile --}}
-    <div class="fixed bottom-0 left-0 z-50 w-full h-20 bg-white/80 backdrop-blur-md border-t border-stone-200 dark:bg-stone-900/80 dark:border-stone-800 lg:hidden safe-area-bottom">
-        <div class="grid h-full w-full grid-cols-5 mx-auto font-medium">
+    <div class="fixed bottom-0 left-0 z-50 w-full bg-white/80 backdrop-blur-md border-t border-stone-200 dark:bg-stone-900/80 dark:border-stone-800 lg:hidden safe-area-bottom">
+        <div class="grid h-full w-full grid-cols-4 mx-auto font-medium py-2">
             <a href="/dashboard" class="inline-flex flex-col items-center justify-center px-2 hover:bg-stone-50 dark:hover:bg-stone-800 group {{ request()->is('dashboard') ? 'text-sage-600 dark:text-sage-500' : 'text-stone-500 dark:text-stone-400' }}">
-                <flux:icon.home class="w-6 h-6 mb-1" />
-                <span class="text-[9px] uppercase tracking-tighter sm:tracking-wider">Inicio</span>
+                <flux:icon.home class="w-5 h-5 mb-1" />
+                <span class="text-[8px] uppercase tracking-tighter">Inicio</span>
             </a>
-            <a href="/invitados" class="inline-flex flex-col items-center justify-center px-2 hover:bg-stone-50 dark:hover:bg-stone-800 group {{ request()->is('invitados') ? 'text-sage-600 dark:text-sage-500' : 'text-stone-500 dark:text-stone-400' }}">
-                <flux:icon.users class="w-6 h-6 mb-1 group-hover:text-sage-500 transition-colors" />
-                <span class="text-[9px] uppercase tracking-tighter sm:tracking-wider">Invitados</span>
+            <a href="/invitados" class="inline-flex flex-col items-center justify-center px-2 hover:bg-stone-50 dark:hover:bg-stone-800 group {{ request()->is('invitados*') ? 'text-sage-600 dark:text-sage-500' : 'text-stone-500 dark:text-stone-400' }}">
+                <flux:icon.users class="w-5 h-5 mb-1" />
+                <span class="text-[8px] uppercase tracking-tighter">Invitados</span>
             </a>
-            <a href="/padrinos" class="inline-flex flex-col items-center justify-center px-2 hover:bg-stone-50 dark:hover:bg-stone-800 group {{ request()->is('padrinos') ? 'text-sage-600 dark:text-sage-500' : 'text-stone-500 dark:text-stone-400' }}">
-                <flux:icon.star class="w-6 h-6 mb-1 group-hover:text-gold-500 transition-colors" />
-                <span class="text-[9px] uppercase tracking-tighter sm:tracking-wider">Padrinos</span>
-            </a>
-            <a href="/inspiracion" class="inline-flex flex-col items-center justify-center px-2 hover:bg-stone-50 dark:hover:bg-stone-800 group {{ request()->is('inspiracion') ? 'text-sage-600 dark:text-sage-500' : 'text-stone-500 dark:text-stone-400' }}">
-                <flux:icon.photo class="w-6 h-6 mb-1 group-hover:text-gold-500 transition-colors" />
-                <span class="text-[9px] uppercase tracking-tighter sm:tracking-wider">Inspir.</span>
+            <a href="/pendientes" class="inline-flex flex-col items-center justify-center px-2 hover:bg-stone-50 dark:hover:bg-stone-800 group {{ request()->is('pendientes*') ? 'text-sage-600 dark:text-sage-500' : 'text-stone-500 dark:text-stone-400' }}">
+                <flux:icon.clipboard-document-list class="w-5 h-5 mb-1" />
+                <span class="text-[8px] uppercase tracking-tighter">Tareas</span>
             </a>
             <a href="/settings" class="inline-flex flex-col items-center justify-center px-2 hover:bg-stone-50 dark:hover:bg-stone-800 group {{ request()->is('settings*') ? 'text-sage-600 dark:text-sage-500' : 'text-stone-500 dark:text-stone-400' }}">
-                <flux:icon.cog-6-tooth class="w-6 h-6 mb-1 group-hover:text-sage-500 transition-colors" />
-                <span class="text-[9px] uppercase tracking-tighter sm:tracking-wider">Ajustes</span>
+                <flux:icon.cog-6-tooth class="w-5 h-5 mb-1" />
+                <span class="text-[8px] uppercase tracking-tighter">Ajustes</span>
             </a>
         </div>
     </div>

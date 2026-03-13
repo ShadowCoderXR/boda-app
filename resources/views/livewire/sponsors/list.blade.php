@@ -10,17 +10,24 @@ new class extends Component {
     public string $editRoles = '';
     public string $editStatus = 'Tentativo';
     public string $editNotes = '';
+    public string $editRoleCategoryId = '';
 
     // Assign Sponsor State
     public $newGuestId = '';
     public $newRole = '';
+    public $newRoleCategoryId = '';
     public $newNotes = '';
+    public $roleCategorySearch = '';
 
     public function with()
     {
         return [
-            'sponsors' => Sponsor::with('guest')->get(),
-            'availableGuests' => Guest::whereDoesntHave('sponsor')->orderBy('name')->get()
+            'sponsors' => Sponsor::with(['guest', 'roleCategory'])->get(),
+            'availableGuests' => Guest::whereDoesntHave('sponsor')->orderBy('name')->get(),
+            'roleCategories' => \App\Models\Category::where('type', 'sponsor')
+                ->where('user_id', auth()->id())
+                ->where('name', 'like', '%'.$this->roleCategorySearch.'%')
+                ->get(),
         ];
     }
 
@@ -32,6 +39,7 @@ new class extends Component {
         $details = $sponsor->details ?? [];
         $this->editStatus = $details['status'] ?? 'Tentativo';
         $this->editNotes = $details['notes'] ?? '';
+        $this->editRoleCategoryId = $sponsor->role_category_id ?: '';
 
         $this->js("Flux.modal('edit-sponsor').show()");
     }
@@ -50,8 +58,21 @@ new class extends Component {
         $details['status'] = $this->editStatus;
         $details['notes'] = $this->editNotes;
 
+        // Handle Category creation if needed
+        $actualCategoryId = $this->editRoleCategoryId;
+        if (!empty($actualCategoryId) && !Str::isUuid($actualCategoryId)) {
+            $newCat = \App\Models\Category::create([
+                'name' => $actualCategoryId,
+                'type' => 'sponsor',
+                'user_id' => auth()->id(),
+                'color' => 'stone'
+            ]);
+            $actualCategoryId = $newCat->id;
+        }
+
         $this->editingSponsor->update([
             'role' => $this->editRoles,
+            'role_category_id' => $actualCategoryId ?: null,
             'details' => $details
         ]);
 
@@ -66,13 +87,27 @@ new class extends Component {
             'newNotes' => 'nullable|string|max:500',
         ]);
 
+        // Handle Category creation if needed
+        $actualCategoryId = $this->newRoleCategoryId;
+        if (!empty($actualCategoryId) && !Str::isUuid($actualCategoryId)) {
+            $newCat = \App\Models\Category::create([
+                'name' => $actualCategoryId,
+                'type' => 'sponsor',
+                'user_id' => auth()->id(),
+                'color' => 'stone'
+            ]);
+            $actualCategoryId = $newCat->id;
+        }
+
         Sponsor::create([
             'guest_id' => $this->newGuestId,
             'role' => $this->newRole,
+            'role_category_id' => $actualCategoryId ?: null,
             'details' => [
                 'status' => 'Tentativo',
                 'notes' => $this->newNotes
-            ]
+            ],
+            'user_id' => auth()->id(),
         ]);
 
         $this->reset(['newGuestId', 'newRole', 'newNotes']);
@@ -117,6 +152,11 @@ new class extends Component {
                 @endif
                 
                 <div class="flex flex-wrap items-center gap-2 mt-auto pt-5">
+                    @if($sponsor->roleCategory)
+                        <flux:badge size="sm" color="{{ $sponsor->roleCategory->color }}" class="text-[10px] uppercase font-bold tracking-tighter">
+                            {{ $sponsor->roleCategory->name }}
+                        </flux:badge>
+                    @endif
                     @if($status === 'Confirmado')
                         <flux:badge color="zinc" class="!bg-sage-100 !text-sage-700 border-0 text-xs shadow-sm">Confirmado</flux:badge>
                     @elseif($status === 'Hecho')
@@ -151,6 +191,49 @@ new class extends Component {
                 </flux:select>
 
                 <flux:input wire:model="newRole" label="Rol del Padrino" placeholder="Ej: Anillos, Arras, Lazo..." />
+                
+                <div x-data="{ open: false }" class="relative" @click.away="open = false" wire:ignore.self>
+                    <flux:label>Categoría de Rol</flux:label>
+                    
+                    <div class="relative mt-1" @click="open = true">
+                        <input 
+                            type="text"
+                            wire:model.live.debounce.300ms="roleCategorySearch" 
+                            @focus="open = true"
+                            placeholder="Buscar o crear..."
+                            autocomplete="off"
+                            class="w-full pl-3 pr-10 py-2 border border-stone-200 dark:border-stone-700 rounded-lg bg-white dark:bg-stone-800 text-sm focus:ring-2 focus:ring-sage-500/20 focus:border-sage-500 transition-all outline-none"
+                        />
+                        <div @click="open = !open" class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer text-stone-400 hover:text-stone-600">
+                            <flux:icon.chevron-down class="w-4 h-4" />
+                        </div>
+                    </div>
+                    
+                    <div x-show="open" 
+                         x-transition
+                         class="absolute z-[9999] w-full mt-1 bg-white dark:bg-stone-800 border-2 border-sage-500/50 rounded-lg shadow-2xl max-h-60 overflow-y-auto">
+                        <div class="p-1">
+                            @if(empty($roleCategorySearch))
+                                <button type="button" wire:click="$set('newRoleCategoryId', ''); roleCategorySearch = ''; open = false" class="w-full text-left p-2 hover:bg-stone-100 dark:hover:bg-stone-700 cursor-pointer rounded-md text-sm border-b border-stone-100 dark:border-stone-700 mb-1">
+                                    General (Sin categoría)
+                                </button>
+                            @endif
+
+                            @foreach($roleCategories as $cat)
+                                <button type="button" wire:click="$set('newRoleCategoryId', '{{ $cat->id }}'); $set('roleCategorySearch', '{{ $cat->name }}'); open = false" class="w-full text-left p-2 hover:bg-stone-100 dark:hover:bg-stone-700 cursor-pointer rounded-md text-sm mb-1">
+                                    {{ $cat->name }}
+                                </button>
+                            @endforeach
+                            
+                            @if(!empty($roleCategorySearch) && !$roleCategories->where('name', $roleCategorySearch)->count())
+                                <button type="button" wire:click="$set('newRoleCategoryId', '{{ $roleCategorySearch }}'); open = false" class="w-full text-left p-2 bg-sage-50 dark:bg-sage-900/20 text-sage-600 dark:text-sage-400 hover:bg-sage-100 dark:hover:bg-sage-900/40 cursor-pointer rounded-md text-sm font-medium border border-sage-200 dark:border-sage-800 mt-1">
+                                    <flux:icon.plus class="inline-block w-3 h-3 mr-1" />
+                                    Crear: "{{ $roleCategorySearch }}"
+                                </button>
+                            @endif
+                        </div>
+                    </div>
+                </div>
 
                 <flux:textarea wire:model="newNotes" label="Notas o Recordatorios (Opcional)" rows="2" placeholder="Agrega detalles iniciales..." />
             </div>
@@ -175,6 +258,49 @@ new class extends Component {
 
             <div class="space-y-4 pt-2 border-t border-stone-100 dark:border-stone-800">
                 <flux:input wire:model="editRoles" label="Rol(es)" />
+
+                <div x-data="{ open: false }" class="relative" @click.away="open = false" wire:ignore.self>
+                    <flux:label>Categoría de Rol</flux:label>
+                    
+                    <div class="relative mt-1" @click="open = true">
+                        <input 
+                            type="text"
+                            wire:model.live.debounce.300ms="roleCategorySearch" 
+                            @focus="open = true"
+                            placeholder="Buscar o crear..."
+                            autocomplete="off"
+                            class="w-full pl-3 pr-10 py-2 border border-stone-200 dark:border-stone-700 rounded-lg bg-white dark:bg-stone-800 text-sm focus:ring-2 focus:ring-sage-500/20 focus:border-sage-500 transition-all outline-none"
+                        />
+                        <div @click="open = !open" class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer text-stone-400 hover:text-stone-600">
+                            <flux:icon.chevron-down class="w-4 h-4" />
+                        </div>
+                    </div>
+                    
+                    <div x-show="open" 
+                         x-transition
+                         class="absolute z-[9999] w-full mt-1 bg-white dark:bg-stone-800 border-2 border-sage-500/50 rounded-lg shadow-2xl max-h-60 overflow-y-auto">
+                        <div class="p-1">
+                            @if(empty($roleCategorySearch))
+                                <button type="button" wire:click="$set('editRoleCategoryId', ''); roleCategorySearch = ''; open = false" class="w-full text-left p-2 hover:bg-stone-100 dark:hover:bg-stone-700 cursor-pointer rounded-md text-sm border-b border-stone-100 dark:border-stone-700 mb-1">
+                                    General (Sin categoría)
+                                </button>
+                            @endif
+
+                            @foreach($roleCategories as $cat)
+                                <button type="button" wire:click="$set('editRoleCategoryId', '{{ $cat->id }}'); $set('roleCategorySearch', '{{ $cat->name }}'); open = false" class="w-full text-left p-2 hover:bg-stone-100 dark:hover:bg-stone-700 cursor-pointer rounded-md text-sm mb-1">
+                                    {{ $cat->name }}
+                                </button>
+                            @endforeach
+                            
+                            @if(!empty($roleCategorySearch) && !$roleCategories->where('name', $roleCategorySearch)->count())
+                                <button type="button" wire:click="$set('editRoleCategoryId', '{{ $roleCategorySearch }}'); open = false" class="w-full text-left p-2 bg-sage-50 dark:bg-sage-900/20 text-sage-600 dark:text-sage-400 hover:bg-sage-100 dark:hover:bg-sage-900/40 cursor-pointer rounded-md text-sm font-medium border border-sage-200 dark:border-sage-800 mt-1">
+                                    <flux:icon.plus class="inline-block w-3 h-3 mr-1" />
+                                    Crear: "{{ $roleCategorySearch }}"
+                                </button>
+                            @endif
+                        </div>
+                    </div>
+                </div>
 
                 <flux:radio.group wire:model="editStatus" label="Estado de la Tarea">
                     <flux:radio value="Tentativo" label="Tentativo" />

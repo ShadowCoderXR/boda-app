@@ -1,0 +1,1895 @@
+﻿
+   PASS  Tests\Unit\ExampleTest
+  Ô£ô that true is true                 0.01s  
+
+   FAIL  Tests\Feature\Auth\AuthenticationTest
+  Ô£ô login screen can be rendered      0.38s  
+  Ô¿» users can authenticate using theÔÇª 0.05s  
+  Ô£ô users can not authenticate withÔÇª  0.02s  
+  - users with two factor enabled arÔÇª 0.01s  
+  Ô£ô users can logout                  0.02s  
+
+   PASS  Tests\Feature\Auth\EmailVerificationTest
+  Ô£ô email verification screen can beÔÇª 0.03s  
+  Ô£ô email can be verified             0.02s  
+  Ô£ô email is not verified with invalÔÇª 0.03s  
+  Ô£ô already verified user visiting vÔÇª 0.02s  
+
+   PASS  Tests\Feature\Auth\PasswordConfirmationTest
+  Ô£ô confirm password screen can be rÔÇª 0.03s  
+
+   FAIL  Tests\Feature\Auth\PasswordResetTest
+  Ô£ô reset password link screen can bÔÇª 0.04s  
+  Ô£ô reset password link can be requeÔÇª 0.23s  
+  Ô¿» reset password screen can be renÔÇª 1.07s  
+  Ô£ô password can be reset with validÔÇª 0.23s  
+
+   WARN  Tests\Feature\Auth\RegistrationTest
+  - registration screen can be rendered ÔåÆ Fortify feature [registration] is not enabled.
+  - new users can register ÔåÆ Fortify feature [registration] is not enabled.
+
+   WARN  Tests\Feature\Auth\TwoFactorChallengeTest
+  - two factor challenge redirects to login when not authenticated ÔåÆ Fortify feature [two-factor-authentication] is not enabled.
+  - two factor challenge can be rendered ÔåÆ Fortify feature [two-factor-authentication] is not enabled.
+
+   PASS  Tests\Feature\DashboardTest
+  Ô£ô guests are redirected to the logÔÇª 0.02s  
+  Ô£ô guest list page requires authentÔÇª 0.02s  
+  Ô£ô authenticated user can view guesÔÇª 0.10s  
+
+   FAIL  Tests\Feature\DatabaseStructureTest
+  Ô£ô guest uses uuid v7 for primary kÔÇª 0.02s  
+  Ô¿» group hierarchy works correctly   0.01s  
+  Ô£ô guest can be linked to a group    0.02s  
+  Ô£ô sponsor must be linked to a guesÔÇª 0.02s  
+  Ô£ô guest uses rsvp_details as jsonÔÇª  0.01s  
+  Ô¿» users can have multiple roles deÔÇª 0.01s  
+  Ô£ô inspiration items cast is_favoriÔÇª 0.01s  
+
+   PASS  Tests\Feature\ExampleTest
+  Ô£ô returns a successful response     0.02s  
+
+   FAIL  Tests\Feature\GuestCreationDynamicTest
+  Ô¿» can create guest with new groupÔÇª  3.84s  
+  Ô¿» can create guest with existing gÔÇª 0.07s  
+
+   FAIL  Tests\Feature\GuestDetailTest
+  Ô¿» authenticated user can view guesÔÇª 0.17s  
+
+   FAIL  Tests\Feature\GuestManagementTest
+  Ô£ô can delete multiple guests fromÔÇª  0.06s  
+  Ô¿» can edit guest full informationÔÇª  0.02s  
+
+   FAIL  Tests\Feature\GuestsListTest
+  Ô¿» guest list component renders groÔÇª 0.04s  
+  Ô¿» edit rsvp modal updates guest daÔÇª 0.06s  
+  Ô¿» can create guest with multiple cÔÇª 0.03s  
+
+   FAIL  Tests\Feature\InspirationGalleryTest
+  Ô£ô gallery renders color and link iÔÇª 0.10s  
+  Ô¿» user can upload a color idea toÔÇª  0.04s  
+  Ô¿» user can upload an image idea toÔÇª 0.04s  
+  Ô£ô user can toggle favorite status   0.05s  
+
+   PASS  Tests\Feature\SeatingModuleTest
+  Ô£ô auto-provisions 10 tables on firÔÇª 0.09s  
+  Ô£ô can add and delete tables         0.05s  
+  Ô£ô can assign a guest manually       0.05s  
+  Ô£ô auto-assigns unseated guests toÔÇª  0.05s  
+  Ô£ô auto-assigns unseated guests staÔÇª 0.06s  
+  Ô£ô can assign single guest to targeÔÇª 0.05s  
+  Ô£ô can swap two guests successfully  0.06s  
+
+   PASS  Tests\Feature\Settings\PasswordUpdateTest
+  Ô£ô password can be updated           0.08s  
+  Ô£ô correct password must be provideÔÇª 0.05s  
+
+   FAIL  Tests\Feature\Settings\ProfileUpdateTest
+  Ô£ô profile page is displayed         0.08s  
+  Ô¿» profile information can be updatÔÇª 0.05s  
+  Ô¿» email verification status is uncÔÇª 0.04s  
+  Ô£ô user can delete their account     0.05s  
+  Ô£ô correct password must be provideÔÇª 0.03s  
+
+   WARN  Tests\Feature\Settings\TwoFactorAuthenticationTest
+  - two factor settings page can be rendered ÔåÆ Fortify feature [two-factor-authentication] is not enabled.
+  - two factor settings page requires password confirmation when enabled ÔåÆ Fortify feature [two-factor-authentication] is not enabled.
+  - two factor settings page returns forbidden response when two factor is disabled ÔåÆ Fortify feature [two-factor-authentication] is not enabled.
+  - two factor authentication disabled when confirmation abandoned between requests ÔåÆ Fortify feature [two-factor-authentication] is not enabled.
+
+   PASS  Tests\Feature\SponsorManagementTest
+  Ô£ô sponsors list component rendersÔÇª  0.09s  
+  Ô£ô user can assign a guest as a newÔÇª 0.05s  
+  Ô£ô user can edit an existing sponsoÔÇª 0.05s  
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILED  Tests\Feature\Auth\AuthenticatÔÇª   
+  Session has unexpected errors: 
+
+{
+    "default": [
+        "El campo username es obligatorio."
+    ]
+}
+Failed asserting that true is false.
+
+  at tests\Feature\Auth\AuthenticationTest.php:21
+     17Ôûò         'password' => 'password',
+     18Ôûò     ]);
+     19Ôûò 
+     20Ôûò     $response
+  Ô×£  21Ôûò         ->assertSessionHasNoErrors()
+     22Ôûò         ->assertRedirect(route('dashboard', absolute: false));
+     23Ôûò 
+     24Ôûò     $this->assertAuthenticated();
+     25Ôûò });
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILED  Tests\Feature\Auth\PasswordResÔÇª   
+  Expected response status code [200] but received 500.
+Failed asserting that 500 is identical to 200.
+
+The following exception occurred during the last request:
+
+Symfony\Component\Routing\Exception\RouteNotFoundException: Route [password.store] not defined. in C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Routing\UrlGenerator.php:528
+Stack trace:
+#0 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php(870): Illuminate\Routing\UrlGenerator->route('password.store', Array, true)
+#1 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\storage\framework\views\fc7a623d2433b9b45fd3b4a36e864b54.php(38): route('password.store')
+#2 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Filesystem\Filesystem.php(123): require('C:\\Users\\raul_\\...')
+#3 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Filesystem\Filesystem.php(124): Illuminate\Filesystem\Filesystem::{closure:Illuminate\Filesystem\Filesystem::getRequire():120}()
+#4 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(57): Illuminate\Filesystem\Filesystem->getRequire('C:\\Users\\raul_\\...', Array)
+#5 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\livewire\livewire\src\Mechanisms\ExtendBlade\ExtendedCompilerEngine.php(22): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\\Users\\raul_\\...', Array)
+#6 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(76): Livewire\Mechanisms\ExtendBlade\ExtendedCompilerEngine->evaluatePath('C:\\Users\\raul_\\...', Array)
+#7 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\livewire\livewire\src\Mechanisms\ExtendBlade\ExtendedCompilerEngine.php(10): Illuminate\View\Engines\CompilerEngine->get('C:\\Users\\raul_\\...', Array)
+#8 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\View\View.php(208): Livewire\Mechanisms\ExtendBlade\ExtendedCompilerEngine->get('C:\\Users\\raul_\\...', Array)
+#9 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\View\View.php(191): Illuminate\View\View->getContents()
+#10 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\View\View.php(160): Illuminate\View\View->renderContents()
+#11 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Http\Response.php(78): Illuminate\View\View->render()
+#12 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Http\Response.php(34): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#13 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Routing\Router.php(939): Illuminate\Http\Response->__construct(Object(Illuminate\View\View), 200, Array)
+#14 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Routing\Router.php(906): Illuminate\Routing\Router::toResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#15 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Routing\Router.php(821): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Laravel\Fortify\Http\Responses\SimpleViewResponse))
+#16 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(180): Illuminate\Routing\Router->{closure:Illuminate\Routing\Router::runRouteWithinStack():821}(Object(Illuminate\Http\Request))
+#17 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Auth\Middleware\RedirectIfAuthenticated.php(47): Illuminate\Pipeline\Pipeline->{closure:Illuminate\Pipeline\Pipeline::prepareDestination():178}(Object(Illuminate\Http\Request))
+#18 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Auth\Middleware\RedirectIfAuthenticated->handle(Object(Illuminate\Http\Request), Object(Closure), 'web')
+#19 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php(50): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#20 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#21 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken.php(87): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#22 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#23 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\View\Middleware\ShareErrorsFromSession.php(48): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#24 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php(120): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#26 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php(63): Illuminate\Session\Middleware\StartSession->handleStatefulRequest(Object(Illuminate\Http\Request), Object(Illuminate\Session\Store), Object(Closure))
+#27 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#28 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse.php(36): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#29 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#30 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Cookie\Middleware\EncryptCookies.php(74): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#31 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#32 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(137): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#33 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Routing\Router.php(821): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#34 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Routing\Router.php(800): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#35 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Routing\Router.php(764): Illuminate\Routing\Router->runRoute(Object(Illuminate\Http\Request), Object(Illuminate\Routing\Route))
+#36 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Routing\Router.php(753): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#37 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(200): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#38 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(180): Illuminate\Foundation\Http\Kernel->{closure:Illuminate\Foundation\Http\Kernel::dispatchToRouter():197}(Object(Illuminate\Http\Request))
+#39 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\livewire\livewire\src\Features\SupportDisablingBackButtonCache\DisableBackButtonCacheMiddleware.php(19): Illuminate\Pipeline\Pipeline->{closure:Illuminate\Pipeline\Pipeline::prepareDestination():178}(Object(Illuminate\Http\Request))
+#40 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Livewire\Features\SupportDisablingBackButtonCache\DisableBackButtonCacheMiddleware->handle(Object(Illuminate\Http\Request), Object(Closure))
+#41 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php(21): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#42 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull.php(31): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#43 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull->handle(Object(Illuminate\Http\Request), Object(Closure))
+#44 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php(21): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#45 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TrimStrings.php(51): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#46 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Foundation\Http\Middleware\TrimStrings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#47 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Http\Middleware\ValidatePostSize.php(27): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#48 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Http\Middleware\ValidatePostSize->handle(Object(Illuminate\Http\Request), Object(Closure))
+#49 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance.php(109): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#50 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance->handle(Object(Illuminate\Http\Request), Object(Closure))
+#51 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Http\Middleware\HandleCors.php(61): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#52 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Http\Middleware\HandleCors->handle(Object(Illuminate\Http\Request), Object(Closure))
+#53 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Http\Middleware\TrustProxies.php(58): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#54 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Http\Middleware\TrustProxies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#55 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\InvokeDeferredCallbacks.php(22): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#56 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Foundation\Http\Middleware\InvokeDeferredCallbacks->handle(Object(Illuminate\Http\Request), Object(Closure))
+#57 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Http\Middleware\ValidatePathEncoding.php(26): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#58 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Http\Middleware\ValidatePathEncoding->handle(Object(Illuminate\Http\Request), Object(Closure))
+#59 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(137): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#60 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(175): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#61 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(144): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#62 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Foundation\Testing\Concerns\MakesHttpRequests.php(607): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#63 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Foundation\Testing\Concerns\MakesHttpRequests.php(368): Illuminate\Foundation\Testing\TestCase->call('GET', 'http://localhos...', Array, Array, Array, Array)
+#64 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\tests\Feature\Auth\PasswordResetTest.php(36): Illuminate\Foundation\Testing\TestCase->get('http://localhos...')
+#65 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Support\Testing\Fakes\NotificationFake.php(261): P\Tests\Feature\Auth\PasswordResetTest->{closure:{closure:C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\tests\Feature\Auth\PasswordResetTest.php:28}:35}(Object(Illuminate\Auth\Notifications\ResetPassword), Array, Object(App\Models\User), NULL)
+#66 [internal function]: Illuminate\Support\Testing\Fakes\NotificationFake->{closure:Illuminate\Support\Testing\Fakes\NotificationFake::sent():261}(Array, 0)
+#67 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Collections\Arr.php(1239): array_filter(Array, Object(Closure), 1)
+#68 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Collections\Collection.php(415): Illuminate\Support\Arr::where(Array, Object(Closure))
+#69 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Support\Testing\Fakes\NotificationFake.php(260): Illuminate\Support\Collection->filter(Object(Closure))
+#70 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Support\Testing\Fakes\NotificationFake.php(90): Illuminate\Support\Testing\Fakes\NotificationFake->sent(Object(App\Models\User), 'Illuminate\\Auth...', Object(Closure))
+#71 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(363): Illuminate\Support\Testing\Fakes\NotificationFake->assertSentTo(Object(App\Models\User), 'Illuminate\\Auth...', Object(Closure))
+#72 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\tests\Feature\Auth\PasswordResetTest.php(35): Illuminate\Support\Facades\Facade::__callStatic('assertSentTo', Array)
+#73 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\pestphp\pest\src\Factories\TestCaseMethodFactory.php(172): P\Tests\Feature\Auth\PasswordResetTest->{closure:C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\tests\Feature\Auth\PasswordResetTest.php:28}()
+#74 [internal function]: P\Tests\Feature\Auth\PasswordResetTest->{closure:Pest\Factories\TestCaseMethodFactory::getClosure():162}()
+#75 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\pestphp\pest\src\Concerns\Testable.php(429): call_user_func_array(Object(Closure), Array)
+#76 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\pestphp\pest\src\Support\ExceptionTrace.php(26): P\Tests\Feature\Auth\PasswordResetTest->{closure:Pest\Concerns\Testable::__callClosure():429}()
+#77 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\pestphp\pest\src\Concerns\Testable.php(429): Pest\Support\ExceptionTrace::ensure(Object(Closure))
+#78 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\pestphp\pest\src\Concerns\Testable.php(331): P\Tests\Feature\Auth\PasswordResetTest->__callClosure(Object(Closure), Array)
+#79 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\pestphp\pest\src\Factories\TestCaseFactory.php(170) : eval()'d code(35): P\Tests\Feature\Auth\PasswordResetTest->__runTest(Object(Closure))
+#80 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\phpunit\phpunit\src\Framework\TestCase.php(1332): P\Tests\Feature\Auth\PasswordResetTest->__pest_evaluable_reset_password_screen_can_be_rendered()
+#81 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\phpunit\phpunit\src\Framework\TestCase.php(519): PHPUnit\Framework\TestCase->runTest()
+#82 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\phpunit\phpunit\src\Framework\TestRunner\TestRunner.php(99): PHPUnit\Framework\TestCase->runBare()
+#83 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\phpunit\phpunit\src\Framework\TestCase.php(359): PHPUnit\Framework\TestRunner->run(Object(P\Tests\Feature\Auth\PasswordResetTest))
+#84 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\phpunit\phpunit\src\Framework\TestSuite.php(374): PHPUnit\Framework\TestCase->run()
+#85 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\phpunit\phpunit\src\Framework\TestSuite.php(374): PHPUnit\Framework\TestSuite->run()
+#86 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\phpunit\phpunit\src\Framework\TestSuite.php(374): PHPUnit\Framework\TestSuite->run()
+#87 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\phpunit\phpunit\src\TextUI\TestRunner.php(64): PHPUnit\Framework\TestSuite->run()
+#88 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\phpunit\phpunit\src\TextUI\Application.php(229): PHPUnit\TextUI\TestRunner->run(Object(PHPUnit\TextUI\Configuration\Configuration), Object(PHPUnit\Runner\ResultCache\DefaultResultCache), Object(PHPUnit\Framework\TestSuite))
+#89 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\pestphp\pest\src\Kernel.php(103): PHPUnit\TextUI\Application->run(Array)
+#90 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\pestphp\pest\bin\pest(184): Pest\Kernel->handle(Array, Array)
+#91 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\pestphp\pest\bin\pest(192): {closure:C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\pestphp\pest\bin\pest:18}()
+#92 {main}
+
+Next Illuminate\View\ViewException: Route [password.store] not defined. (View: C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\resources\views\pages\auth\reset-password.blade.php) in C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Routing\UrlGenerator.php:528
+Stack trace:
+#0 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\livewire\livewire\src\Mechanisms\ExtendBlade\ExtendedCompilerEngine.php(58): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(Symfony\Component\Routing\Exception\RouteNotFoundException), 2)
+#1 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(59): Livewire\Mechanisms\ExtendBlade\ExtendedCompilerEngine->handleViewException(Object(Symfony\Component\Routing\Exception\RouteNotFoundException), 2)
+#2 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\livewire\livewire\src\Mechanisms\ExtendBlade\ExtendedCompilerEngine.php(22): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\\Users\\raul_\\...', Array)
+#3 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(76): Livewire\Mechanisms\ExtendBlade\ExtendedCompilerEngine->evaluatePath('C:\\Users\\raul_\\...', Array)
+#4 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\livewire\livewire\src\Mechanisms\ExtendBlade\ExtendedCompilerEngine.php(10): Illuminate\View\Engines\CompilerEngine->get('C:\\Users\\raul_\\...', Array)
+#5 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\View\View.php(208): Livewire\Mechanisms\ExtendBlade\ExtendedCompilerEngine->get('C:\\Users\\raul_\\...', Array)
+#6 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\View\View.php(191): Illuminate\View\View->getContents()
+#7 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\View\View.php(160): Illuminate\View\View->renderContents()
+#8 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Http\Response.php(78): Illuminate\View\View->render()
+#9 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Http\Response.php(34): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#10 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Routing\Router.php(939): Illuminate\Http\Response->__construct(Object(Illuminate\View\View), 200, Array)
+#11 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Routing\Router.php(906): Illuminate\Routing\Router::toResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#12 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Routing\Router.php(821): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Laravel\Fortify\Http\Responses\SimpleViewResponse))
+#13 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(180): Illuminate\Routing\Router->{closure:Illuminate\Routing\Router::runRouteWithinStack():821}(Object(Illuminate\Http\Request))
+#14 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Auth\Middleware\RedirectIfAuthenticated.php(47): Illuminate\Pipeline\Pipeline->{closure:Illuminate\Pipeline\Pipeline::prepareDestination():178}(Object(Illuminate\Http\Request))
+#15 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Auth\Middleware\RedirectIfAuthenticated->handle(Object(Illuminate\Http\Request), Object(Closure), 'web')
+#16 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php(50): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#17 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Routing\Middleware\SubstituteBindings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#18 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\VerifyCsrfToken.php(87): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#19 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#20 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\View\Middleware\ShareErrorsFromSession.php(48): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#21 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#22 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php(120): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#23 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php(63): Illuminate\Session\Middleware\StartSession->handleStatefulRequest(Object(Illuminate\Http\Request), Object(Illuminate\Session\Store), Object(Closure))
+#24 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse.php(36): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#26 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#27 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Cookie\Middleware\EncryptCookies.php(74): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#28 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#29 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(137): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#30 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Routing\Router.php(821): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#31 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Routing\Router.php(800): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#32 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Routing\Router.php(764): Illuminate\Routing\Router->runRoute(Object(Illuminate\Http\Request), Object(Illuminate\Routing\Route))
+#33 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Routing\Router.php(753): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#34 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(200): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#35 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(180): Illuminate\Foundation\Http\Kernel->{closure:Illuminate\Foundation\Http\Kernel::dispatchToRouter():197}(Object(Illuminate\Http\Request))
+#36 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\livewire\livewire\src\Features\SupportDisablingBackButtonCache\DisableBackButtonCacheMiddleware.php(19): Illuminate\Pipeline\Pipeline->{closure:Illuminate\Pipeline\Pipeline::prepareDestination():178}(Object(Illuminate\Http\Request))
+#37 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Livewire\Features\SupportDisablingBackButtonCache\DisableBackButtonCacheMiddleware->handle(Object(Illuminate\Http\Request), Object(Closure))
+#38 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php(21): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#39 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull.php(31): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#40 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull->handle(Object(Illuminate\Http\Request), Object(Closure))
+#41 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php(21): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#42 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TrimStrings.php(51): Illuminate\Foundation\Http\Middleware\TransformsRequest->handle(Object(Illuminate\Http\Request), Object(Closure))
+#43 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Foundation\Http\Middleware\TrimStrings->handle(Object(Illuminate\Http\Request), Object(Closure))
+#44 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Http\Middleware\ValidatePostSize.php(27): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#45 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Http\Middleware\ValidatePostSize->handle(Object(Illuminate\Http\Request), Object(Closure))
+#46 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance.php(109): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#47 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance->handle(Object(Illuminate\Http\Request), Object(Closure))
+#48 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Http\Middleware\HandleCors.php(61): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#49 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Http\Middleware\HandleCors->handle(Object(Illuminate\Http\Request), Object(Closure))
+#50 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Http\Middleware\TrustProxies.php(58): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#51 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Http\Middleware\TrustProxies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#52 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\InvokeDeferredCallbacks.php(22): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#53 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Foundation\Http\Middleware\InvokeDeferredCallbacks->handle(Object(Illuminate\Http\Request), Object(Closure))
+#54 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Http\Middleware\ValidatePathEncoding.php(26): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#55 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(219): Illuminate\Http\Middleware\ValidatePathEncoding->handle(Object(Illuminate\Http\Request), Object(Closure))
+#56 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(137): Illuminate\Pipeline\Pipeline->{closure:{closure:Illuminate\Pipeline\Pipeline::carry():194}:195}(Object(Illuminate\Http\Request))
+#57 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(175): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#58 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(144): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#59 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Foundation\Testing\Concerns\MakesHttpRequests.php(607): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#60 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Foundation\Testing\Concerns\MakesHttpRequests.php(368): Illuminate\Foundation\Testing\TestCase->call('GET', 'http://localhos...', Array, Array, Array, Array)
+#61 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\tests\Feature\Auth\PasswordResetTest.php(36): Illuminate\Foundation\Testing\TestCase->get('http://localhos...')
+#62 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Support\Testing\Fakes\NotificationFake.php(261): P\Tests\Feature\Auth\PasswordResetTest->{closure:{closure:C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\tests\Feature\Auth\PasswordResetTest.php:28}:35}(Object(Illuminate\Auth\Notifications\ResetPassword), Array, Object(App\Models\User), NULL)
+#63 [internal function]: Illuminate\Support\Testing\Fakes\NotificationFake->{closure:Illuminate\Support\Testing\Fakes\NotificationFake::sent():261}(Array, 0)
+#64 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Collections\Arr.php(1239): array_filter(Array, Object(Closure), 1)
+#65 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Collections\Collection.php(415): Illuminate\Support\Arr::where(Array, Object(Closure))
+#66 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Support\Testing\Fakes\NotificationFake.php(260): Illuminate\Support\Collection->filter(Object(Closure))
+#67 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Support\Testing\Fakes\NotificationFake.php(90): Illuminate\Support\Testing\Fakes\NotificationFake->sent(Object(App\Models\User), 'Illuminate\\Auth...', Object(Closure))
+#68 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\laravel\framework\src\Illuminate\Support\Facades\Facade.php(363): Illuminate\Support\Testing\Fakes\NotificationFake->assertSentTo(Object(App\Models\User), 'Illuminate\\Auth...', Object(Closure))
+#69 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\tests\Feature\Auth\PasswordResetTest.php(35): Illuminate\Support\Facades\Facade::__callStatic('assertSentTo', Array)
+#70 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\pestphp\pest\src\Factories\TestCaseMethodFactory.php(172): P\Tests\Feature\Auth\PasswordResetTest->{closure:C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\tests\Feature\Auth\PasswordResetTest.php:28}()
+#71 [internal function]: P\Tests\Feature\Auth\PasswordResetTest->{closure:Pest\Factories\TestCaseMethodFactory::getClosure():162}()
+#72 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\pestphp\pest\src\Concerns\Testable.php(429): call_user_func_array(Object(Closure), Array)
+#73 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\pestphp\pest\src\Support\ExceptionTrace.php(26): P\Tests\Feature\Auth\PasswordResetTest->{closure:Pest\Concerns\Testable::__callClosure():429}()
+#74 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\pestphp\pest\src\Concerns\Testable.php(429): Pest\Support\ExceptionTrace::ensure(Object(Closure))
+#75 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\pestphp\pest\src\Concerns\Testable.php(331): P\Tests\Feature\Auth\PasswordResetTest->__callClosure(Object(Closure), Array)
+#76 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\pestphp\pest\src\Factories\TestCaseFactory.php(170) : eval()'d code(35): P\Tests\Feature\Auth\PasswordResetTest->__runTest(Object(Closure))
+#77 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\phpunit\phpunit\src\Framework\TestCase.php(1332): P\Tests\Feature\Auth\PasswordResetTest->__pest_evaluable_reset_password_screen_can_be_rendered()
+#78 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\phpunit\phpunit\src\Framework\TestCase.php(519): PHPUnit\Framework\TestCase->runTest()
+#79 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\phpunit\phpunit\src\Framework\TestRunner\TestRunner.php(99): PHPUnit\Framework\TestCase->runBare()
+#80 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\phpunit\phpunit\src\Framework\TestCase.php(359): PHPUnit\Framework\TestRunner->run(Object(P\Tests\Feature\Auth\PasswordResetTest))
+#81 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\phpunit\phpunit\src\Framework\TestSuite.php(374): PHPUnit\Framework\TestCase->run()
+#82 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\phpunit\phpunit\src\Framework\TestSuite.php(374): PHPUnit\Framework\TestSuite->run()
+#83 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\phpunit\phpunit\src\Framework\TestSuite.php(374): PHPUnit\Framework\TestSuite->run()
+#84 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\phpunit\phpunit\src\TextUI\TestRunner.php(64): PHPUnit\Framework\TestSuite->run()
+#85 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\phpunit\phpunit\src\TextUI\Application.php(229): PHPUnit\TextUI\TestRunner->run(Object(PHPUnit\TextUI\Configuration\Configuration), Object(PHPUnit\Runner\ResultCache\DefaultResultCache), Object(PHPUnit\Framework\TestSuite))
+#86 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\pestphp\pest\src\Kernel.php(103): PHPUnit\TextUI\Application->run(Array)
+#87 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\pestphp\pest\bin\pest(184): Pest\Kernel->handle(Array, Array)
+#88 C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\pestphp\pest\bin\pest(192): {closure:C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\vendor\pestphp\pest\bin\pest:18}()
+#89 {main}
+
+----------------------------------------------------------------------------------
+
+Route [password.store] not defined. (View: C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\resources\views\pages\auth\reset-password.blade.php)
+
+  at tests\Feature\Auth\PasswordResetTest.php:38
+     34Ôûò 
+     35Ôûò     Notification::assertSentTo($user, ResetPassword::class, function ($notification) {
+     36Ôûò         $response = $this->get(route('password.reset', $notification->token));
+     37Ôûò 
+  Ô×£  38Ôûò         $response->assertOk();
+     39Ôûò 
+     40Ôûò         return true;
+     41Ôûò     });
+     42Ôûò });
+
+  1   vendor\laravel\framework\src\Illuminate\Support\Testing\Fakes\NotificationFake.php:261
+  2   vendor\laravel\framework\src\Illuminate\Collections\Arr.php:1239
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILED  Tests\FeatureÔÇª  ErrorException   
+  Attempt to read property "id" on null
+
+  at tests\Feature\DatabaseStructureTest.php:30
+     26Ôûò test('group hierarchy works correctly', function () {
+     27Ôûò     $parentGroup = Group::create(['name' => 'Familia Silva']);
+     28Ôûò     $childGroup = Group::create(['name' => 'Silva Fernandez', 'parent_id' => $parentGroup->id]);
+     29Ôûò 
+  Ô×£  30Ôûò     expect($childGroup->parent->id)->toBe($parentGroup->id)
+     31Ôûò         ->and($parentGroup->children()->count())->toBe(1)
+     32Ôûò         ->and($parentGroup->children->first()->id)->toBe($childGroup->id);
+     33Ôûò });
+     34Ôûò
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILED  Tests\Feature\DataÔÇª  ValueError   
+  "ayudante" is not a valid backing value for enum App\Enums\UserRole
+
+  at vendor\laravel\framework\src\Illuminate\Database\Eloquent\Concerns\HasAttributes.php:1301
+    1297Ôûò      */
+    1298Ôûò     protected function getEnumCaseFromValue($enumClass, $value)
+    1299Ôûò     {
+    1300Ôûò         return is_subclass_of($enumClass, BackedEnum::class)
+  Ô×£ 1301Ôûò             ? $enumClass::from($value)
+    1302Ôûò             : constant($enumClass.'::'.$value);
+    1303Ôûò     }
+    1304Ôûò 
+    1305Ôûò     /**
+
+  1   vendor\laravel\framework\src\Illuminate\Database\Eloquent\Concerns\HasAttributes.php:1301
+  2   vendor\laravel\framework\src\Illuminate\Database\Eloquent\Concerns\HasAttributes.php:1286
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILEÔÇª  PublicPropertyNotFoundException   
+  Unable to set component data. Public property [$newGuestName] not found on component: [guests.list]
+
+  at vendor\livewire\livewire\src\Mechanisms\HandleComponents\HandleComponents.php:498
+    494Ôûò         $finish = trigger('update', $component, $path, $value);
+    495Ôûò 
+    496Ôûò         // Ensure that it's a public property, not on the base class first...
+    497Ôûò         if (! in_array($property, array_keys(Utils::getPublicPropertiesDefinedOnSubclass($component)))) {
+  Ô×£ 498Ôûò             throw new PublicPropertyNotFoundException($property, $component->getName());
+    499Ôûò         }
+    500Ôûò 
+    501Ôûò         // If this isn't a "deep" set, set it directly, otherwise we have to
+    502Ôûò         // recursively get up and set down the value through the synths...
+
+  1   vendor\livewire\livewire\src\Mechanisms\HandleComponents\HandleComponents.php:498
+  2   vendor\livewire\livewire\src\Mechanisms\HandleComponents\HandleComponents.php:475
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILEÔÇª  PublicPropertyNotFoundException   
+  Unable to set component data. Public property [$newGuestName] not found on component: [dashboard.stats]
+
+  at vendor\livewire\livewire\src\Mechanisms\HandleComponents\HandleComponents.php:498
+    494Ôûò         $finish = trigger('update', $component, $path, $value);
+    495Ôûò 
+    496Ôûò         // Ensure that it's a public property, not on the base class first...
+    497Ôûò         if (! in_array($property, array_keys(Utils::getPublicPropertiesDefinedOnSubclass($component)))) {
+  Ô×£ 498Ôûò             throw new PublicPropertyNotFoundException($property, $component->getName());
+    499Ôûò         }
+    500Ôûò 
+    501Ôûò         // If this isn't a "deep" set, set it directly, otherwise we have to
+    502Ôûò         // recursively get up and set down the value through the synths...
+
+  1   vendor\livewire\livewire\src\Mechanisms\HandleComponents\HandleComponents.php:498
+  2   vendor\livewire\livewire\src\Mechanisms\HandleComponents\HandleComponents.php:475
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILED  Tests\Feature\GuestDetailTestÔÇª    
+  Expected: <!DOCTYPE html>\n
+<html lang="es">\n
+<head>\n
+    <meta charset="utf-8">\n
+    <meta name="viewport" content="width=device-width, initial-scale=1">\n
+    <title>BodaApp</title>\n
+    <script type="module" src="http://[::1]:5173/@vite/client" data-navigate-track="reload"></script><link rel="stylesheet" href="http://[::1]:5173/resources/css/app.css" data-navigate-track="reload" /><script type="module" src="http://[::1]:5173/resources/js/app.js" data-navigate-track="reload"></script>    <style>\n
+    :root.dark {\n
+        color-scheme: dark;\n
+    }\n
+</style>\n
+<script>\n
+    window.Flux = {\n
+        applyAppearance (appearance) {\n
+            let applyDark = () => document.documentElement.classList.add('dark')\n
+            let applyLight = () => document.documentElement.classList.remove('dark')\n
+\n
+            if (appearance === 'system') {\n
+                let media = window.matchMedia('(prefers-color-scheme: dark)')\n
+\n
+                window.localStorage.removeItem('flux.appearance')\n
+\n
+                media.matches ? applyDark() : applyLight()\n
+            } else if (appearance === 'dark') {\n
+                window.localStorage.setItem('flux.appearance', 'dark')\n
+\n
+                applyDark()\n
+            } else if (appearance === 'light') {\n
+                window.localStorage.setItem('flux.appearance', 'light')\n
+\n
+                applyLight()\n
+            }\n
+        }\n
+    }\n
+\n
+    window.Flux.applyAppearance(window.localStorage.getItem('flux.appearance') || 'system')\n
+</script>\n
+<!-- Livewire Styles --><style >[wire\:loading][wire\:loading], [wire\:loading\.delay][wire\:loading\.delay], [wire\:loading\.list-item][wire\:loading\.list-item], [wire\:loading\.inline-block][wire\:loading\.inline-block], [wire\:loading\.inline][wire\:loading\.inline], [wire\:loading\.block][wire\:loading\.block], [wire\:loading\.flex][wire\:loading\.flex], [wire\:loading\.table][wire\:loading\.table], [wire\:loading\.grid][wire\:loading\.grid], [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.none][wire\:loading\.delay\.none], [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short][wire\:loading\.delay\.short], [wire\:loading\.delay\.default][wire\:loading\.delay\.default], [wire\:loading\.delay\.long][wire\:loading\.delay\.long], [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {display: none;}[wire\:offline][wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}:root {--livewire-progress-bar-color: #2299dd;}[x-cloak] {display: none !important;}[wire\:cloak] {display: none !important;}dialog#livewire-error::backdrop {background-color: rgba(0, 0, 0, .6);}</style>\n
+</head>\n
+<body class="min-h-screen bg-stone-50 dark:bg-stone-900 font-sans text-stone-900 dark:text-stone-100">\n
+\n
+    \n
+    <ui-sidebar-toggle class="z-20 fixed inset-0 bg-black/10 hidden data-flux-sidebar-on-mobile:not-data-flux-sidebar-collapsed-mobile:block" data-flux-sidebar-backdrop></ui-sidebar-toggle>\n
+\n
+<ui-sidebar\n
+    class="[grid-area:sidebar] z-1 flex flex-col gap-4 [:where(&amp;)]:w-64 p-4 data-flux-sidebar-collapsed-desktop:w-14 data-flux-sidebar-collapsed-desktop:px-2 data-flux-sidebar-collapsed-desktop:cursor-e-resize rtl:data-flux-sidebar-collapsed-desktop:cursor-w-resize max-lg:data-flux-sidebar-cloak:hidden data-flux-sidebar-on-mobile:data-flux-sidebar-collapsed-mobile:-translate-x-full data-flux-sidebar-on-mobile:data-flux-sidebar-collapsed-mobile:rtl:translate-x-full z-20! data-flux-sidebar-on-mobile:start-0! data-flux-sidebar-on-mobile:fixed! data-flux-sidebar-on-mobile:top-0! data-flux-sidebar-on-mobile:min-h-dvh! data-flux-sidebar-on-mobile:max-h-dvh! max-h-dvh overflow-y-auto overscroll-contain hidden lg:flex bg-stone-50 dark:bg-stone-900 border-r border-stone-200 dark:border-stone-700" x-init="$el.classList.add(&#039;transition-transform&#039;)"\n
+     collapsible="mobile"      stashable      sticky     x-data\n
+    data-flux-sidebar-cloak\n
+    data-flux-sidebar\n
+>\n
+    <a href="/dashboard" class="h-10 flex items-center me-4 gap-2 px-2 dark:hidden" data-flux-brand>\n
+                    <div class="flex items-center justify-center h-6 rounded-sm overflow-hidden shrink-0">\n
+                                    <img src="https://fluxui.com/img/demo/logo.png" alt="" class="h-6" />\n
+                            </div>\n
+        \n
+        <div class="text-sm font-medium truncate [:where(&amp;)]:text-zinc-800 dark:[:where(&amp;)]:text-zinc-100">BodaApp</div>\n
+    </a>\n
+        <a href="/dashboard" class="h-10 flex items-center me-4 gap-2 px-2 hidden dark:flex" data-flux-brand>\n
+                    <div class="flex items-center justify-center h-6 rounded-sm overflow-hidden shrink-0">\n
+                                    <img src="https://fluxui.com/img/demo/logo-dark.png" alt="" class="h-6" />\n
+                            </div>\n
+        \n
+        <div class="text-sm font-medium truncate [:where(&amp;)]:text-zinc-800 dark:[:where(&amp;)]:text-zinc-100">BodaApp</div>\n
+    </a>\n
+\n
+        <nav class="flex flex-col overflow-visible min-h-auto" data-flux-navlist>\n
+    <a href="/dashboard" wire:current.ignore="" class="h-10 lg:h-8 relative flex items-center gap-3 rounded-lg  py-0 text-start w-full px-3 my-px text-zinc-500 dark:text-white/80 data-current:text-(--color-accent-content) hover:data-current:text-(--color-accent-content) data-current:bg-white dark:data-current:bg-white/[7%] data-current:border data-current:border-zinc-200 dark:data-current:border-transparent hover:text-zinc-800 dark:hover:text-white dark:hover:bg-white/[7%] hover:bg-zinc-800/5  border border-transparent" data-flux-navlist-item="data-flux-navlist-item" wire:navigate="">\n
+        <div class="relative">\n
+                            <svg class="shrink-0 [:where(&amp;)]:size-6 size-4!" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/>\n
+</svg>\n
+\n
+                    \n
+                    </div>\n
+    \n
+            <div class="flex-1 text-sm font-medium leading-none whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>Dashboard</div>\n
+    </a>\n
+            <a href="/invitados" data-current="data-current" wire:current.ignore="" class="h-10 lg:h-8 relative flex items-center gap-3 rounded-lg  py-0 text-start w-full px-3 my-px text-zinc-500 dark:text-white/80 data-current:text-(--color-accent-content) hover:data-current:text-(--color-accent-content) data-current:bg-white dark:data-current:bg-white/[7%] data-current:border data-current:border-zinc-200 dark:data-current:border-transparent hover:text-zinc-800 dark:hover:text-white dark:hover:bg-white/[7%] hover:bg-zinc-800/5  border border-transparent" data-flux-navlist-item="data-flux-navlist-item" wire:navigate="">\n
+        <div class="relative">\n
+                            <svg class="shrink-0 [:where(&amp;)]:size-6 size-4!" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z"/>\n
+</svg>\n
+\n
+                    \n
+                    </div>\n
+    \n
+            <div class="flex-1 text-sm font-medium leading-none whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>Invitados</div>\n
+    </a>\n
+            <a href="/mesas" wire:current.ignore="" class="h-10 lg:h-8 relative flex items-center gap-3 rounded-lg  py-0 text-start w-full px-3 my-px text-zinc-500 dark:text-white/80 data-current:text-(--color-accent-content) hover:data-current:text-(--color-accent-content) data-current:bg-white dark:data-current:bg-white/[7%] data-current:border data-current:border-zinc-200 dark:data-current:border-transparent hover:text-zinc-800 dark:hover:text-white dark:hover:bg-white/[7%] hover:bg-zinc-800/5  border border-transparent" data-flux-navlist-item="data-flux-navlist-item" wire:navigate="">\n
+        <div class="relative">\n
+                            <svg class="shrink-0 [:where(&amp;)]:size-6 size-4!" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path stroke-linecap="round" stroke-linejoin="round" d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 0 1-1.125-1.125M3.375 19.5h7.5c.621 0 1.125-.504 1.125-1.125m-9.75 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-7.5A1.125 1.125 0 0 1 12 18.375m9.75-12.75c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125m19.5 0v1.5c0 .621-.504 1.125-1.125 1.125M2.25 5.625v1.5c0 .621.504 1.125 1.125 1.125m0 0h17.25m-17.25 0h7.5c.621 0 1.125.504 1.125 1.125M3.375 8.25c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125m17.25-3.75h-7.5c-.621 0-1.125.504-1.125 1.125m8.625-1.125c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125M12 10.875v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 10.875c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125M13.125 12h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125M20.625 12c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h7.5M12 14.625v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 14.625c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125m0 1.5v-1.5m0 0c0-.621.504-1.125 1.125-1.125m0 0h7.5"/>\n
+</svg>\n
+\n
+                    \n
+                    </div>\n
+    \n
+            <div class="flex-1 text-sm font-medium leading-none whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>Mesas</div>\n
+    </a>\n
+            <a href="/padrinos" wire:current.ignore="" class="h-10 lg:h-8 relative flex items-center gap-3 rounded-lg  py-0 text-start w-full px-3 my-px text-zinc-500 dark:text-white/80 data-current:text-(--color-accent-content) hover:data-current:text-(--color-accent-content) data-current:bg-white dark:data-current:bg-white/[7%] data-current:border data-current:border-zinc-200 dark:data-current:border-transparent hover:text-zinc-800 dark:hover:text-white dark:hover:bg-white/[7%] hover:bg-zinc-800/5  border border-transparent" data-flux-navlist-item="data-flux-navlist-item" wire:navigate="">\n
+        <div class="relative">\n
+                            <svg class="shrink-0 [:where(&amp;)]:size-6 size-4!" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"/>\n
+</svg>\n
+\n
+                    \n
+                    </div>\n
+    \n
+            <div class="flex-1 text-sm font-medium leading-none whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>Padrinos</div>\n
+    </a>\n
+            <a href="/inspiracion" wire:current.ignore="" class="h-10 lg:h-8 relative flex items-center gap-3 rounded-lg  py-0 text-start w-full px-3 my-px text-zinc-500 dark:text-white/80 data-current:text-(--color-accent-content) hover:data-current:text-(--color-accent-content) data-current:bg-white dark:data-current:bg-white/[7%] data-current:border data-current:border-zinc-200 dark:data-current:border-transparent hover:text-zinc-800 dark:hover:text-white dark:hover:bg-white/[7%] hover:bg-zinc-800/5  border border-transparent" data-flux-navlist-item="data-flux-navlist-item" wire:navigate="">\n
+        <div class="relative">\n
+                            <svg class="shrink-0 [:where(&amp;)]:size-6 size-4!" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"/>\n
+</svg>\n
+\n
+                    \n
+                    </div>\n
+    \n
+            <div class="flex-1 text-sm font-medium leading-none whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>Inspiraci├│n</div>\n
+    </a>\n
+</nav>\n
+\n
+        <div class="font-medium [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white text-sm [&amp;:has(+[data-flux-subheading])]:mb-2 [[data-flux-subheading]+&amp;]:mt-2 px-3 mt-6 mb-2 text-stone-400 uppercase tracking-widest font-bold" data-flux-heading>Planificaci├│n</div>\n
+        <nav class="flex flex-col overflow-visible min-h-auto" data-flux-navlist>\n
+    <a href="/pendientes" wire:current.ignore="" class="h-10 lg:h-8 relative flex items-center gap-3 rounded-lg  py-0 text-start w-full px-3 my-px text-zinc-500 dark:text-white/80 data-current:text-(--color-accent-content) hover:data-current:text-(--color-accent-content) data-current:bg-white dark:data-current:bg-white/[7%] data-current:border data-current:border-zinc-200 dark:data-current:border-transparent hover:text-zinc-800 dark:hover:text-white dark:hover:bg-white/[7%] hover:bg-zinc-800/5  border border-transparent" data-flux-navlist-item="data-flux-navlist-item" wire:navigate="">\n
+        <div class="relative">\n
+                            <svg class="shrink-0 [:where(&amp;)]:size-6 size-4!" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z"/>\n
+</svg>\n
+\n
+                    \n
+                    </div>\n
+    \n
+            <div class="flex-1 text-sm font-medium leading-none whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>Pendientes</div>\n
+    </a>\n
+            <a href="/proveedores" wire:current.ignore="" class="h-10 lg:h-8 relative flex items-center gap-3 rounded-lg  py-0 text-start w-full px-3 my-px text-zinc-500 dark:text-white/80 data-current:text-(--color-accent-content) hover:data-current:text-(--color-accent-content) data-current:bg-white dark:data-current:bg-white/[7%] data-current:border data-current:border-zinc-200 dark:data-current:border-transparent hover:text-zinc-800 dark:hover:text-white dark:hover:bg-white/[7%] hover:bg-zinc-800/5  border border-transparent" data-flux-navlist-item="data-flux-navlist-item" wire:navigate="">\n
+        <div class="relative">\n
+                            <svg class="shrink-0 [:where(&amp;)]:size-6 size-4!" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72M6.75 18h3.75a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75H6.75a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75Z"/>\n
+</svg>\n
+\n
+                    \n
+                    </div>\n
+    \n
+            <div class="flex-1 text-sm font-medium leading-none whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>Proveedores</div>\n
+    </a>\n
+            <a href="/invitacion" wire:current.ignore="" class="h-10 lg:h-8 relative flex items-center gap-3 rounded-lg  py-0 text-start w-full px-3 my-px text-zinc-500 dark:text-white/80 data-current:text-(--color-accent-content) hover:data-current:text-(--color-accent-content) data-current:bg-white dark:data-current:bg-white/[7%] data-current:border data-current:border-zinc-200 dark:data-current:border-transparent hover:text-zinc-800 dark:hover:text-white dark:hover:bg-white/[7%] hover:bg-zinc-800/5  border border-transparent" data-flux-navlist-item="data-flux-navlist-item" wire:navigate="">\n
+        <div class="relative">\n
+                            <svg class="shrink-0 [:where(&amp;)]:size-6 size-4!" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 0 1 0 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 0 1 0-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375Z"/>\n
+</svg>\n
+\n
+                    \n
+                    </div>\n
+    \n
+            <div class="flex-1 text-sm font-medium leading-none whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>Invitaci├│n</div>\n
+    </a>\n
+</nav>\n
+\n
+        <div class="flex-1" data-flux-spacer></div>\n
+\n
+        <nav class="flex flex-col overflow-visible min-h-auto" data-flux-navlist>\n
+    <a href="/settings/categories" wire:current.ignore="" class="h-10 lg:h-8 relative flex items-center gap-3 rounded-lg  py-0 text-start w-full px-3 my-px text-zinc-500 dark:text-white/80 data-current:text-(--color-accent-content) hover:data-current:text-(--color-accent-content) data-current:bg-white dark:data-current:bg-white/[7%] data-current:border data-current:border-zinc-200 dark:data-current:border-transparent hover:text-zinc-800 dark:hover:text-white dark:hover:bg-white/[7%] hover:bg-zinc-800/5  border border-transparent" data-flux-navlist-item="data-flux-navlist-item" wire:navigate="">\n
+        <div class="relative">\n
+                            <svg class="shrink-0 [:where(&amp;)]:size-6 size-4!" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75"/>\n
+</svg>\n
+\n
+                    \n
+                    </div>\n
+    \n
+            <div class="flex-1 text-sm font-medium leading-none whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>Datos</div>\n
+    </a>\n
+            <a href="/settings" class="h-10 lg:h-8 relative flex items-center gap-3 rounded-lg  py-0 text-start w-full px-3 my-px text-zinc-500 dark:text-white/80 data-current:text-(--color-accent-content) hover:data-current:text-(--color-accent-content) data-current:bg-white dark:data-current:bg-white/[7%] data-current:border data-current:border-zinc-200 dark:data-current:border-transparent hover:text-zinc-800 dark:hover:text-white dark:hover:bg-white/[7%] hover:bg-zinc-800/5  border border-transparent" data-flux-navlist-item="data-flux-navlist-item" wire:navigate="">\n
+        <div class="relative">\n
+                            <svg class="shrink-0 [:where(&amp;)]:size-6 size-4!" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z"/>\n
+  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>\n
+</svg>\n
+\n
+                    \n
+                    </div>\n
+    \n
+            <div class="flex-1 text-sm font-medium leading-none whitespace-nowrap [[data-nav-footer]_&]:hidden [[data-nav-sidebar]_[data-nav-footer]_&]:block" data-content>Ajustes</div>\n
+    </a>\n
+</nav>\n
+</ui-sidebar>\n
+\n
+    \n
+    <div class="[grid-area:main] p-6 lg:p-8 [[data-flux-container]_&amp;]:px-0  pb-32 lg:pb-12 px-4 md:px-6 lg:px-8 max-w-7xl mx-auto w-full min-h-screen" data-flux-main>\n
+    <div wire:key="lw-520201629-0" wire:snapshot="{&quot;data&quot;:{&quot;guest&quot;:[null,{&quot;class&quot;:&quot;App\\Models\\Guest&quot;,&quot;key&quot;:&quot;019ce394-b051-7109-932c-00e126b7342c&quot;,&quot;s&quot;:&quot;mdl&quot;}],&quot;editMode&quot;:false,&quot;name&quot;:&quot;Alejandro Garcia&quot;,&quot;email&quot;:&quot;alejandro@example.com&quot;,&quot;phone&quot;:&quot;1234567890&quot;,&quot;group_id&quot;:null,&quot;category_ids&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;rsvp_status&quot;:&quot;confirmed&quot;,&quot;extra_spots&quot;:0,&quot;groupName&quot;:&quot;&quot;,&quot;parentGroupId&quot;:null,&quot;editingMemberId&quot;:null,&quot;memberName&quot;:&quot;&quot;,&quot;memberRsvp&quot;:&quot;pending&quot;,&quot;memberMenu&quot;:&quot;&quot;,&quot;memberAllergies&quot;:&quot;&quot;},&quot;memo&quot;:{&quot;id&quot;:&quot;m1g9eS0suKnTQK7RmkgD&quot;,&quot;name&quot;:&quot;guests.detail&quot;,&quot;path&quot;:&quot;invitados\/alejandro&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;es&quot;,&quot;islands&quot;:[]},&quot;checksum&quot;:&quot;684ad4fe5820e02b16f5bf3b65a09abd13bbabd43818441e7ffac2ee35d4d100&quot;}" wire:effects="[]" wire:id="m1g9eS0suKnTQK7RmkgD" wire:name="guests.detail" class="max-w-4xl mx-auto py-8">\n
+    <div class="mb-6 flex items-center justify-between">\n
+        <div class="flex items-center gap-4">\n
+            <a href="/invitados" data-flux-button="data-flux-button" class="relative items-center font-medium justify-center gap-2 whitespace-nowrap disabled:opacity-75 dark:disabled:opacity-75 disabled:cursor-default disabled:pointer-events-none justify-center h-10 text-sm rounded-lg w-10 inline-flex  bg-transparent hover:bg-zinc-800/5 dark:hover:bg-white/15 text-zinc-800 dark:text-white">\n
+        <svg class="shrink-0 [:where(&amp;)]:size-5" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path fill-rule="evenodd" d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd"/>\n
+</svg>\n
+    </a>\n
+            <div>\n
+                <div class="font-medium [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white text-2xl [&amp;:has(+[data-flux-subheading])]:mb-2 [[data-flux-subheading]+&amp;]:mt-2" data-flux-heading>Alejandro Garcia</div>\n
+                <div class="text-sm [:where(&amp;)]:text-zinc-500 [:where(&amp;)]:dark:text-white/70" data-flux-subheading>\n
+    Detalles del Invitado\n
+</div>\n
+            </div>\n
+        </div>\n
+\n
+        <div class="flex gap-2">\n
+            <!--[if BLOCK]><![endif]-->                <div\n
+    class="contents"\n
+    x-data\n
+    x-on:click="$el.querySelector('button[disabled]') || $dispatch('modal-show', { name: 'confirm-delete-main' })"\n
+        data-flux-modal-trigger\n
+>\n
+    <button type="button" class="relative items-center font-medium justify-center gap-2 whitespace-nowrap disabled:opacity-75 dark:disabled:opacity-75 disabled:cursor-default disabled:pointer-events-none justify-center h-10 text-sm rounded-lg ps-3 pe-4 inline-flex  bg-white hover:bg-zinc-50 dark:bg-zinc-700 dark:hover:bg-zinc-600/75 text-zinc-800 dark:text-white border border-zinc-200 hover:border-zinc-200 border-b-zinc-300/80 dark:border-zinc-600 dark:hover:border-zinc-600 shadow-xs [[data-flux-button-group]_&amp;]:border-s-0 [:is([data-flux-button-group]&gt;&amp;:first-child,_[data-flux-button-group]_:first-child&gt;&amp;)]:border-s-[1px]   text-red-500 hover:bg-red-50" data-flux-button="data-flux-button" data-flux-group-target="data-flux-group-target">\n
+        <svg class="shrink-0 [:where(&amp;)]:size-4" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path fill-rule="evenodd" d="M5 3.25V4H2.75a.75.75 0 0 0 0 1.5h.3l.815 8.15A1.5 1.5 0 0 0 5.357 15h5.285a1.5 1.5 0 0 0 1.493-1.35l.815-8.15h.3a.75.75 0 0 0 0-1.5H11v-.75A2.25 2.25 0 0 0 8.75 1h-1.5A2.25 2.25 0 0 0 5 3.25Zm2.25-.75a.75.75 0 0 0-.75.75V4h3v-.75a.75.75 0 0 0-.75-.75h-1.5ZM6.05 6a.75.75 0 0 1 .787.713l.275 5.5a.75.75 0 0 1-1.498.075l-.275-5.5A.75.75 0 0 1 6.05 6Zm3.9 0a.75.75 0 0 1 .712.787l-.275 5.5a.75.75 0 0 1-1.498-.075l.275-5.5a.75.75 0 0 1 .786-.711Z" clip-rule="evenodd"/>\n
+</svg>\n
+\n
+                \n
+                    \n
+            \n
+            <span>Eliminar</span>\n
+    </button>\n
+</div>\n
+                <button type="button" class="relative items-center font-medium justify-center gap-2 whitespace-nowrap disabled:opacity-75 dark:disabled:opacity-75 disabled:cursor-default disabled:pointer-events-none justify-center h-10 text-sm rounded-lg ps-3 pe-4 inline-flex  bg-white hover:bg-zinc-50 dark:bg-zinc-700 dark:hover:bg-zinc-600/75 text-zinc-800 dark:text-white border border-zinc-200 hover:border-zinc-200 border-b-zinc-300/80 dark:border-zinc-600 dark:hover:border-zinc-600 shadow-xs [[data-flux-button-group]_&amp;]:border-s-0 [:is([data-flux-button-group]&gt;&amp;:first-child,_[data-flux-button-group]_:first-child&gt;&amp;)]:border-s-[1px] *:transition-opacity [&amp;[data-loading]&gt;:not([data-flux-loading-indicator])]:opacity-0 [&amp;[data-flux-loading]&gt;:not([data-flux-loading-indicator])]:opacity-0 [&amp;[data-loading]&gt;[data-flux-loading-indicator]]:opacity-100 [&amp;[data-flux-loading]&gt;[data-flux-loading-indicator]]:opacity-100 data-loading:pointer-events-none data-flux-loading:pointer-events-none" data-flux-button="data-flux-button" data-flux-group-target="data-flux-group-target" wire:target="toggleEdit" wire:loading.attr="data-flux-loading" wire:click="toggleEdit">\n
+        <div class="absolute inset-0 flex items-center justify-center opacity-0" data-flux-loading-indicator>\n
+                <svg class="shrink-0 [:where(&amp;)]:size-4 animate-spin" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true" data-slot="icon">\n
+    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>\n
+    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>\n
+</svg>\n
+                    </div>\n
+        \n
+                    <svg class="shrink-0 [:where(&amp;)]:size-4" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path fill-rule="evenodd" d="M11.013 2.513a1.75 1.75 0 0 1 2.475 2.474L6.226 12.25a2.751 2.751 0 0 1-.892.596l-2.047.848a.75.75 0 0 1-.98-.98l.848-2.047a2.75 2.75 0 0 1 .596-.892l7.262-7.261Z" clip-rule="evenodd"/>\n
+</svg>\n
+\n
+                \n
+                    \n
+            \n
+            <span>Editar Informaci├│n</span>\n
+    </button>\n
+            <!--[if ENDBLOCK]><![endif]-->        </div>\n
+    </div>\n
+\n
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">\n
+        <div class="md:col-span-2">\n
+            <!--[if BLOCK]><![endif]-->                <div class="[:where(&amp;)]:bg-white dark:[:where(&amp;)]:bg-white/10 border border-zinc-200 dark:border-white/10 [:where(&amp;)]:p-6 [:where(&amp;)]:rounded-xl" data-flux-card>\n
+    <div class="space-y-6">\n
+                        <div class="grid grid-cols-2 gap-4">\n
+                            <div>\n
+                                <ui-label class="inline-flex items-center text-sm font-medium  [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white [&amp;:has([data-flux-label-trailing])]:flex" data-flux-label>\n
+    Estado RSVP\n
+\n
+    \n
+    \n
+    </ui-label>\n
+                                <div class="mt-1">\n
+                                                                        <div data-flux-badge="data-flux-badge" class="inline-flex items-center font-medium whitespace-nowrap  [print-color-adjust:exact] text-sm py-1 **:data-flux-badge-icon:me-1.5 rounded-md px-2 text-green-800 [&amp;_button]:text-green-800! dark:text-green-200 dark:[&amp;_button]:text-green-200! bg-green-400/20 dark:bg-green-400/40 [&amp;:is(button)]:hover:bg-green-400/30 dark:[button]:hover:bg-green-400/50">\n
+        Confirmado\n
+    </div>\n
+                                </div>\n
+                            </div>\n
+\n
+                            <div>\n
+                                <ui-label class="inline-flex items-center text-sm font-medium  [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white [&amp;:has([data-flux-label-trailing])]:flex" data-flux-label>\n
+    Grupo / Familia\n
+\n
+    \n
+    \n
+    </ui-label>\n
+                                <div class="mt-1 font-medium">Sin grupo</div>\n
+                            </div>\n
+                        </div>\n
+\n
+                        <div class="grid grid-cols-2 gap-4 border-t border-stone-100 dark:border-stone-800 pt-6">\n
+                            <div>\n
+                                <ui-label class="inline-flex items-center text-sm font-medium  [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white [&amp;:has([data-flux-label-trailing])]:flex" data-flux-label>\n
+    Email\n
+\n
+    \n
+    \n
+    </ui-label>\n
+                                <div class="mt-1 font-medium">alejandro@example.com</div>\n
+                            </div>\n
+                            <div>\n
+                                <ui-label class="inline-flex items-center text-sm font-medium  [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white [&amp;:has([data-flux-label-trailing])]:flex" data-flux-label>\n
+    Tel├®fono\n
+\n
+    \n
+    \n
+    </ui-label>\n
+                                <div class="mt-1 font-medium">1234567890</div>\n
+                            </div>\n
+                        </div>\n
+\n
+                        <div>\n
+                            <ui-label class="inline-flex items-center text-sm font-medium  [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white [&amp;:has([data-flux-label-trailing])]:flex" data-flux-label>\n
+    Categor├¡as\n
+\n
+    \n
+    \n
+    </ui-label>\n
+                            <div class="flex flex-wrap gap-2 mt-2">\n
+                                <!--[if BLOCK]><![endif]-->                                    <span class="text-stone-500 text-sm italic">Sin categor├¡as</span>\n
+                                <!--[if ENDBLOCK]><![endif]-->                            </div>\n
+                        </div>\n
+                    </div>\n
+</div>\n
+            <!--[if ENDBLOCK]><![endif]-->\n
+            \n
+            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->        </div>\n
+\n
+        <div class="space-y-6">\n
+            <div class="[:where(&amp;)]:bg-white dark:[:where(&amp;)]:bg-white/10 border border-zinc-200 dark:border-white/10 [:where(&amp;)]:p-6 [:where(&amp;)]:rounded-xl space-y-4" data-flux-card>\n
+    <div>\n
+                    <div class="font-medium [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white text-sm [&amp;:has(+[data-flux-subheading])]:mb-2 [[data-flux-subheading]+&amp;]:mt-2 mb-2" data-flux-heading>Invitaci├│n Digital</div>\n
+                    <div class="text-sm [:where(&amp;)]:text-zinc-500 [:where(&amp;)]:dark:text-white/70" data-flux-subheading>\n
+    Enlace p├║blico para compartir con el invitado.\n
+</div>\n
+                </div>\n
+\n
+                <div class="p-3 bg-gold-50 dark:bg-gold-500/10 border border-gold-200 dark:border-gold-500/30 rounded-lg break-all font-mono text-[10px] text-gold-700 dark:text-gold-300">\n
+                    http://localhost:8000/invitacion/alejandro\n
+                </div>\n
+\n
+                <a href="http://localhost:8000/invitacion/alejandro" data-flux-button="data-flux-button" class="relative items-center font-medium justify-center gap-2 whitespace-nowrap disabled:opacity-75 dark:disabled:opacity-75 disabled:cursor-default disabled:pointer-events-none justify-center h-8 text-sm rounded-md px-3 inline-flex  bg-white hover:bg-zinc-50 dark:bg-zinc-700 dark:hover:bg-zinc-600/75 text-zinc-800 dark:text-white border border-zinc-200 hover:border-zinc-200 border-b-zinc-300/80 dark:border-zinc-600 dark:hover:border-zinc-600 shadow-xs [[data-flux-button-group]_&amp;]:border-s-0 [:is([data-flux-button-group]&gt;&amp;:first-child,_[data-flux-button-group]_:first-child&gt;&amp;)]:border-s-[1px]   w-full" data-flux-group-target="data-flux-group-target" target="_blank">\n
+        <svg class="shrink-0 [:where(&amp;)]:size-4" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/>\n
+  <path fill-rule="evenodd" d="M1.38 8.28a.87.87 0 0 1 0-.566 7.003 7.003 0 0 1 13.238.006.87.87 0 0 1 0 .566A7.003 7.003 0 0 1 1.379 8.28ZM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" clip-rule="evenodd"/>\n
+</svg>\n
+\n
+                \n
+                    \n
+            \n
+            <span>Ver Invitaci├│n Digital</span>\n
+    </a>\n
+\n
+                <p class="text-[10px] text-stone-500 text-center italic leading-tight">\n
+                    Este es el dise├▒o premium que ver├ín tus invitados.\n
+                </p>\n
+</div>\n
+        </div>\n
+    \n
+    <ui-modal  data-flux-modal>\n
+    \n
+    <dialog\n
+        wire:ignore.self \n
+        class="p-6 [:where(&amp;)]:max-w-xl [:where(&amp;)]:min-w-xs shadow-lg rounded-xl bg-white dark:bg-zinc-800 ring ring-black/5 dark:ring-zinc-700 shadow-lg rounded-xl min-w-[22rem]"\n
+         data-modal="edit-member"                         x-data="fluxModal('edit-member', 'm1g9eS0suKnTQK7RmkgD')"\n
+                x-on:modal-show.document="handleShow($event)"\n
+        x-on:modal-close.document="handleClose($event)"\n
+    >\n
+        <form wire:submit="saveMember" class="space-y-6">\n
+            <div>\n
+                <div class="font-medium [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white text-base [&amp;:has(+[data-flux-subheading])]:mb-2 [[data-flux-subheading]+&amp;]:mt-2" data-flux-heading>Editar Miembro</div>\n
+                <div class="text-sm [:where(&amp;)]:text-zinc-500 [:where(&amp;)]:dark:text-white/70" data-flux-subheading>\n
+    Gestiona los detalles espec├¡ficos de este asistente.\n
+</div>\n
+            </div>\n
+            \n
+            <div class="space-y-4">\n
+                <ui-field class="min-w-0 [&amp;:not(:has([data-flux-field])):has([data-flux-control][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-radio-group][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-checkbox-group][disabled])&gt;[data-flux-label]]:opacity-50 block *:data-flux-label:mb-3 [&amp;&gt;[data-flux-label]:has(+[data-flux-description])]:mb-2 [&amp;&gt;[data-flux-label]+[data-flux-description]]:mt-0 [&amp;&gt;[data-flux-label]+[data-flux-description]]:mb-3 [&amp;&gt;*:not([data-flux-label])+[data-flux-description]]:mt-3" data-flux-field>\n
+    <ui-label class="inline-flex items-center text-sm font-medium  [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white [&amp;:has([data-flux-label-trailing])]:flex" data-flux-label>\n
+    Nombre completo\n
+\n
+    \n
+    \n
+    </ui-label>\n
+        \n
+        \n
+        <div class="w-full relative block group/input" data-flux-input>\n
+            \n
+            <input\n
+                type="text"\n
+                \n
+                class="w-full border rounded-lg block disabled:shadow-none dark:shadow-none appearance-none text-base sm:text-sm py-2 h-10 leading-[1.375rem] ps-3 pe-3 bg-white dark:bg-white/10 dark:disabled:bg-white/[7%] text-zinc-700 disabled:text-zinc-500 placeholder-zinc-400 disabled:placeholder-zinc-400/70 dark:text-zinc-300 dark:disabled:text-zinc-400 dark:placeholder-zinc-400 dark:disabled:placeholder-zinc-500 shadow-xs border-zinc-200 border-b-zinc-300/80 disabled:border-b-zinc-200 dark:border-white/10 dark:disabled:border-white/5 data-invalid:shadow-none data-invalid:border-red-500 dark:data-invalid:border-red-500 disabled:data-invalid:border-red-500 dark:disabled:data-invalid:border-red-500" wire:model="memberName" label="Nombre completo"\n
+                 name="memberName"                                                                                                 data-flux-control\n
+                data-flux-group-target\n
+                                            >\n
+\n
+                    </div>\n
+\n
+                <div role="alert" aria-live="polite" aria-atomic="true" class="mt-3 text-sm font-medium text-red-500 dark:text-red-400 hidden" data-flux-error>\n
+    </div>\n
+</ui-field>\n
+\n
+                <ui-field class="min-w-0 [&amp;:not(:has([data-flux-field])):has([data-flux-control][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-radio-group][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-checkbox-group][disabled])&gt;[data-flux-label]]:opacity-50 block *:data-flux-label:mb-3 [&amp;&gt;[data-flux-label]:has(+[data-flux-description])]:mb-2 [&amp;&gt;[data-flux-label]+[data-flux-description]]:mt-0 [&amp;&gt;[data-flux-label]+[data-flux-description]]:mb-3 [&amp;&gt;*:not([data-flux-label])+[data-flux-description]]:mt-3" data-flux-field>\n
+    <ui-label class="inline-flex items-center text-sm font-medium  [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white [&amp;:has([data-flux-label-trailing])]:flex" data-flux-label>\n
+    Estado de Asistencia\n
+\n
+    \n
+    \n
+    </ui-label>\n
+        \n
+        \n
+        <ui-radio-group class="*:data-flux-field:mb-3 [&amp;&gt;[data-flux-field]:has(&gt;[data-flux-description])]:mb-4 [&amp;&gt;[data-flux-field]:last-child]:mb-0!" wire:model="memberRsvp" label="Estado de Asistencia"  data-flux-radio-group>\n
+        <ui-field class="min-w-0 [&amp;:not(:has([data-flux-field])):has([data-flux-control][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-radio-group][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-checkbox-group][disabled])&gt;[data-flux-label]]:opacity-50 grid gap-x-3 gap-y-1.5 has-[[data-flux-label]~[data-flux-control]]:grid-cols-[1fr_auto] has-[[data-flux-control]~[data-flux-label]]:grid-cols-[auto_1fr] [&amp;&gt;[data-flux-control]~[data-flux-description]]:row-start-2 [&amp;&gt;[data-flux-control]~[data-flux-description]]:col-start-2 [&amp;&gt;[data-flux-control]~[data-flux-error]]:col-span-2 [&amp;&gt;[data-flux-control]~[data-flux-error]]:mt-1 [&amp;&gt;[data-flux-label]~[data-flux-control]]:row-start-1 [&amp;&gt;[data-flux-label]~[data-flux-control]]:col-start-2" data-flux-field>\n
+    <ui-radio class="flex size-[1.125rem] rounded-full mt-px outline-offset-2" value="pending" label="Pendiente" data-flux-control data-flux-radio tabindex="-1">\n
+        <div class="shrink-0 size-[1.125rem] rounded-full text-sm text-zinc-700 dark:text-zinc-800 shadow-xs [ui-radio[disabled]_&amp;]:opacity-75 [ui-radio[data-checked][disabled]_&amp;]:opacity-50 [ui-radio[disabled]_&amp;]:shadow-none [ui-radio[data-checked]_&amp;]:shadow-none flex justify-center items-center [ui-radio[data-checked]_&amp;&gt;div]:block border border-zinc-300 dark:border-white/10 [ui-radio[disabled]_&amp;]:border-zinc-200 dark:[ui-radio[disabled]_&amp;]:border-white/5 [ui-radio[data-checked]_&amp;]:border-transparent data-indeterminate:border-transparent [ui-radio[data-checked]_&amp;]:[ui-radio[disabled]_&amp;]:border-transparent data-indeterminate:border-transparent [print-color-adjust:exact] bg-white dark:bg-white/10 [ui-radio[data-checked]_&amp;]:bg-[var(--color-accent)] hover:[ui-radio[data-checked]_&amp;]:bg-(--color-accent) focus:[ui-radio[data-checked]_&amp;]:bg-(--color-accent)" data-flux-radio-indicator>\n
+    <div class="hidden size-2 rounded-full bg-[var(--color-accent-foreground)]"></div>\n
+</div>\n
+    </ui-radio>\n
+\n
+                    <ui-label class="inline-flex items-center text-sm font-medium  [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white [&amp;:has([data-flux-label-trailing])]:flex" data-flux-label>\n
+    Pendiente\n
+\n
+    \n
+    \n
+    </ui-label>\n
+        \n
+        \n
+        <div role="alert" aria-live="polite" aria-atomic="true" class="mt-3 text-sm font-medium text-red-500 dark:text-red-400 hidden" data-flux-error>\n
+    </div>\n
+</ui-field>\n
+\n
+                    <ui-field class="min-w-0 [&amp;:not(:has([data-flux-field])):has([data-flux-control][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-radio-group][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-checkbox-group][disabled])&gt;[data-flux-label]]:opacity-50 grid gap-x-3 gap-y-1.5 has-[[data-flux-label]~[data-flux-control]]:grid-cols-[1fr_auto] has-[[data-flux-control]~[data-flux-label]]:grid-cols-[auto_1fr] [&amp;&gt;[data-flux-control]~[data-flux-description]]:row-start-2 [&amp;&gt;[data-flux-control]~[data-flux-description]]:col-start-2 [&amp;&gt;[data-flux-control]~[data-flux-error]]:col-span-2 [&amp;&gt;[data-flux-control]~[data-flux-error]]:mt-1 [&amp;&gt;[data-flux-label]~[data-flux-control]]:row-start-1 [&amp;&gt;[data-flux-label]~[data-flux-control]]:col-start-2" data-flux-field>\n
+    <ui-radio class="flex size-[1.125rem] rounded-full mt-px outline-offset-2" value="confirmed" label="Confirmado" data-flux-control data-flux-radio tabindex="-1">\n
+        <div class="shrink-0 size-[1.125rem] rounded-full text-sm text-zinc-700 dark:text-zinc-800 shadow-xs [ui-radio[disabled]_&amp;]:opacity-75 [ui-radio[data-checked][disabled]_&amp;]:opacity-50 [ui-radio[disabled]_&amp;]:shadow-none [ui-radio[data-checked]_&amp;]:shadow-none flex justify-center items-center [ui-radio[data-checked]_&amp;&gt;div]:block border border-zinc-300 dark:border-white/10 [ui-radio[disabled]_&amp;]:border-zinc-200 dark:[ui-radio[disabled]_&amp;]:border-white/5 [ui-radio[data-checked]_&amp;]:border-transparent data-indeterminate:border-transparent [ui-radio[data-checked]_&amp;]:[ui-radio[disabled]_&amp;]:border-transparent data-indeterminate:border-transparent [print-color-adjust:exact] bg-white dark:bg-white/10 [ui-radio[data-checked]_&amp;]:bg-[var(--color-accent)] hover:[ui-radio[data-checked]_&amp;]:bg-(--color-accent) focus:[ui-radio[data-checked]_&amp;]:bg-(--color-accent)" data-flux-radio-indicator>\n
+    <div class="hidden size-2 rounded-full bg-[var(--color-accent-foreground)]"></div>\n
+</div>\n
+    </ui-radio>\n
+\n
+                    <ui-label class="inline-flex items-center text-sm font-medium  [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white [&amp;:has([data-flux-label-trailing])]:flex" data-flux-label>\n
+    Confirmado\n
+\n
+    \n
+    \n
+    </ui-label>\n
+        \n
+        \n
+        <div role="alert" aria-live="polite" aria-atomic="true" class="mt-3 text-sm font-medium text-red-500 dark:text-red-400 hidden" data-flux-error>\n
+    </div>\n
+</ui-field>\n
+\n
+                    <ui-field class="min-w-0 [&amp;:not(:has([data-flux-field])):has([data-flux-control][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-radio-group][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-checkbox-group][disabled])&gt;[data-flux-label]]:opacity-50 grid gap-x-3 gap-y-1.5 has-[[data-flux-label]~[data-flux-control]]:grid-cols-[1fr_auto] has-[[data-flux-control]~[data-flux-label]]:grid-cols-[auto_1fr] [&amp;&gt;[data-flux-control]~[data-flux-description]]:row-start-2 [&amp;&gt;[data-flux-control]~[data-flux-description]]:col-start-2 [&amp;&gt;[data-flux-control]~[data-flux-error]]:col-span-2 [&amp;&gt;[data-flux-control]~[data-flux-error]]:mt-1 [&amp;&gt;[data-flux-label]~[data-flux-control]]:row-start-1 [&amp;&gt;[data-flux-label]~[data-flux-control]]:col-start-2" data-flux-field>\n
+    <ui-radio class="flex size-[1.125rem] rounded-full mt-px outline-offset-2" value="declined" label="Declinado" data-flux-control data-flux-radio tabindex="-1">\n
+        <div class="shrink-0 size-[1.125rem] rounded-full text-sm text-zinc-700 dark:text-zinc-800 shadow-xs [ui-radio[disabled]_&amp;]:opacity-75 [ui-radio[data-checked][disabled]_&amp;]:opacity-50 [ui-radio[disabled]_&amp;]:shadow-none [ui-radio[data-checked]_&amp;]:shadow-none flex justify-center items-center [ui-radio[data-checked]_&amp;&gt;div]:block border border-zinc-300 dark:border-white/10 [ui-radio[disabled]_&amp;]:border-zinc-200 dark:[ui-radio[disabled]_&amp;]:border-white/5 [ui-radio[data-checked]_&amp;]:border-transparent data-indeterminate:border-transparent [ui-radio[data-checked]_&amp;]:[ui-radio[disabled]_&amp;]:border-transparent data-indeterminate:border-transparent [print-color-adjust:exact] bg-white dark:bg-white/10 [ui-radio[data-checked]_&amp;]:bg-[var(--color-accent)] hover:[ui-radio[data-checked]_&amp;]:bg-(--color-accent) focus:[ui-radio[data-checked]_&amp;]:bg-(--color-accent)" data-flux-radio-indicator>\n
+    <div class="hidden size-2 rounded-full bg-[var(--color-accent-foreground)]"></div>\n
+</div>\n
+    </ui-radio>\n
+\n
+                    <ui-label class="inline-flex items-center text-sm font-medium  [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white [&amp;:has([data-flux-label-trailing])]:flex" data-flux-label>\n
+    Declinado\n
+\n
+    \n
+    \n
+    </ui-label>\n
+        \n
+        \n
+        <div role="alert" aria-live="polite" aria-atomic="true" class="mt-3 text-sm font-medium text-red-500 dark:text-red-400 hidden" data-flux-error>\n
+    </div>\n
+</ui-field>\n
+    </ui-radio-group>\n
+\n
+                <div role="alert" aria-live="polite" aria-atomic="true" class="mt-3 text-sm font-medium text-red-500 dark:text-red-400 hidden" data-flux-error>\n
+    </div>\n
+</ui-field>\n
+\n
+                <div class="space-y-4 pt-4 border-t border-stone-100 dark:border-stone-800">\n
+                    <ui-field class="min-w-0 [&amp;:not(:has([data-flux-field])):has([data-flux-control][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-radio-group][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-checkbox-group][disabled])&gt;[data-flux-label]]:opacity-50 block *:data-flux-label:mb-3 [&amp;&gt;[data-flux-label]:has(+[data-flux-description])]:mb-2 [&amp;&gt;[data-flux-label]+[data-flux-description]]:mt-0 [&amp;&gt;[data-flux-label]+[data-flux-description]]:mb-3 [&amp;&gt;*:not([data-flux-label])+[data-flux-description]]:mt-3" data-flux-field>\n
+    <ui-label class="inline-flex items-center text-sm font-medium  [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white [&amp;:has([data-flux-label-trailing])]:flex" data-flux-label>\n
+    Preferencia de Men├║\n
+\n
+    \n
+    \n
+    </ui-label>\n
+        \n
+        \n
+        <select\n
+    class="appearance-none [:where(&amp;)]:w-full ps-3 pe-10 block h-10 py-2 text-base sm:text-sm leading-[1.375rem] rounded-lg shadow-xs border bg-white dark:bg-white/10 dark:disabled:bg-white/[7%] text-zinc-700 dark:text-zinc-300 disabled:text-zinc-500 dark:disabled:text-zinc-400 has-[option.placeholder:checked]:text-zinc-400 dark:has-[option.placeholder:checked]:text-zinc-400 dark:[&amp;&gt;option]:bg-zinc-700 dark:[&amp;&gt;option]:text-white disabled:shadow-none border border-zinc-200 border-b-zinc-300/80 dark:border-white/10" wire:model="memberMenu" label="Preferencia de Men├║"\n
+         name="memberMenu"         data-flux-control\n
+    data-flux-select-native\n
+    data-flux-group-target\n
+>\n
+    \n
+    <option\n
+    \n
+     value="Est├índar"      wire:key="Est├índar" >Est├índar</option>                        <option\n
+    \n
+     value="Vegetariano"      wire:key="Vegetariano" >Vegetariano</option>                        <option\n
+    \n
+     value="Vegano"      wire:key="Vegano" >Vegano</option>                        <option\n
+    \n
+     value="Infantil"      wire:key="Infantil" >Infantil</option>\n
+</select>\n
+\n
+                <div role="alert" aria-live="polite" aria-atomic="true" class="mt-3 text-sm font-medium text-red-500 dark:text-red-400 hidden" data-flux-error>\n
+    </div>\n
+</ui-field>\n
+                    <ui-field class="min-w-0 [&amp;:not(:has([data-flux-field])):has([data-flux-control][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-radio-group][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-checkbox-group][disabled])&gt;[data-flux-label]]:opacity-50 block *:data-flux-label:mb-3 [&amp;&gt;[data-flux-label]:has(+[data-flux-description])]:mb-2 [&amp;&gt;[data-flux-label]+[data-flux-description]]:mt-0 [&amp;&gt;[data-flux-label]+[data-flux-description]]:mb-3 [&amp;&gt;*:not([data-flux-label])+[data-flux-description]]:mt-3" data-flux-field>\n
+    <ui-label class="inline-flex items-center text-sm font-medium  [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white [&amp;:has([data-flux-label-trailing])]:flex" data-flux-label>\n
+    Alergias o Restricciones\n
+\n
+    \n
+    \n
+    </ui-label>\n
+        \n
+        \n
+        <div class="w-full relative block group/input" data-flux-input>\n
+            \n
+            <input\n
+                type="text"\n
+                \n
+                class="w-full border rounded-lg block disabled:shadow-none dark:shadow-none appearance-none text-base sm:text-sm py-2 h-10 leading-[1.375rem] ps-3 pe-3 bg-white dark:bg-white/10 dark:disabled:bg-white/[7%] text-zinc-700 disabled:text-zinc-500 placeholder-zinc-400 disabled:placeholder-zinc-400/70 dark:text-zinc-300 dark:disabled:text-zinc-400 dark:placeholder-zinc-400 dark:disabled:placeholder-zinc-500 shadow-xs border-zinc-200 border-b-zinc-300/80 disabled:border-b-zinc-200 dark:border-white/10 dark:disabled:border-white/5 data-invalid:shadow-none data-invalid:border-red-500 dark:data-invalid:border-red-500 disabled:data-invalid:border-red-500 dark:disabled:data-invalid:border-red-500" wire:model="memberAllergies" label="Alergias o Restricciones" placeholder="Ej: Cacahuates..."\n
+                 name="memberAllergies"                                                                                                 data-flux-control\n
+                data-flux-group-target\n
+                                            >\n
+\n
+                    </div>\n
+\n
+                <div role="alert" aria-live="polite" aria-atomic="true" class="mt-3 text-sm font-medium text-red-500 dark:text-red-400 hidden" data-flux-error>\n
+    </div>\n
+</ui-field>\n
+                </div>\n
+            </div>\n
+            \n
+            <div class="flex gap-2">\n
+                <div class="flex-1" data-flux-spacer></div>\n
+                <ui-close data-flux-modal-close >\n
+    <button type="button" class="relative items-center font-medium justify-center gap-2 whitespace-nowrap disabled:opacity-75 dark:disabled:opacity-75 disabled:cursor-default disabled:pointer-events-none justify-center h-10 text-sm rounded-lg ps-4 pe-4 inline-flex  bg-transparent hover:bg-zinc-800/5 dark:hover:bg-white/15 text-zinc-800 dark:text-white" data-flux-button="data-flux-button">\n
+        Cancelar\n
+    </button>\n
+</ui-close>\n
+                <button type="submit" class="relative items-center font-medium justify-center gap-2 whitespace-nowrap disabled:opacity-75 dark:disabled:opacity-75 disabled:cursor-default disabled:pointer-events-none justify-center h-10 text-sm rounded-lg ps-4 pe-4 inline-flex  bg-[var(--color-accent)] hover:bg-[color-mix(in_oklab,_var(--color-accent),_transparent_10%)] text-[var(--color-accent-foreground)] border border-black/10 dark:border-0 shadow-[inset_0px_1px_--theme(--color-white/.2)] [[data-flux-button-group]_&amp;]:border-e-0 [:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-e-[1px] dark:[:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-e-0 dark:[:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-s-[1px] [:is([data-flux-button-group]&gt;&amp;:not(:first-child),_[data-flux-button-group]_:not(:first-child)&gt;&amp;)]:border-s-[color-mix(in_srgb,var(--color-accent-foreground),transparent_85%)] *:transition-opacity [&amp;[disabled]&gt;:not([data-flux-loading-indicator])]:opacity-0 [&amp;[disabled]&gt;[data-flux-loading-indicator]]:opacity-100 [&amp;[disabled]]:pointer-events-none  bg-sage-600 hover:bg-sage-700 border-0" data-flux-button="data-flux-button" data-flux-group-target="data-flux-group-target">\n
+        <div class="absolute inset-0 flex items-center justify-center opacity-0" data-flux-loading-indicator>\n
+                <svg class="shrink-0 [:where(&amp;)]:size-4 animate-spin" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true" data-slot="icon">\n
+    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>\n
+    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>\n
+</svg>\n
+                    </div>\n
+        \n
+        \n
+                    \n
+            \n
+            <span>Guardar Cambios</span>\n
+    </button>\n
+            </div>\n
+        </form>\n
+\n
+                    <div class="absolute top-0 end-0 mt-4 me-4">\n
+                <ui-close data-flux-modal-close >\n
+    <button type="button" class="relative items-center font-medium justify-center gap-2 whitespace-nowrap disabled:opacity-75 dark:disabled:opacity-75 disabled:cursor-default disabled:pointer-events-none justify-center h-8 text-sm rounded-md w-8 inline-flex  bg-transparent hover:bg-zinc-800/5 dark:hover:bg-white/15 text-zinc-800 dark:text-white      text-zinc-400! hover:text-zinc-800! dark:text-zinc-500! dark:hover:text-white!" data-flux-button="data-flux-button" aria-label="Close modal">\n
+        <svg class="shrink-0 [:where(&amp;)]:size-5" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"/>\n
+</svg>\n
+    </button>\n
+</ui-close>\n
+            </div>\n
+            </dialog>\n
+</ui-modal>\n
+\n
+    \n
+    <ui-modal  data-flux-modal>\n
+    \n
+    <dialog\n
+        wire:ignore.self \n
+        class="p-6 [:where(&amp;)]:max-w-xl [:where(&amp;)]:min-w-xs shadow-lg rounded-xl bg-white dark:bg-zinc-800 ring ring-black/5 dark:ring-zinc-700 shadow-lg rounded-xl min-w-[22rem]"\n
+         data-modal="confirm-delete-main"                         x-data="fluxModal('confirm-delete-main', 'm1g9eS0suKnTQK7RmkgD')"\n
+                x-on:modal-show.document="handleShow($event)"\n
+        x-on:modal-close.document="handleClose($event)"\n
+    >\n
+        <div class="space-y-6">\n
+            <div>\n
+                <div class="font-medium [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white text-base [&amp;:has(+[data-flux-subheading])]:mb-2 [[data-flux-subheading]+&amp;]:mt-2" data-flux-heading>┬┐Eliminar invitado?</div>\n
+                <div class="text-sm [:where(&amp;)]:text-zinc-500 [:where(&amp;)]:dark:text-white/70" data-flux-subheading>\n
+    Esta acci├│n no se puede deshacer. Se eliminar├í a <b>Alejandro Garcia</b> y a todos sus miembros asociados si es representante.\n
+</div>\n
+            </div>\n
+\n
+            <div class="flex gap-2">\n
+                <ui-close data-flux-modal-close >\n
+    <button type="button" class="relative items-center font-medium justify-center gap-2 whitespace-nowrap disabled:opacity-75 dark:disabled:opacity-75 disabled:cursor-default disabled:pointer-events-none justify-center h-10 text-sm rounded-lg ps-4 pe-4 inline-flex  bg-transparent hover:bg-zinc-800/5 dark:hover:bg-white/15 text-zinc-800 dark:text-white" data-flux-button="data-flux-button">\n
+        Cancelar\n
+    </button>\n
+</ui-close>\n
+                <button type="button" class="relative items-center font-medium justify-center gap-2 whitespace-nowrap disabled:opacity-75 dark:disabled:opacity-75 disabled:cursor-default disabled:pointer-events-none justify-center h-10 text-sm rounded-lg ps-4 pe-4 inline-flex  bg-red-500 hover:bg-red-600 dark:bg-red-600 dark:hover:bg-red-500 text-white  shadow-[inset_0px_1px_var(--color-red-500),inset_0px_2px_--theme(--color-white/.15)] dark:shadow-none [[data-flux-button-group]_&amp;]:border-e [:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-e-0 [[data-flux-button-group]_&amp;]:border-red-600 dark:[[data-flux-button-group]_&amp;]:border-red-900/25 *:transition-opacity [&amp;[data-loading]&gt;:not([data-flux-loading-indicator])]:opacity-0 [&amp;[data-flux-loading]&gt;:not([data-flux-loading-indicator])]:opacity-0 [&amp;[data-loading]&gt;[data-flux-loading-indicator]]:opacity-100 [&amp;[data-flux-loading]&gt;[data-flux-loading-indicator]]:opacity-100 data-loading:pointer-events-none data-flux-loading:pointer-events-none  flex-1" data-flux-button="data-flux-button" data-flux-group-target="data-flux-group-target" wire:target="deleteGuest" wire:loading.attr="data-flux-loading" wire:click="deleteGuest">\n
+        <div class="absolute inset-0 flex items-center justify-center opacity-0" data-flux-loading-indicator>\n
+                <svg class="shrink-0 [:where(&amp;)]:size-4 animate-spin" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true" data-slot="icon">\n
+    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>\n
+    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>\n
+</svg>\n
+                    </div>\n
+        \n
+        \n
+                    \n
+            \n
+            <span>Confirmar Eliminaci├│n</span>\n
+    </button>\n
+            </div>\n
+        </div>\n
+\n
+                    <div class="absolute top-0 end-0 mt-4 me-4">\n
+                <ui-close data-flux-modal-close >\n
+    <button type="button" class="relative items-center font-medium justify-center gap-2 whitespace-nowrap disabled:opacity-75 dark:disabled:opacity-75 disabled:cursor-default disabled:pointer-events-none justify-center h-8 text-sm rounded-md w-8 inline-flex  bg-transparent hover:bg-zinc-800/5 dark:hover:bg-white/15 text-zinc-800 dark:text-white      text-zinc-400! hover:text-zinc-800! dark:text-zinc-500! dark:hover:text-white!" data-flux-button="data-flux-button" aria-label="Close modal">\n
+        <svg class="shrink-0 [:where(&amp;)]:size-5" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"/>\n
+</svg>\n
+    </button>\n
+</ui-close>\n
+            </div>\n
+            </dialog>\n
+</ui-modal>\n
+</div>\n
+</div>\n
+</div>\n
+\n
+    \n
+    <div class="fixed bottom-0 left-0 z-50 w-full bg-white/80 backdrop-blur-md border-t border-stone-200 dark:bg-stone-900/80 dark:border-stone-800 lg:hidden safe-area-bottom">\n
+        <div class="grid h-full w-full grid-cols-4 mx-auto font-medium py-2">\n
+            <a href="/dashboard" class="inline-flex flex-col items-center justify-center px-2 hover:bg-stone-50 dark:hover:bg-stone-800 group text-stone-500 dark:text-stone-400">\n
+                <svg class="shrink-0 [:where(&amp;)]:size-6 w-5 h-5 mb-1" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/>\n
+</svg>\n
+\n
+                        <span class="text-[8px] uppercase tracking-tighter">Inicio</span>\n
+            </a>\n
+            <a href="/invitados" class="inline-flex flex-col items-center justify-center px-2 hover:bg-stone-50 dark:hover:bg-stone-800 group text-sage-600 dark:text-sage-500">\n
+                <svg class="shrink-0 [:where(&amp;)]:size-6 w-5 h-5 mb-1" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z"/>\n
+</svg>\n
+\n
+                        <span class="text-[8px] uppercase tracking-tighter">Invitados</span>\n
+            </a>\n
+            <a href="/pendientes" class="inline-flex flex-col items-center justify-center px-2 hover:bg-stone-50 dark:hover:bg-stone-800 group text-stone-500 dark:text-stone-400">\n
+                <svg class="shrink-0 [:where(&amp;)]:size-6 w-5 h-5 mb-1" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z"/>\n
+</svg>\n
+\n
+                        <span class="text-[8px] uppercase tracking-tighter">Tareas</span>\n
+            </a>\n
+            <a href="/settings" class="inline-flex flex-col items-center justify-center px-2 hover:bg-stone-50 dark:hover:bg-stone-800 group text-stone-500 dark:text-stone-400">\n
+                <svg class="shrink-0 [:where(&amp;)]:size-6 w-5 h-5 mb-1" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z"/>\n
+  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>\n
+</svg>\n
+\n
+                        <span class="text-[8px] uppercase tracking-tighter">Ajustes</span>\n
+            </a>\n
+        </div>\n
+    </div>\n
+\n
+    \n
+    <script src="http://localhost:8000/flux/flux.js?id=bdbfbc9b" data-navigate-once></script>\n
+<!-- Livewire Scripts -->\n
+<script src="http://localhost:8000/livewire-09a462ce/livewire.js?id=8f29b734"   data-csrf="x5QLiUI09pgweAgptNIN9R5PvLtDPM2lXU6wgCUz" data-module-url="http://localhost:8000/livewire-09a462ce" data-update-uri="http://localhost:8000/livewire-09a462ce/update" data-navigate-once="true"></script>\n
+</body>\n
+</html>\n
+
+
+  To contain: Gluten
+
+  at tests\Feature\GuestDetailTest.php:30
+     26Ôûò         ->assertSee('Alejandro Garcia')
+     27Ôûò         ->assertSee('alejandro@example.com')
+     28Ôûò         ->assertSee('1234567890')
+     29Ôûò         ->assertSee('Vegetariano')
+  Ô×£  30Ôûò         ->assertSee('Gluten')
+     31Ôûò         ->assertSee(url('/invitados/alejandro'));
+     32Ôûò });
+     33Ôûò
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILED  Tests\Feature\GÔÇª  ViewException   
+  Cannot assign null to property Livewire\Volt\Component@anonymous::$extra_spots of type int (View: C:\Users\raul_\Documentos\Proyectos\Personal\boda-app\storage\framework\views\a168b0ebcff266df6b662fc4b6d06e88.blade.php)
+
+  at storage\framework\views\livewire\classes\1c3fc44d.php:47
+     43Ôûò         $this->phone = $this->guest->phone ?? '';
+     44Ôûò         $this->group_id = $this->guest->group_id;
+     45Ôûò         $this->category_ids = $this->guest->categories->pluck('id')->toArray();
+     46Ôûò         $this->rsvp_status = $this->guest->rsvp_status;
+  Ô×£  47Ôûò         $this->extra_spots = $this->guest->extra_spots;
+     48Ôûò 
+     49Ôûò         if ($this->guest->group) {
+     50Ôûò             $this->groupName = $this->guest->group->name;
+     51Ôûò             $this->parentGroupId = $this->guest->group->subgroup_id;
+
+  1   storage\framework\views\livewire\classes\1c3fc44d.php:47
+  2   storage\framework\views\livewire\classes\1c3fc44d.php:36
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILED  Tests\Feature\GuestsListTest >ÔÇª   
+  Expected: <div wire:key="lw-1247845882-0" wire:snapshot="" wire:effects="" wire:id="elWyQ5fLJeDRirkB3Z3u" wire:name="guests.list">\n
+    \n
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-6">\n
+        <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">\n
+            <div class="w-full sm:w-64">\n
+                <ui-field class="min-w-0 [&amp;:not(:has([data-flux-field])):has([data-flux-control][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-radio-group][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-checkbox-group][disabled])&gt;[data-flux-label]]:opacity-50 block *:data-flux-label:mb-3 [&amp;&gt;[data-flux-label]:has(+[data-flux-description])]:mb-2 [&amp;&gt;[data-flux-label]+[data-flux-description]]:mt-0 [&amp;&gt;[data-flux-label]+[data-flux-description]]:mb-3 [&amp;&gt;*:not([data-flux-label])+[data-flux-description]]:mt-3" data-flux-field>\n
+    <ui-label class="inline-flex items-center text-sm font-medium  [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white [&amp;:has([data-flux-label-trailing])]:flex" data-flux-label>\n
+    Filtrar por Categor├¡a\n
+\n
+    \n
+    \n
+    </ui-label>\n
+        \n
+        \n
+        <select\n
+    class="appearance-none [:where(&amp;)]:w-full ps-3 pe-10 block h-10 py-2 text-base sm:text-sm leading-[1.375rem] rounded-lg shadow-xs border bg-white dark:bg-white/10 dark:disabled:bg-white/[7%] text-zinc-700 dark:text-zinc-300 disabled:text-zinc-500 dark:disabled:text-zinc-400 has-[option.placeholder:checked]:text-zinc-400 dark:has-[option.placeholder:checked]:text-zinc-400 dark:[&amp;&gt;option]:bg-zinc-700 dark:[&amp;&gt;option]:text-white disabled:shadow-none border border-zinc-200 border-b-zinc-300/80 dark:border-white/10" wire:model.live="selectedCategory" label="Filtrar por Categor├¡a"\n
+         name="selectedCategory"         data-flux-control\n
+    data-flux-select-native\n
+    data-flux-group-target\n
+>\n
+            <option value="" disabled selected class="placeholder">Todas las categor├¡as</option>\n
+    \n
+    <!--[if BLOCK]><![endif]-->                        <option\n
+    \n
+     value="1"      wire:key="1" >VIP</option>                    <!--[if ENDBLOCK]><![endif]-->\n
+</select>\n
+\n
+                <div role="alert" aria-live="polite" aria-atomic="true" class="mt-3 text-sm font-medium text-red-500 dark:text-red-400 hidden" data-flux-error>\n
+    </div>\n
+</ui-field>\n
+            </div>\n
+\n
+            <div class="flex gap-2 items-end">\n
+                <button type="button" class="relative items-center font-medium justify-center gap-2 whitespace-nowrap disabled:opacity-75 dark:disabled:opacity-75 disabled:cursor-default disabled:pointer-events-none justify-center h-10 text-sm rounded-lg ps-3 pe-4 inline-flex  bg-white hover:bg-zinc-50 dark:bg-zinc-700 dark:hover:bg-zinc-600/75 text-zinc-800 dark:text-white border border-zinc-200 hover:border-zinc-200 border-b-zinc-300/80 dark:border-zinc-600 dark:hover:border-zinc-600 shadow-xs [[data-flux-button-group]_&amp;]:border-s-0 [:is([data-flux-button-group]&gt;&amp;:first-child,_[data-flux-button-group]_:first-child&gt;&amp;)]:border-s-[1px] *:transition-opacity [&amp;[data-loading]&gt;:not([data-flux-loading-indicator])]:opacity-0 [&amp;[data-flux-loading]&gt;:not([data-flux-loading-indicator])]:opacity-0 [&amp;[data-loading]&gt;[data-flux-loading-indicator]]:opacity-100 [&amp;[data-flux-loading]&gt;[data-flux-loading-indicator]]:opacity-100 data-loading:pointer-events-none data-flux-loading:pointer-events-none" data-flux-button="data-flux-button" data-flux-group-target="data-flux-group-target" wire:loading.attr="data-flux-loading" wire:click="toggleManageMode" wire:target="toggleManageMode">\n
+        <div class="absolute inset-0 flex items-center justify-center opacity-0" data-flux-loading-indicator>\n
+                <svg class="shrink-0 [:where(&amp;)]:size-4 animate-spin" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true" data-slot="icon">\n
+    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>\n
+    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>\n
+</svg>\n
+                    </div>\n
+        \n
+                    <svg class="shrink-0 [:where(&amp;)]:size-4" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path fill-rule="evenodd" d="M5 3.25V4H2.75a.75.75 0 0 0 0 1.5h.3l.815 8.15A1.5 1.5 0 0 0 5.357 15h5.285a1.5 1.5 0 0 0 1.493-1.35l.815-8.15h.3a.75.75 0 0 0 0-1.5H11v-.75A2.25 2.25 0 0 0 8.75 1h-1.5A2.25 2.25 0 0 0 5 3.25Zm2.25-.75a.75.75 0 0 0-.75.75V4h3v-.75a.75.75 0 0 0-.75-.75h-1.5ZM6.05 6a.75.75 0 0 1 .787.713l.275 5.5a.75.75 0 0 1-1.498.075l-.275-5.5A.75.75 0 0 1 6.05 6Zm3.9 0a.75.75 0 0 1 .712.787l-.275 5.5a.75.75 0 0 1-1.498-.075l.275-5.5a.75.75 0 0 1 .786-.711Z" clip-rule="evenodd"/>\n
+</svg>\n
+\n
+                \n
+                    \n
+            \n
+            <span>Gestionar</span>\n
+    </button>\n
+\n
+                <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->            </div>\n
+        </div>\n
+        \n
+        <div\n
+    class="contents"\n
+    x-data\n
+    x-on:click="$el.querySelector('button[disabled]') || $dispatch('modal-show', { name: 'add-group' })"\n
+        data-flux-modal-trigger\n
+>\n
+    <button type="button" class="relative items-center font-medium justify-center gap-2 whitespace-nowrap disabled:opacity-75 dark:disabled:opacity-75 disabled:cursor-default disabled:pointer-events-none justify-center h-10 text-sm rounded-lg ps-3 pe-4 inline-flex  bg-white hover:bg-zinc-50 dark:bg-zinc-700 dark:hover:bg-zinc-600/75 text-zinc-800 dark:text-white border border-zinc-200 hover:border-zinc-200 border-b-zinc-300/80 dark:border-zinc-600 dark:hover:border-zinc-600 shadow-xs [[data-flux-button-group]_&amp;]:border-s-0 [:is([data-flux-button-group]&gt;&amp;:first-child,_[data-flux-button-group]_:first-child&gt;&amp;)]:border-s-[1px]   bg-sage-600 hover:bg-sage-700 text-white w-full sm:w-auto" data-flux-button="data-flux-button" data-flux-group-target="data-flux-group-target">\n
+        <svg class="shrink-0 [:where(&amp;)]:size-4" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z"/>\n
+</svg>\n
+\n
+                \n
+                    \n
+            \n
+            <span>A├▒adir Familia / Grupo</span>\n
+    </button>\n
+</div>\n
+    </div>\n
+\n
+    \n
+    <div class="space-y-8">\n
+        <!--[if BLOCK]><![endif]-->            <div>\n
+                                <div class="mb-4">\n
+                    <div class="font-medium [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white text-base [&amp;:has(+[data-flux-subheading])]:mb-2 [[data-flux-subheading]+&amp;]:mt-2 text-stone-800 dark:text-stone-100 font-black" data-flux-heading><svg class="shrink-0 [:where(&amp;)]:size-6 inline-block w-5 h-5 mr-1 -mt-1 text-sage-400" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"/>\n
+</svg>\n
+\n
+                                Sin Familia Extendida</div>\n
+                    <!--[if BLOCK]><![endif]-->                        <div class="text-sm [:where(&amp;)]:text-zinc-500 [:where(&amp;)]:dark:text-white/70 ml-7 text-xs text-stone-400 uppercase tracking-widest" data-flux-subheading>\n
+    Amigos Novio\n
+</div>\n
+                    <!--[if ENDBLOCK]><![endif]-->                </div>\n
+                \n
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">\n
+                    <!--[if BLOCK]><![endif]-->                        <div class="[:where(&amp;)]:bg-white dark:[:where(&amp;)]:bg-white/10 border border-zinc-200 dark:border-white/10 [:where(&amp;)]:p-6 [:where(&amp;)]:rounded-xl relative flex flex-col pt-4 pb-4 px-5 " data-flux-card>\n
+    <div class="flex justify-between items-start mb-2">\n
+                                <div class="flex items-start gap-3 w-full">\n
+                                    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                                    <div class="flex-1 min-w-0">\n
+                                        <a href="/invitados/raul-silva" wire:navigate class="group">\n
+                                            <h3 class="font-bold text-lg leading-tight group-hover:text-sage-600 transition-colors truncate">\n
+                                                Raul Silva\n
+                                                <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                                            </h3>\n
+                                            <p class="text-[10px] text-stone-400 mt-0.5">@raul-silva</p>\n
+                                        </a>\n
+                                        \n
+                                        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                                        \n
+                                        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                                    </div>\n
+                                </div>\n
+                                <!--[if BLOCK]><![endif]-->                                    <button type="button" class="relative items-center font-medium justify-center gap-2 whitespace-nowrap disabled:opacity-75 dark:disabled:opacity-75 disabled:cursor-default disabled:pointer-events-none justify-center h-8 text-sm rounded-md w-8 inline-flex  bg-transparent hover:bg-zinc-800/5 dark:hover:bg-white/15 text-zinc-800 dark:text-white    *:transition-opacity [&amp;[data-loading]&gt;:not([data-flux-loading-indicator])]:opacity-0 [&amp;[data-flux-loading]&gt;:not([data-flux-loading-indicator])]:opacity-0 [&amp;[data-loading]&gt;[data-flux-loading-indicator]]:opacity-100 [&amp;[data-flux-loading]&gt;[data-flux-loading-indicator]]:opacity-100 data-loading:pointer-events-none data-flux-loading:pointer-events-none  text-stone-300 hover:text-stone-700 -mr-2 shrink-0" data-flux-button="data-flux-button" wire:loading.attr="disabled" wire:click="editRsvp('019ce394-b14b-71f3-9d45-7333b6bdae34')" wire:target="editRsvp('019ce394-b14b-71f3-9d45-7333b6bdae34')">\n
+        <div class="absolute inset-0 flex items-center justify-center opacity-0" data-flux-loading-indicator>\n
+                <svg class="shrink-0 [:where(&amp;)]:size-5 animate-spin" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true" data-slot="icon">\n
+    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>\n
+    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>\n
+</svg>\n
+                    </div>\n
+        \n
+                    <svg class="shrink-0 [:where(&amp;)]:size-5" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path d="m2.695 14.762-1.262 3.155a.5.5 0 0 0 .65.65l3.155-1.262a4 4 0 0 0 1.343-.886L17.5 5.501a2.121 2.121 0 0 0-3-3L3.58 13.419a4 4 0 0 0-.885 1.343Z"/>\n
+</svg>\n
+    </button>\n
+                                <!--[if ENDBLOCK]><![endif]-->                            </div>\n
+                            \n
+                            <div class="flex flex-wrap items-center gap-2 mt-auto pt-3 border-t border-stone-50 dark:border-stone-800">\n
+                                <!--[if BLOCK]><![endif]-->                                    <div data-flux-badge="data-flux-badge" class="inline-flex items-center font-medium whitespace-nowrap  [print-color-adjust:exact] text-sm py-1 **:data-flux-badge-icon:me-1.5 rounded-md px-2 text-zinc-700 [&amp;_button]:text-zinc-700! dark:text-zinc-200 dark:[&amp;_button]:text-zinc-200! bg-zinc-400/15 dark:bg-zinc-400/40 [&amp;:is(button)]:hover:bg-zinc-400/25 dark:[button]:hover:bg-zinc-400/50 border-0 text-[10px] font-bold">\n
+        Pendiente\n
+    </div>\n
+                                <!--[if ENDBLOCK]><![endif]-->\n
+                                <!--[if BLOCK]><![endif]-->                                    <div data-flux-badge="data-flux-badge" class="inline-flex items-center font-medium whitespace-nowrap  [print-color-adjust:exact] text-xs py-1 **:data-flux-badge-icon:me-1 rounded-md px-2 text-zinc-700 [&amp;_button]:text-zinc-700! dark:text-zinc-200 dark:[&amp;_button]:text-zinc-200! bg-zinc-400/15 dark:bg-zinc-400/40 [&amp;:is(button)]:hover:bg-zinc-400/25 dark:[button]:hover:bg-zinc-400/50 text-[9px]">\n
+        <svg class="shrink-0 [:where(&amp;)]:size-4 size-3" data-flux-badge-icon="data-flux-badge-icon" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path fill-rule="evenodd" d="M4.5 2A2.5 2.5 0 0 0 2 4.5v2.879a2.5 2.5 0 0 0 .732 1.767l4.5 4.5a2.5 2.5 0 0 0 3.536 0l2.878-2.878a2.5 2.5 0 0 0 0-3.536l-4.5-4.5A2.5 2.5 0 0 0 7.38 2H4.5ZM5 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd"/>\n
+</svg>\n
+\n
+            \n
+    VIP\n
+    </div>\n
+                                <!--[if ENDBLOCK]><![endif]-->                            </div>\n
+</div>\n
+                    <!--[if ENDBLOCK]><![endif]-->                </div>\n
+            </div>\n
+                    <div>\n
+                                <div class="mb-4">\n
+                    <div class="font-medium [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white text-base [&amp;:has(+[data-flux-subheading])]:mb-2 [[data-flux-subheading]+&amp;]:mt-2 text-stone-800 dark:text-stone-100 font-black" data-flux-heading><svg class="shrink-0 [:where(&amp;)]:size-6 inline-block w-5 h-5 mr-1 -mt-1 text-sage-400" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"/>\n
+</svg>\n
+\n
+                                Sin Familia Extendida</div>\n
+                    <!--[if BLOCK]><![endif]-->                        <div class="text-sm [:where(&amp;)]:text-zinc-500 [:where(&amp;)]:dark:text-white/70 ml-7 text-xs text-stone-400 uppercase tracking-widest" data-flux-subheading>\n
+    Compa├▒eros de Trabajo\n
+</div>\n
+                    <!--[if ENDBLOCK]><![endif]-->                </div>\n
+                \n
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">\n
+                    <!--[if BLOCK]><![endif]-->                        <div class="[:where(&amp;)]:bg-white dark:[:where(&amp;)]:bg-white/10 border border-zinc-200 dark:border-white/10 [:where(&amp;)]:p-6 [:where(&amp;)]:rounded-xl relative flex flex-col pt-4 pb-4 px-5 " data-flux-card>\n
+    <div class="flex justify-between items-start mb-2">\n
+                                <div class="flex items-start gap-3 w-full">\n
+                                    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                                    <div class="flex-1 min-w-0">\n
+                                        <a href="/invitados/carlos-perez" wire:navigate class="group">\n
+                                            <h3 class="font-bold text-lg leading-tight group-hover:text-sage-600 transition-colors truncate">\n
+                                                Carlos Perez\n
+                                                <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                                            </h3>\n
+                                            <p class="text-[10px] text-stone-400 mt-0.5">@carlos-perez</p>\n
+                                        </a>\n
+                                        \n
+                                        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                                        \n
+                                        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                                    </div>\n
+                                </div>\n
+                                <!--[if BLOCK]><![endif]-->                                    <button type="button" class="relative items-center font-medium justify-center gap-2 whitespace-nowrap disabled:opacity-75 dark:disabled:opacity-75 disabled:cursor-default disabled:pointer-events-none justify-center h-8 text-sm rounded-md w-8 inline-flex  bg-transparent hover:bg-zinc-800/5 dark:hover:bg-white/15 text-zinc-800 dark:text-white    *:transition-opacity [&amp;[data-loading]&gt;:not([data-flux-loading-indicator])]:opacity-0 [&amp;[data-flux-loading]&gt;:not([data-flux-loading-indicator])]:opacity-0 [&amp;[data-loading]&gt;[data-flux-loading-indicator]]:opacity-100 [&amp;[data-flux-loading]&gt;[data-flux-loading-indicator]]:opacity-100 data-loading:pointer-events-none data-flux-loading:pointer-events-none  text-stone-300 hover:text-stone-700 -mr-2 shrink-0" data-flux-button="data-flux-button" wire:loading.attr="disabled" wire:click="editRsvp('019ce394-b14b-71f3-9d45-7333b7189137')" wire:target="editRsvp('019ce394-b14b-71f3-9d45-7333b7189137')">\n
+        <div class="absolute inset-0 flex items-center justify-center opacity-0" data-flux-loading-indicator>\n
+                <svg class="shrink-0 [:where(&amp;)]:size-5 animate-spin" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true" data-slot="icon">\n
+    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>\n
+    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>\n
+</svg>\n
+                    </div>\n
+        \n
+                    <svg class="shrink-0 [:where(&amp;)]:size-5" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path d="m2.695 14.762-1.262 3.155a.5.5 0 0 0 .65.65l3.155-1.262a4 4 0 0 0 1.343-.886L17.5 5.501a2.121 2.121 0 0 0-3-3L3.58 13.419a4 4 0 0 0-.885 1.343Z"/>\n
+</svg>\n
+    </button>\n
+                                <!--[if ENDBLOCK]><![endif]-->                            </div>\n
+                            \n
+                            <div class="flex flex-wrap items-center gap-2 mt-auto pt-3 border-t border-stone-50 dark:border-stone-800">\n
+                                <!--[if BLOCK]><![endif]-->                                    <div data-flux-badge="data-flux-badge" class="inline-flex items-center font-medium whitespace-nowrap  [print-color-adjust:exact] text-sm py-1 **:data-flux-badge-icon:me-1.5 rounded-md px-2 text-zinc-700 [&amp;_button]:text-zinc-700! dark:text-zinc-200 dark:[&amp;_button]:text-zinc-200! bg-zinc-400/15 dark:bg-zinc-400/40 [&amp;:is(button)]:hover:bg-zinc-400/25 dark:[button]:hover:bg-zinc-400/50 border-0 text-[10px] font-bold">\n
+        Pendiente\n
+    </div>\n
+                                <!--[if ENDBLOCK]><![endif]-->\n
+                                <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                            </div>\n
+</div>\n
+                    <!--[if ENDBLOCK]><![endif]-->                </div>\n
+            </div>\n
+        <!--[if ENDBLOCK]><![endif]-->    </div>\n
+\n
+    \n
+    <ui-modal  data-flux-modal>\n
+    \n
+    <dialog\n
+        wire:ignore.self \n
+        class="p-6 [:where(&amp;)]:max-w-xl [:where(&amp;)]:min-w-xs shadow-lg rounded-xl bg-white dark:bg-zinc-800 ring ring-black/5 dark:ring-zinc-700 shadow-lg rounded-xl min-w-[28rem]"\n
+         data-modal="add-group"                         x-data="fluxModal('add-group', 'elWyQ5fLJeDRirkB3Z3u')"\n
+                x-on:modal-show.document="handleShow($event)"\n
+        x-on:modal-close.document="handleClose($event)"\n
+    >\n
+        <form wire:submit="saveGroup" class="space-y-6">\n
+            <div>\n
+                <div class="font-medium [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white text-base [&amp;:has(+[data-flux-subheading])]:mb-2 [[data-flux-subheading]+&amp;]:mt-2" data-flux-heading>Nueva Familia / Grupo</div>\n
+                <div class="text-sm [:where(&amp;)]:text-zinc-500 [:where(&amp;)]:dark:text-white/70" data-flux-subheading>\n
+    Registra a un representante y los miembros que lo acompa├▒an.\n
+</div>\n
+            </div>\n
+            \n
+            <div class="space-y-6">\n
+                \n
+                <div class="space-y-4">\n
+                    <div class="font-medium [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white text-sm [&amp;:has(+[data-flux-subheading])]:mb-2 [[data-flux-subheading]+&amp;]:mt-2 uppercase tracking-widest text-stone-400 text-[10px]" data-flux-heading>Representante (Responsable)</div>\n
+                    <ui-field class="min-w-0 [&amp;:not(:has([data-flux-field])):has([data-flux-control][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-radio-group][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-checkbox-group][disabled])&gt;[data-flux-label]]:opacity-50 block *:data-flux-label:mb-3 [&amp;&gt;[data-flux-label]:has(+[data-flux-description])]:mb-2 [&amp;&gt;[data-flux-label]+[data-flux-description]]:mt-0 [&amp;&gt;[data-flux-label]+[data-flux-description]]:mb-3 [&amp;&gt;*:not([data-flux-label])+[data-flux-description]]:mt-3" data-flux-field>\n
+    <ui-label class="inline-flex items-center text-sm font-medium  [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white [&amp;:has([data-flux-label-trailing])]:flex" data-flux-label>\n
+    Nombre completo\n
+\n
+    \n
+    \n
+    </ui-label>\n
+        \n
+        \n
+        <div class="w-full relative block group/input" data-flux-input>\n
+            \n
+            <input\n
+                type="text"\n
+                \n
+                class="w-full border rounded-lg block disabled:shadow-none dark:shadow-none appearance-none text-base sm:text-sm py-2 h-10 leading-[1.375rem] ps-3 pe-3 bg-white dark:bg-white/10 dark:disabled:bg-white/[7%] text-zinc-700 disabled:text-zinc-500 placeholder-zinc-400 disabled:placeholder-zinc-400/70 dark:text-zinc-300 dark:disabled:text-zinc-400 dark:placeholder-zinc-400 dark:disabled:placeholder-zinc-500 shadow-xs border-zinc-200 border-b-zinc-300/80 disabled:border-b-zinc-200 dark:border-white/10 dark:disabled:border-white/5 data-invalid:shadow-none data-invalid:border-red-500 dark:data-invalid:border-red-500 disabled:data-invalid:border-red-500 dark:disabled:data-invalid:border-red-500" wire:model="repName" label="Nombre completo" placeholder="Ej: Juan Silva"\n
+                 name="repName"                                                                                                 data-flux-control\n
+                data-flux-group-target\n
+                                            >\n
+\n
+                    </div>\n
+\n
+                <div role="alert" aria-live="polite" aria-atomic="true" class="mt-3 text-sm font-medium text-red-500 dark:text-red-400 hidden" data-flux-error>\n
+    </div>\n
+</ui-field>\n
+                    <div class="grid grid-cols-2 gap-4">\n
+                        <ui-field class="min-w-0 [&amp;:not(:has([data-flux-field])):has([data-flux-control][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-radio-group][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-checkbox-group][disabled])&gt;[data-flux-label]]:opacity-50 block *:data-flux-label:mb-3 [&amp;&gt;[data-flux-label]:has(+[data-flux-description])]:mb-2 [&amp;&gt;[data-flux-label]+[data-flux-description]]:mt-0 [&amp;&gt;[data-flux-label]+[data-flux-description]]:mb-3 [&amp;&gt;*:not([data-flux-label])+[data-flux-description]]:mt-3" data-flux-field>\n
+    <ui-label class="inline-flex items-center text-sm font-medium  [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white [&amp;:has([data-flux-label-trailing])]:flex" data-flux-label>\n
+    Email\n
+\n
+    \n
+    \n
+    </ui-label>\n
+        \n
+        \n
+        <div class="w-full relative block group/input" data-flux-input>\n
+            \n
+            <input\n
+                type="email"\n
+                \n
+                class="w-full border rounded-lg block disabled:shadow-none dark:shadow-none appearance-none text-base sm:text-sm py-2 h-10 leading-[1.375rem] ps-3 pe-3 bg-white dark:bg-white/10 dark:disabled:bg-white/[7%] text-zinc-700 disabled:text-zinc-500 placeholder-zinc-400 disabled:placeholder-zinc-400/70 dark:text-zinc-300 dark:disabled:text-zinc-400 dark:placeholder-zinc-400 dark:disabled:placeholder-zinc-500 shadow-xs border-zinc-200 border-b-zinc-300/80 disabled:border-b-zinc-200 dark:border-white/10 dark:disabled:border-white/5 data-invalid:shadow-none data-invalid:border-red-500 dark:data-invalid:border-red-500 disabled:data-invalid:border-red-500 dark:disabled:data-invalid:border-red-500" wire:model="repEmail" label="Email" placeholder="juan@ejemplo.com"\n
+                 name="repEmail"                                                                                                 data-flux-control\n
+                data-flux-group-target\n
+                                            >\n
+\n
+                    </div>\n
+\n
+                <div role="alert" aria-live="polite" aria-atomic="true" class="mt-3 text-sm font-medium text-red-500 dark:text-red-400 hidden" data-flux-error>\n
+    </div>\n
+</ui-field>\n
+                        <ui-field class="min-w-0 [&amp;:not(:has([data-flux-field])):has([data-flux-control][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-radio-group][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-checkbox-group][disabled])&gt;[data-flux-label]]:opacity-50 block *:data-flux-label:mb-3 [&amp;&gt;[data-flux-label]:has(+[data-flux-description])]:mb-2 [&amp;&gt;[data-flux-label]+[data-flux-description]]:mt-0 [&amp;&gt;[data-flux-label]+[data-flux-description]]:mb-3 [&amp;&gt;*:not([data-flux-label])+[data-flux-description]]:mt-3" data-flux-field>\n
+    <ui-label class="inline-flex items-center text-sm font-medium  [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white [&amp;:has([data-flux-label-trailing])]:flex" data-flux-label>\n
+    Tel├®fono\n
+\n
+    \n
+    \n
+    </ui-label>\n
+        \n
+        \n
+        <div class="w-full relative block group/input" data-flux-input>\n
+            \n
+            <input\n
+                type="text"\n
+                \n
+                class="w-full border rounded-lg block disabled:shadow-none dark:shadow-none appearance-none text-base sm:text-sm py-2 h-10 leading-[1.375rem] ps-3 pe-3 bg-white dark:bg-white/10 dark:disabled:bg-white/[7%] text-zinc-700 disabled:text-zinc-500 placeholder-zinc-400 disabled:placeholder-zinc-400/70 dark:text-zinc-300 dark:disabled:text-zinc-400 dark:placeholder-zinc-400 dark:disabled:placeholder-zinc-500 shadow-xs border-zinc-200 border-b-zinc-300/80 disabled:border-b-zinc-200 dark:border-white/10 dark:disabled:border-white/5 data-invalid:shadow-none data-invalid:border-red-500 dark:data-invalid:border-red-500 disabled:data-invalid:border-red-500 dark:disabled:data-invalid:border-red-500" wire:model="repPhone" label="Tel├®fono" placeholder="5512345678"\n
+                 name="repPhone"                                                                                                 data-flux-control\n
+                data-flux-group-target\n
+                                            >\n
+\n
+                    </div>\n
+\n
+                <div role="alert" aria-live="polite" aria-atomic="true" class="mt-3 text-sm font-medium text-red-500 dark:text-red-400 hidden" data-flux-error>\n
+    </div>\n
+</ui-field>\n
+                    </div>\n
+                </div>\n
+\n
+                \n
+                <div class="space-y-4 pt-4 border-t border-stone-50 dark:border-stone-800">\n
+                    <div class="flex items-center justify-between">\n
+                        <div class="font-medium [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white text-sm [&amp;:has(+[data-flux-subheading])]:mb-2 [[data-flux-subheading]+&amp;]:mt-2 uppercase tracking-widest text-stone-400 text-[10px]" data-flux-heading>Miembros Nominados (Opcional)</div>\n
+                        <button type="button" class="relative items-center font-medium justify-center gap-2 whitespace-nowrap disabled:opacity-75 dark:disabled:opacity-75 disabled:cursor-default disabled:pointer-events-none justify-center h-8 text-sm rounded-md w-8 inline-flex  bg-transparent hover:bg-zinc-800/5 dark:hover:bg-white/15 text-zinc-800 dark:text-white    *:transition-opacity [&amp;[data-loading]&gt;:not([data-flux-loading-indicator])]:opacity-0 [&amp;[data-flux-loading]&gt;:not([data-flux-loading-indicator])]:opacity-0 [&amp;[data-loading]&gt;[data-flux-loading-indicator]]:opacity-100 [&amp;[data-flux-loading]&gt;[data-flux-loading-indicator]]:opacity-100 data-loading:pointer-events-none data-flux-loading:pointer-events-none" data-flux-button="data-flux-button" wire:target="addMemberField" wire:loading.attr="data-flux-loading" wire:click="addMemberField">\n
+        <div class="absolute inset-0 flex items-center justify-center opacity-0" data-flux-loading-indicator>\n
+                <svg class="shrink-0 [:where(&amp;)]:size-5 animate-spin" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true" data-slot="icon">\n
+    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>\n
+    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>\n
+</svg>\n
+                    </div>\n
+        \n
+                    <svg class="shrink-0 [:where(&amp;)]:size-5" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z"/>\n
+</svg>\n
+    </button>\n
+                    </div>\n
+                    \n
+                    <div class="space-y-2">\n
+                        <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                    </div>\n
+                </div>\n
+\n
+                \n
+                <div class="pt-4 border-t border-stone-50 dark:border-stone-800">\n
+                    <ui-field class="min-w-0 [&amp;:not(:has([data-flux-field])):has([data-flux-control][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-radio-group][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-checkbox-group][disabled])&gt;[data-flux-label]]:opacity-50 block *:data-flux-label:mb-3 [&amp;&gt;[data-flux-label]:has(+[data-flux-description])]:mb-2 [&amp;&gt;[data-flux-label]+[data-flux-description]]:mt-0 [&amp;&gt;[data-flux-label]+[data-flux-description]]:mb-3 [&amp;&gt;*:not([data-flux-label])+[data-flux-description]]:mt-3" data-flux-field>\n
+    <ui-label class="inline-flex items-center text-sm font-medium  [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white [&amp;:has([data-flux-label-trailing])]:flex" data-flux-label>\n
+    Pases Adicionales (Sin Nombre)\n
+\n
+    \n
+    \n
+    </ui-label>\n
+        \n
+        \n
+        <div class="w-full relative block group/input" data-flux-input>\n
+            \n
+            <input\n
+                type="number"\n
+                \n
+                class="w-full border rounded-lg block disabled:shadow-none dark:shadow-none appearance-none text-base sm:text-sm py-2 h-10 leading-[1.375rem] ps-3 pe-3 bg-white dark:bg-white/10 dark:disabled:bg-white/[7%] text-zinc-700 disabled:text-zinc-500 placeholder-zinc-400 disabled:placeholder-zinc-400/70 dark:text-zinc-300 dark:disabled:text-zinc-400 dark:placeholder-zinc-400 dark:disabled:placeholder-zinc-500 shadow-xs border-zinc-200 border-b-zinc-300/80 disabled:border-b-zinc-200 dark:border-white/10 dark:disabled:border-white/5 data-invalid:shadow-none data-invalid:border-red-500 dark:data-invalid:border-red-500 disabled:data-invalid:border-red-500 dark:disabled:data-invalid:border-red-500" wire:model="extraSpots" label="Pases Adicionales (Sin Nombre)" placeholder="0" min="0"\n
+                 name="extraSpots"                                                                                                 data-flux-control\n
+                data-flux-group-target\n
+                                            >\n
+\n
+                    </div>\n
+\n
+                <div role="alert" aria-live="polite" aria-atomic="true" class="mt-3 text-sm font-medium text-red-500 dark:text-red-400 hidden" data-flux-error>\n
+    </div>\n
+</ui-field>\n
+                </div>\n
+\n
+                \n
+                <div class="space-y-4 pt-4 border-t border-stone-50 dark:border-stone-800">\n
+                    <div class="font-medium [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white text-sm [&amp;:has(+[data-flux-subheading])]:mb-2 [[data-flux-subheading]+&amp;]:mt-2 uppercase tracking-widest text-stone-400 text-[10px]" data-flux-heading>Organizaci├│n</div>\n
+                    \n
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">\n
+                        <ui-field class="min-w-0 [&amp;:not(:has([data-flux-field])):has([data-flux-control][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-radio-group][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-checkbox-group][disabled])&gt;[data-flux-label]]:opacity-50 block *:data-flux-label:mb-3 [&amp;&gt;[data-flux-label]:has(+[data-flux-description])]:mb-2 [&amp;&gt;[data-flux-label]+[data-flux-description]]:mt-0 [&amp;&gt;[data-flux-label]+[data-flux-description]]:mb-3 [&amp;&gt;*:not([data-flux-label])+[data-flux-description]]:mt-3" data-flux-field>\n
+    <ui-label class="inline-flex items-center text-sm font-medium  [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white [&amp;:has([data-flux-label-trailing])]:flex" data-flux-label>\n
+    Nombre de la Familia / Grupo\n
+\n
+    \n
+    \n
+    </ui-label>\n
+        \n
+        \n
+        <div class="w-full relative block group/input" data-flux-input>\n
+            \n
+            <input\n
+                type="text"\n
+                \n
+                class="w-full border rounded-lg block disabled:shadow-none dark:shadow-none appearance-none text-base sm:text-sm py-2 h-10 leading-[1.375rem] ps-3 pe-3 bg-white dark:bg-white/10 dark:disabled:bg-white/[7%] text-zinc-700 disabled:text-zinc-500 placeholder-zinc-400 disabled:placeholder-zinc-400/70 dark:text-zinc-300 dark:disabled:text-zinc-400 dark:placeholder-zinc-400 dark:disabled:placeholder-zinc-500 shadow-xs border-zinc-200 border-b-zinc-300/80 disabled:border-b-zinc-200 dark:border-white/10 dark:disabled:border-white/5 data-invalid:shadow-none data-invalid:border-red-500 dark:data-invalid:border-red-500 disabled:data-invalid:border-red-500 dark:disabled:data-invalid:border-red-500" wire:model="newGroupName" label="Nombre de la Familia / Grupo" placeholder="Ej: Familia Silva L├│pez"\n
+                 name="newGroupName"                                                                                                 data-flux-control\n
+                data-flux-group-target\n
+                                            >\n
+\n
+                    </div>\n
+\n
+                <div role="alert" aria-live="polite" aria-atomic="true" class="mt-3 text-sm font-medium text-red-500 dark:text-red-400 hidden" data-flux-error>\n
+    </div>\n
+</ui-field>\n
+                        \n
+                        <div x-data="{ open: false }" class="relative" @click.away="open = false" wire:ignore.self>\n
+                            <ui-label class="inline-flex items-center text-sm font-medium  [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white [&amp;:has([data-flux-label-trailing])]:flex" data-flux-label>\n
+    Depende de (Sub-grupo)\n
+\n
+    \n
+    \n
+    </ui-label>\n
+                            \n
+                            <div class="relative mt-1" @click="open = true">\n
+                                <input \n
+                                    type="text"\n
+                                    wire:model.live.debounce.300ms="groupSearch" \n
+                                    @focus="open = true"\n
+                                    placeholder="Buscar o crear..."\n
+                                    autocomplete="off"\n
+                                    class="w-full pl-3 pr-10 py-2 border border-stone-200 dark:border-stone-700 rounded-lg bg-white dark:bg-stone-800 text-sm focus:ring-2 focus:ring-sage-500/20 focus:border-sage-500 transition-all outline-none"\n
+                                />\n
+                                <div @click="open = !open" class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer text-stone-400 hover:text-stone-600">\n
+                                    <svg class="shrink-0 [:where(&amp;)]:size-6 w-4 h-4" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/>\n
+</svg>\n
+\n
+                                        </div>\n
+                            </div>\n
+                            \n
+                            <div x-show="open" \n
+                                 x-transition\n
+                                 class="absolute z-[9999] w-full mt-1 bg-white dark:bg-stone-800 border-2 border-sage-500/50 rounded-lg shadow-2xl max-h-60 overflow-y-auto">\n
+                                <div class="p-1">\n
+                                    <!--[if BLOCK]><![endif]-->                                        <button type="button" wire:click="$set('parentGroupId', ''); groupSearch = ''; open = false" class="w-full text-left p-2 hover:bg-stone-100 dark:hover:bg-stone-700 cursor-pointer rounded-md text-sm border-b border-stone-100 dark:border-stone-700 mb-1">\n
+                                            Ninguno (General)\n
+                                        </button>\n
+                                    <!--[if ENDBLOCK]><![endif]-->\n
+                                    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                                    \n
+                                    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->                                </div>\n
+                            </div>\n
+                        </div>\n
+                    </div>\n
+\n
+                    <div class="space-y-3 pt-2">\n
+                        <ui-field class="min-w-0 [&amp;:not(:has([data-flux-field])):has([data-flux-control][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-radio-group][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-checkbox-group][disabled])&gt;[data-flux-label]]:opacity-50 block *:data-flux-label:mb-3 [&amp;&gt;[data-flux-label]:has(+[data-flux-description])]:mb-2 [&amp;&gt;[data-flux-label]+[data-flux-description]]:mt-0 [&amp;&gt;[data-flux-label]+[data-flux-description]]:mb-3 [&amp;&gt;*:not([data-flux-label])+[data-flux-description]]:mt-3" data-flux-field>\n
+    <ui-label class="inline-flex items-center text-sm font-medium  [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white [&amp;:has([data-flux-label-trailing])]:flex" data-flux-label>\n
+    Categor├¡as\n
+\n
+    \n
+    \n
+    </ui-label>\n
+        \n
+                    <ui-description class="text-sm text-zinc-500 dark:text-white/60" data-flux-description>\n
+    Para todos los miembros.\n
+</ui-description>\n
+        \n
+        <ui-checkbox-group class="*:data-flux-field:mb-3 [&amp;&gt;[data-flux-field]:has(&gt;[data-flux-description])]:mb-4 [&amp;&gt;[data-flux-field]:last-child]:mb-0!" wire:model.self="categoryIds" label="Categor├¡as" description="Para todos los miembros." data-flux-checkbox-group>\n
+        <!--[if BLOCK]><![endif]-->                                <ui-field class="min-w-0 [&amp;:not(:has([data-flux-field])):has([data-flux-control][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-radio-group][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-checkbox-group][disabled])&gt;[data-flux-label]]:opacity-50 grid gap-x-3 gap-y-1.5 has-[[data-flux-label]~[data-flux-control]]:grid-cols-[1fr_auto] has-[[data-flux-control]~[data-flux-label]]:grid-cols-[auto_1fr] [&amp;&gt;[data-flux-control]~[data-flux-description]]:row-start-2 [&amp;&gt;[data-flux-control]~[data-flux-description]]:col-start-2 [&amp;&gt;[data-flux-control]~[data-flux-error]]:col-span-2 [&amp;&gt;[data-flux-control]~[data-flux-error]]:mt-1 [&amp;&gt;[data-flux-label]~[data-flux-control]]:row-start-1 [&amp;&gt;[data-flux-label]~[data-flux-control]]:col-start-2" data-flux-field>\n
+    <ui-checkbox class="flex size-[1.125rem] rounded-[.3rem] mt-px outline-offset-2" label="VIP" value="1"  data-flux-control data-flux-checkbox>\n
+        <div class="shrink-0 size-[1.125rem] rounded-[.3rem] flex justify-center items-center text-sm text-zinc-700 dark:text-zinc-800 shadow-xs [ui-checkbox[disabled]_&amp;]:opacity-75 [ui-checkbox[data-checked][disabled]_&amp;]:opacity-50 [ui-checkbox[disabled]_&amp;]:shadow-none [ui-checkbox[data-checked]_&amp;]:shadow-none [ui-checkbox[data-indeterminate]_&amp;]:shadow-none [ui-checkbox[data-checked]:not([data-indeterminate])_&amp;&gt;svg:first-child]:block [ui-checkbox[data-indeterminate]_&amp;&gt;svg:last-child]:block border border-zinc-300 dark:border-white/10 [ui-checkbox[disabled]_&amp;]:border-zinc-200 dark:[ui-checkbox[disabled]_&amp;]:border-white/5 [ui-checkbox[data-checked]_&amp;]:border-transparent [ui-checkbox[data-indeterminate]_&amp;]:border-transparent [ui-checkbox[disabled][data-checked]_&amp;]:border-transparent [ui-checkbox[disabled][data-indeterminate]_&amp;]:border-transparent [print-color-adjust:exact] bg-white dark:bg-white/10 [ui-checkbox[data-checked]_&amp;]:bg-[var(--color-accent)] hover:[ui-checkbox[data-checked]_&amp;]:bg-(--color-accent) focus:[ui-checkbox[data-checked]_&amp;]:bg-(--color-accent) [ui-checkbox[data-indeterminate]_&amp;]:bg-[var(--color-accent)] hover:[ui-checkbox[data-indeterminate]_&amp;]:bg-(--color-accent) focus:[ui-checkbox[data-indeterminate]_&amp;]:bg-(--color-accent)" data-flux-checkbox-indicator>\n
+    <svg class="shrink-0 [:where(&amp;)]:size-4 hidden text-[var(--color-accent-foreground)]" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd"/>\n
+</svg>\n
+\n
+            <svg class="shrink-0 [:where(&amp;)]:size-4 hidden text-[var(--color-accent-foreground)]" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path d="M3.75 7.25a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Z"/>\n
+</svg>\n
+\n
+        </div>\n
+    </ui-checkbox>\n
+\n
+                    <ui-label class="inline-flex items-center text-sm font-medium  [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white [&amp;:has([data-flux-label-trailing])]:flex" data-flux-label>\n
+    VIP\n
+\n
+    \n
+    \n
+    </ui-label>\n
+        \n
+        \n
+        <div role="alert" aria-live="polite" aria-atomic="true" class="mt-3 text-sm font-medium text-red-500 dark:text-red-400 hidden" data-flux-error>\n
+    </div>\n
+</ui-field>\n
+\n
+                            <!--[if ENDBLOCK]><![endif]-->\n
+    </ui-checkbox-group>\n
+\n
+                <div role="alert" aria-live="polite" aria-atomic="true" class="mt-3 text-sm font-medium text-red-500 dark:text-red-400 hidden" data-flux-error>\n
+    </div>\n
+</ui-field>\n
+                        <div class="w-full relative block group/input" data-flux-input>\n
+            \n
+            <input\n
+                type="text"\n
+                \n
+                class="w-full border rounded-lg block disabled:shadow-none dark:shadow-none appearance-none text-sm py-1.5 h-8 leading-[1.125rem] ps-3 pe-3 bg-white dark:bg-white/10 dark:disabled:bg-white/[7%] text-zinc-700 disabled:text-zinc-500 placeholder-zinc-400 disabled:placeholder-zinc-400/70 dark:text-zinc-300 dark:disabled:text-zinc-400 dark:placeholder-zinc-400 dark:disabled:placeholder-zinc-500 shadow-xs border-zinc-200 border-b-zinc-300/80 disabled:border-b-zinc-200 dark:border-white/10 dark:disabled:border-white/5 data-invalid:shadow-none data-invalid:border-red-500 dark:data-invalid:border-red-500 disabled:data-invalid:border-red-500 dark:disabled:data-invalid:border-red-500" wire:model="newCategoryName" placeholder="A├▒adir nueva categor├¡a..."\n
+                 name="newCategoryName"                                                                                                 data-flux-control\n
+                data-flux-group-target\n
+                                            >\n
+\n
+                    </div>\n
+                    </div>\n
+                </div>\n
+            </div>\n
+            \n
+            <div class="flex gap-2">\n
+                <div class="flex-1" data-flux-spacer></div>\n
+                <ui-close data-flux-modal-close >\n
+    <button type="button" class="relative items-center font-medium justify-center gap-2 whitespace-nowrap disabled:opacity-75 dark:disabled:opacity-75 disabled:cursor-default disabled:pointer-events-none justify-center h-10 text-sm rounded-lg ps-4 pe-4 inline-flex  bg-transparent hover:bg-zinc-800/5 dark:hover:bg-white/15 text-zinc-800 dark:text-white" data-flux-button="data-flux-button">\n
+        Cancelar\n
+    </button>\n
+</ui-close>\n
+                <button type="submit" class="relative items-center font-medium justify-center gap-2 whitespace-nowrap disabled:opacity-75 dark:disabled:opacity-75 disabled:cursor-default disabled:pointer-events-none justify-center h-10 text-sm rounded-lg ps-4 pe-4 inline-flex  bg-[var(--color-accent)] hover:bg-[color-mix(in_oklab,_var(--color-accent),_transparent_10%)] text-[var(--color-accent-foreground)] border border-black/10 dark:border-0 shadow-[inset_0px_1px_--theme(--color-white/.2)] [[data-flux-button-group]_&amp;]:border-e-0 [:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-e-[1px] dark:[:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-e-0 dark:[:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-s-[1px] [:is([data-flux-button-group]&gt;&amp;:not(:first-child),_[data-flux-button-group]_:not(:first-child)&gt;&amp;)]:border-s-[color-mix(in_srgb,var(--color-accent-foreground),transparent_85%)] *:transition-opacity [&amp;[disabled]&gt;:not([data-flux-loading-indicator])]:opacity-0 [&amp;[disabled]&gt;[data-flux-loading-indicator]]:opacity-100 [&amp;[disabled]]:pointer-events-none  bg-sage-600 hover:bg-sage-700 border-0" data-flux-button="data-flux-button" data-flux-group-target="data-flux-group-target">\n
+        <div class="absolute inset-0 flex items-center justify-center opacity-0" data-flux-loading-indicator>\n
+                <svg class="shrink-0 [:where(&amp;)]:size-4 animate-spin" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true" data-slot="icon">\n
+    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>\n
+    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>\n
+</svg>\n
+                    </div>\n
+        \n
+        \n
+                    \n
+            \n
+            <span>Guardar Todo el Grupo</span>\n
+    </button>\n
+            </div>\n
+        </form>\n
+\n
+                    <div class="absolute top-0 end-0 mt-4 me-4">\n
+                <ui-close data-flux-modal-close >\n
+    <button type="button" class="relative items-center font-medium justify-center gap-2 whitespace-nowrap disabled:opacity-75 dark:disabled:opacity-75 disabled:cursor-default disabled:pointer-events-none justify-center h-8 text-sm rounded-md w-8 inline-flex  bg-transparent hover:bg-zinc-800/5 dark:hover:bg-white/15 text-zinc-800 dark:text-white      text-zinc-400! hover:text-zinc-800! dark:text-zinc-500! dark:hover:text-white!" data-flux-button="data-flux-button" aria-label="Close modal">\n
+        <svg class="shrink-0 [:where(&amp;)]:size-5" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"/>\n
+</svg>\n
+    </button>\n
+</ui-close>\n
+            </div>\n
+            </dialog>\n
+</ui-modal>\n
+\n
+    \n
+    <ui-modal  data-flux-modal>\n
+    \n
+    <dialog\n
+        wire:ignore.self \n
+        class="p-6 [:where(&amp;)]:max-w-xl [:where(&amp;)]:min-w-xs shadow-lg rounded-xl bg-white dark:bg-zinc-800 ring ring-black/5 dark:ring-zinc-700 shadow-lg rounded-xl min-w-[22rem]"\n
+         data-modal="confirm-delete"                         x-data="fluxModal('confirm-delete', 'elWyQ5fLJeDRirkB3Z3u')"\n
+                x-on:modal-show.document="handleShow($event)"\n
+        x-on:modal-close.document="handleClose($event)"\n
+    >\n
+        <div class="space-y-6">\n
+            <div>\n
+                <div class="font-medium [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white text-base [&amp;:has(+[data-flux-subheading])]:mb-2 [[data-flux-subheading]+&amp;]:mt-2" data-flux-heading>┬┐Eliminar invitados?</div>\n
+                <div class="text-sm [:where(&amp;)]:text-zinc-500 [:where(&amp;)]:dark:text-white/70" data-flux-subheading>\n
+    Esta acci├│n no se puede deshacer. Se eliminar├ín los 0 invitados seleccionados.\n
+</div>\n
+            </div>\n
+\n
+            <div class="flex gap-2">\n
+                <ui-close data-flux-modal-close >\n
+    <button type="button" class="relative items-center font-medium justify-center gap-2 whitespace-nowrap disabled:opacity-75 dark:disabled:opacity-75 disabled:cursor-default disabled:pointer-events-none justify-center h-10 text-sm rounded-lg ps-4 pe-4 inline-flex  bg-transparent hover:bg-zinc-800/5 dark:hover:bg-white/15 text-zinc-800 dark:text-white" data-flux-button="data-flux-button">\n
+        Cancelar\n
+    </button>\n
+</ui-close>\n
+                <button type="button" class="relative items-center font-medium justify-center gap-2 whitespace-nowrap disabled:opacity-75 dark:disabled:opacity-75 disabled:cursor-default disabled:pointer-events-none justify-center h-10 text-sm rounded-lg ps-4 pe-4 inline-flex  bg-red-500 hover:bg-red-600 dark:bg-red-600 dark:hover:bg-red-500 text-white  shadow-[inset_0px_1px_var(--color-red-500),inset_0px_2px_--theme(--color-white/.15)] dark:shadow-none [[data-flux-button-group]_&amp;]:border-e [:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-e-0 [[data-flux-button-group]_&amp;]:border-red-600 dark:[[data-flux-button-group]_&amp;]:border-red-900/25 *:transition-opacity [&amp;[data-loading]&gt;:not([data-flux-loading-indicator])]:opacity-0 [&amp;[data-flux-loading]&gt;:not([data-flux-loading-indicator])]:opacity-0 [&amp;[data-loading]&gt;[data-flux-loading-indicator]]:opacity-100 [&amp;[data-flux-loading]&gt;[data-flux-loading-indicator]]:opacity-100 data-loading:pointer-events-none data-flux-loading:pointer-events-none  flex-1" data-flux-button="data-flux-button" data-flux-group-target="data-flux-group-target" wire:target="deleteSelected" wire:loading.attr="data-flux-loading" wire:click="deleteSelected">\n
+        <div class="absolute inset-0 flex items-center justify-center opacity-0" data-flux-loading-indicator>\n
+                <svg class="shrink-0 [:where(&amp;)]:size-4 animate-spin" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true" data-slot="icon">\n
+    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>\n
+    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>\n
+</svg>\n
+                    </div>\n
+        \n
+        \n
+                    \n
+            \n
+            <span>Confirmar Eliminaci├│n</span>\n
+    </button>\n
+            </div>\n
+        </div>\n
+\n
+                    <div class="absolute top-0 end-0 mt-4 me-4">\n
+                <ui-close data-flux-modal-close >\n
+    <button type="button" class="relative items-center font-medium justify-center gap-2 whitespace-nowrap disabled:opacity-75 dark:disabled:opacity-75 disabled:cursor-default disabled:pointer-events-none justify-center h-8 text-sm rounded-md w-8 inline-flex  bg-transparent hover:bg-zinc-800/5 dark:hover:bg-white/15 text-zinc-800 dark:text-white      text-zinc-400! hover:text-zinc-800! dark:text-zinc-500! dark:hover:text-white!" data-flux-button="data-flux-button" aria-label="Close modal">\n
+        <svg class="shrink-0 [:where(&amp;)]:size-5" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"/>\n
+</svg>\n
+    </button>\n
+</ui-close>\n
+            </div>\n
+            </dialog>\n
+</ui-modal>\n
+\n
+    \n
+    <ui-modal  data-flux-modal>\n
+    \n
+    <dialog\n
+        wire:ignore.self \n
+        class="p-6 [:where(&amp;)]:max-w-xl [:where(&amp;)]:min-w-xs shadow-lg rounded-xl bg-white dark:bg-zinc-800 ring ring-black/5 dark:ring-zinc-700 shadow-lg rounded-xl min-w-[22rem]"\n
+         data-modal="edit-rsvp"                         x-data="fluxModal('edit-rsvp', 'elWyQ5fLJeDRirkB3Z3u')"\n
+                x-on:modal-show.document="handleShow($event)"\n
+        x-on:modal-close.document="handleClose($event)"\n
+    >\n
+        <form wire:submit="saveRsvp" class="space-y-6">\n
+            <div>\n
+                <div class="font-medium [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white text-base [&amp;:has(+[data-flux-subheading])]:mb-2 [[data-flux-subheading]+&amp;]:mt-2" data-flux-heading>Editar RSVP</div>\n
+                <div class="text-sm [:where(&amp;)]:text-zinc-500 [:where(&amp;)]:dark:text-white/70" data-flux-subheading>\n
+    \n
+</div>\n
+            </div>\n
+            \n
+            <ui-field class="min-w-0 [&amp;:not(:has([data-flux-field])):has([data-flux-control][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-radio-group][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-checkbox-group][disabled])&gt;[data-flux-label]]:opacity-50 block *:data-flux-label:mb-3 [&amp;&gt;[data-flux-label]:has(+[data-flux-description])]:mb-2 [&amp;&gt;[data-flux-label]+[data-flux-description]]:mt-0 [&amp;&gt;[data-flux-label]+[data-flux-description]]:mb-3 [&amp;&gt;*:not([data-flux-label])+[data-flux-description]]:mt-3" data-flux-field>\n
+    <ui-label class="inline-flex items-center text-sm font-medium  [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white [&amp;:has([data-flux-label-trailing])]:flex" data-flux-label>\n
+    Estado de Asistencia\n
+\n
+    \n
+    \n
+    </ui-label>\n
+        \n
+        \n
+        <ui-radio-group class="*:data-flux-field:mb-3 [&amp;&gt;[data-flux-field]:has(&gt;[data-flux-description])]:mb-4 [&amp;&gt;[data-flux-field]:last-child]:mb-0!" wire:model="editRsvpStatus" label="Estado de Asistencia"  data-flux-radio-group>\n
+        <ui-field class="min-w-0 [&amp;:not(:has([data-flux-field])):has([data-flux-control][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-radio-group][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-checkbox-group][disabled])&gt;[data-flux-label]]:opacity-50 grid gap-x-3 gap-y-1.5 has-[[data-flux-label]~[data-flux-control]]:grid-cols-[1fr_auto] has-[[data-flux-control]~[data-flux-label]]:grid-cols-[auto_1fr] [&amp;&gt;[data-flux-control]~[data-flux-description]]:row-start-2 [&amp;&gt;[data-flux-control]~[data-flux-description]]:col-start-2 [&amp;&gt;[data-flux-control]~[data-flux-error]]:col-span-2 [&amp;&gt;[data-flux-control]~[data-flux-error]]:mt-1 [&amp;&gt;[data-flux-label]~[data-flux-control]]:row-start-1 [&amp;&gt;[data-flux-label]~[data-flux-control]]:col-start-2" data-flux-field>\n
+    <ui-radio class="flex size-[1.125rem] rounded-full mt-px outline-offset-2" value="pending" label="Pendiente" data-flux-control data-flux-radio tabindex="-1">\n
+        <div class="shrink-0 size-[1.125rem] rounded-full text-sm text-zinc-700 dark:text-zinc-800 shadow-xs [ui-radio[disabled]_&amp;]:opacity-75 [ui-radio[data-checked][disabled]_&amp;]:opacity-50 [ui-radio[disabled]_&amp;]:shadow-none [ui-radio[data-checked]_&amp;]:shadow-none flex justify-center items-center [ui-radio[data-checked]_&amp;&gt;div]:block border border-zinc-300 dark:border-white/10 [ui-radio[disabled]_&amp;]:border-zinc-200 dark:[ui-radio[disabled]_&amp;]:border-white/5 [ui-radio[data-checked]_&amp;]:border-transparent data-indeterminate:border-transparent [ui-radio[data-checked]_&amp;]:[ui-radio[disabled]_&amp;]:border-transparent data-indeterminate:border-transparent [print-color-adjust:exact] bg-white dark:bg-white/10 [ui-radio[data-checked]_&amp;]:bg-[var(--color-accent)] hover:[ui-radio[data-checked]_&amp;]:bg-(--color-accent) focus:[ui-radio[data-checked]_&amp;]:bg-(--color-accent)" data-flux-radio-indicator>\n
+    <div class="hidden size-2 rounded-full bg-[var(--color-accent-foreground)]"></div>\n
+</div>\n
+    </ui-radio>\n
+\n
+                    <ui-label class="inline-flex items-center text-sm font-medium  [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white [&amp;:has([data-flux-label-trailing])]:flex" data-flux-label>\n
+    Pendiente\n
+\n
+    \n
+    \n
+    </ui-label>\n
+        \n
+        \n
+        <div role="alert" aria-live="polite" aria-atomic="true" class="mt-3 text-sm font-medium text-red-500 dark:text-red-400 hidden" data-flux-error>\n
+    </div>\n
+</ui-field>\n
+\n
+                <ui-field class="min-w-0 [&amp;:not(:has([data-flux-field])):has([data-flux-control][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-radio-group][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-checkbox-group][disabled])&gt;[data-flux-label]]:opacity-50 grid gap-x-3 gap-y-1.5 has-[[data-flux-label]~[data-flux-control]]:grid-cols-[1fr_auto] has-[[data-flux-control]~[data-flux-label]]:grid-cols-[auto_1fr] [&amp;&gt;[data-flux-control]~[data-flux-description]]:row-start-2 [&amp;&gt;[data-flux-control]~[data-flux-description]]:col-start-2 [&amp;&gt;[data-flux-control]~[data-flux-error]]:col-span-2 [&amp;&gt;[data-flux-control]~[data-flux-error]]:mt-1 [&amp;&gt;[data-flux-label]~[data-flux-control]]:row-start-1 [&amp;&gt;[data-flux-label]~[data-flux-control]]:col-start-2" data-flux-field>\n
+    <ui-radio class="flex size-[1.125rem] rounded-full mt-px outline-offset-2" value="confirmed" label="Confirmado" data-flux-control data-flux-radio tabindex="-1">\n
+        <div class="shrink-0 size-[1.125rem] rounded-full text-sm text-zinc-700 dark:text-zinc-800 shadow-xs [ui-radio[disabled]_&amp;]:opacity-75 [ui-radio[data-checked][disabled]_&amp;]:opacity-50 [ui-radio[disabled]_&amp;]:shadow-none [ui-radio[data-checked]_&amp;]:shadow-none flex justify-center items-center [ui-radio[data-checked]_&amp;&gt;div]:block border border-zinc-300 dark:border-white/10 [ui-radio[disabled]_&amp;]:border-zinc-200 dark:[ui-radio[disabled]_&amp;]:border-white/5 [ui-radio[data-checked]_&amp;]:border-transparent data-indeterminate:border-transparent [ui-radio[data-checked]_&amp;]:[ui-radio[disabled]_&amp;]:border-transparent data-indeterminate:border-transparent [print-color-adjust:exact] bg-white dark:bg-white/10 [ui-radio[data-checked]_&amp;]:bg-[var(--color-accent)] hover:[ui-radio[data-checked]_&amp;]:bg-(--color-accent) focus:[ui-radio[data-checked]_&amp;]:bg-(--color-accent)" data-flux-radio-indicator>\n
+    <div class="hidden size-2 rounded-full bg-[var(--color-accent-foreground)]"></div>\n
+</div>\n
+    </ui-radio>\n
+\n
+                    <ui-label class="inline-flex items-center text-sm font-medium  [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white [&amp;:has([data-flux-label-trailing])]:flex" data-flux-label>\n
+    Confirmado\n
+\n
+    \n
+    \n
+    </ui-label>\n
+        \n
+        \n
+        <div role="alert" aria-live="polite" aria-atomic="true" class="mt-3 text-sm font-medium text-red-500 dark:text-red-400 hidden" data-flux-error>\n
+    </div>\n
+</ui-field>\n
+\n
+                <ui-field class="min-w-0 [&amp;:not(:has([data-flux-field])):has([data-flux-control][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-radio-group][disabled])&gt;[data-flux-label]]:opacity-50 [&amp;:has(&gt;[data-flux-checkbox-group][disabled])&gt;[data-flux-label]]:opacity-50 grid gap-x-3 gap-y-1.5 has-[[data-flux-label]~[data-flux-control]]:grid-cols-[1fr_auto] has-[[data-flux-control]~[data-flux-label]]:grid-cols-[auto_1fr] [&amp;&gt;[data-flux-control]~[data-flux-description]]:row-start-2 [&amp;&gt;[data-flux-control]~[data-flux-description]]:col-start-2 [&amp;&gt;[data-flux-control]~[data-flux-error]]:col-span-2 [&amp;&gt;[data-flux-control]~[data-flux-error]]:mt-1 [&amp;&gt;[data-flux-label]~[data-flux-control]]:row-start-1 [&amp;&gt;[data-flux-label]~[data-flux-control]]:col-start-2" data-flux-field>\n
+    <ui-radio class="flex size-[1.125rem] rounded-full mt-px outline-offset-2" value="declined" label="Declinado" data-flux-control data-flux-radio tabindex="-1">\n
+        <div class="shrink-0 size-[1.125rem] rounded-full text-sm text-zinc-700 dark:text-zinc-800 shadow-xs [ui-radio[disabled]_&amp;]:opacity-75 [ui-radio[data-checked][disabled]_&amp;]:opacity-50 [ui-radio[disabled]_&amp;]:shadow-none [ui-radio[data-checked]_&amp;]:shadow-none flex justify-center items-center [ui-radio[data-checked]_&amp;&gt;div]:block border border-zinc-300 dark:border-white/10 [ui-radio[disabled]_&amp;]:border-zinc-200 dark:[ui-radio[disabled]_&amp;]:border-white/5 [ui-radio[data-checked]_&amp;]:border-transparent data-indeterminate:border-transparent [ui-radio[data-checked]_&amp;]:[ui-radio[disabled]_&amp;]:border-transparent data-indeterminate:border-transparent [print-color-adjust:exact] bg-white dark:bg-white/10 [ui-radio[data-checked]_&amp;]:bg-[var(--color-accent)] hover:[ui-radio[data-checked]_&amp;]:bg-(--color-accent) focus:[ui-radio[data-checked]_&amp;]:bg-(--color-accent)" data-flux-radio-indicator>\n
+    <div class="hidden size-2 rounded-full bg-[var(--color-accent-foreground)]"></div>\n
+</div>\n
+    </ui-radio>\n
+\n
+                    <ui-label class="inline-flex items-center text-sm font-medium  [:where(&amp;)]:text-zinc-800 [:where(&amp;)]:dark:text-white [&amp;:has([data-flux-label-trailing])]:flex" data-flux-label>\n
+    Declinado\n
+\n
+    \n
+    \n
+    </ui-label>\n
+        \n
+        \n
+        <div role="alert" aria-live="polite" aria-atomic="true" class="mt-3 text-sm font-medium text-red-500 dark:text-red-400 hidden" data-flux-error>\n
+    </div>\n
+</ui-field>\n
+    </ui-radio-group>\n
+\n
+                <div role="alert" aria-live="polite" aria-atomic="true" class="mt-3 text-sm font-medium text-red-500 dark:text-red-400 hidden" data-flux-error>\n
+    </div>\n
+</ui-field>\n
+            \n
+            <div class="flex gap-2">\n
+                <div class="flex-1" data-flux-spacer></div>\n
+                <ui-close data-flux-modal-close >\n
+    <button type="button" class="relative items-center font-medium justify-center gap-2 whitespace-nowrap disabled:opacity-75 dark:disabled:opacity-75 disabled:cursor-default disabled:pointer-events-none justify-center h-10 text-sm rounded-lg ps-4 pe-4 inline-flex  bg-transparent hover:bg-zinc-800/5 dark:hover:bg-white/15 text-zinc-800 dark:text-white" data-flux-button="data-flux-button">\n
+        Cancelar\n
+    </button>\n
+</ui-close>\n
+                <button type="submit" class="relative items-center font-medium justify-center gap-2 whitespace-nowrap disabled:opacity-75 dark:disabled:opacity-75 disabled:cursor-default disabled:pointer-events-none justify-center h-10 text-sm rounded-lg ps-4 pe-4 inline-flex  bg-[var(--color-accent)] hover:bg-[color-mix(in_oklab,_var(--color-accent),_transparent_10%)] text-[var(--color-accent-foreground)] border border-black/10 dark:border-0 shadow-[inset_0px_1px_--theme(--color-white/.2)] [[data-flux-button-group]_&amp;]:border-e-0 [:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-e-[1px] dark:[:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-e-0 dark:[:is([data-flux-button-group]&gt;&amp;:last-child,_[data-flux-button-group]_:last-child&gt;&amp;)]:border-s-[1px] [:is([data-flux-button-group]&gt;&amp;:not(:first-child),_[data-flux-button-group]_:not(:first-child)&gt;&amp;)]:border-s-[color-mix(in_srgb,var(--color-accent-foreground),transparent_85%)] *:transition-opacity [&amp;[disabled]&gt;:not([data-flux-loading-indicator])]:opacity-0 [&amp;[disabled]&gt;[data-flux-loading-indicator]]:opacity-100 [&amp;[disabled]]:pointer-events-none  bg-sage-600 hover:bg-sage-700 border-0" data-flux-button="data-flux-button" data-flux-group-target="data-flux-group-target">\n
+        <div class="absolute inset-0 flex items-center justify-center opacity-0" data-flux-loading-indicator>\n
+                <svg class="shrink-0 [:where(&amp;)]:size-4 animate-spin" data-flux-icon xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true" data-slot="icon">\n
+    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>\n
+    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>\n
+</svg>\n
+                    </div>\n
+        \n
+        \n
+                    \n
+            \n
+            <span>Guardar Cambios</span>\n
+    </button>\n
+            </div>\n
+        </form>\n
+\n
+                    <div class="absolute top-0 end-0 mt-4 me-4">\n
+                <ui-close data-flux-modal-close >\n
+    <button type="button" class="relative items-center font-medium justify-center gap-2 whitespace-nowrap disabled:opacity-75 dark:disabled:opacity-75 disabled:cursor-default disabled:pointer-events-none justify-center h-8 text-sm rounded-md w-8 inline-flex  bg-transparent hover:bg-zinc-800/5 dark:hover:bg-white/15 text-zinc-800 dark:text-white      text-zinc-400! hover:text-zinc-800! dark:text-zinc-500! dark:hover:text-white!" data-flux-button="data-flux-button" aria-label="Close modal">\n
+        <svg class="shrink-0 [:where(&amp;)]:size-5" data-flux-icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">\n
+  <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z"/>\n
+</svg>\n
+    </button>\n
+</ui-close>\n
+            </div>\n
+            </dialog>\n
+</ui-modal>\n
+</div>
+
+  To contain: Familia Silva &gt; Amigos Novio
+
+  at vendor\livewire\livewire\src\Features\SupportTesting\MakesAssertions.php:14
+     10Ôûò {
+     11Ôûò     function assertSee($values, $escape = true, $stripInitialData = true)
+     12Ôûò     {
+     13Ôûò         foreach (Arr::wrap($values) as $value) {
+  Ô×£  14Ôûò             PHPUnit::assertStringContainsString(
+     15Ôûò                 $escape ? e($value): $value,
+     16Ôûò                 $this->html($stripInitialData)
+     17Ôûò             );
+     18Ôûò         }
+
+  1   vendor\livewire\livewire\src\Features\SupportTesting\MakesAssertions.php:14
+  2   tests\Feature\GuestsListTest.php:28
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILED  Tests\FeatureÔÇª  ErrorException   
+  Trying to access array offset on null
+
+  at tests\Feature\GuestsListTest.php:60
+     56Ôûò 
+     57Ôûò     // 3. Assert
+     58Ôûò     $guest->refresh();
+     59Ôûò     expect($guest->rsvp_status)->toBe('confirmed');
+  Ô×£  60Ôûò     expect($guest->rsvp_details['menu'])->toBe('Vegetariano');
+     61Ôûò     expect($guest->rsvp_details['allergies'])->toBe('Mani');
+     62Ôûò });
+     63Ôûò 
+     64Ôûò test('can create guest with multiple categories', function () {
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILEÔÇª  PublicPropertyNotFoundException   
+  Unable to set component data. Public property [$newGuestName] not found on component: [guests.list]
+
+  at vendor\livewire\livewire\src\Mechanisms\HandleComponents\HandleComponents.php:498
+    494Ôûò         $finish = trigger('update', $component, $path, $value);
+    495Ôûò 
+    496Ôûò         // Ensure that it's a public property, not on the base class first...
+    497Ôûò         if (! in_array($property, array_keys(Utils::getPublicPropertiesDefinedOnSubclass($component)))) {
+  Ô×£ 498Ôûò             throw new PublicPropertyNotFoundException($property, $component->getName());
+    499Ôûò         }
+    500Ôûò 
+    501Ôûò         // If this isn't a "deep" set, set it directly, otherwise we have to
+    502Ôûò         // recursively get up and set down the value through the synths...
+
+  1   vendor\livewire\livewire\src\Mechanisms\HandleComponents\HandleComponents.php:498
+  2   vendor\livewire\livewire\src\Mechanisms\HandleComponents\HandleComponents.php:475
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILEÔÇª  PublicPropertyNotFoundException   
+  Unable to set component data. Public property [$newCategory] not found on component: [inspiration.gallery]
+
+  at vendor\livewire\livewire\src\Mechanisms\HandleComponents\HandleComponents.php:498
+    494Ôûò         $finish = trigger('update', $component, $path, $value);
+    495Ôûò 
+    496Ôûò         // Ensure that it's a public property, not on the base class first...
+    497Ôûò         if (! in_array($property, array_keys(Utils::getPublicPropertiesDefinedOnSubclass($component)))) {
+  Ô×£ 498Ôûò             throw new PublicPropertyNotFoundException($property, $component->getName());
+    499Ôûò         }
+    500Ôûò 
+    501Ôûò         // If this isn't a "deep" set, set it directly, otherwise we have to
+    502Ôûò         // recursively get up and set down the value through the synths...
+
+  1   vendor\livewire\livewire\src\Mechanisms\HandleComponents\HandleComponents.php:498
+  2   vendor\livewire\livewire\src\Mechanisms\HandleComponents\HandleComponents.php:475
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILEÔÇª  PublicPropertyNotFoundException   
+  Unable to set component data. Public property [$newCategory] not found on component: [inspiration.gallery]
+
+  at vendor\livewire\livewire\src\Mechanisms\HandleComponents\HandleComponents.php:498
+    494Ôûò         $finish = trigger('update', $component, $path, $value);
+    495Ôûò 
+    496Ôûò         // Ensure that it's a public property, not on the base class first...
+    497Ôûò         if (! in_array($property, array_keys(Utils::getPublicPropertiesDefinedOnSubclass($component)))) {
+  Ô×£ 498Ôûò             throw new PublicPropertyNotFoundException($property, $component->getName());
+    499Ôûò         }
+    500Ôûò 
+    501Ôûò         // If this isn't a "deep" set, set it directly, otherwise we have to
+    502Ôûò         // recursively get up and set down the value through the synths...
+
+  1   vendor\livewire\livewire\src\Mechanisms\HandleComponents\HandleComponents.php:498
+  2   vendor\livewire\livewire\src\Mechanisms\HandleComponents\HandleComponents.php:475
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILED  Tests\Feature\Settings\ProfileÔÇª   
+  Component has errors: "groupName" => ["El campo group name es obligatorio."]
+Failed asserting that false is true.
+
+  at vendor\livewire\livewire\src\Features\SupportValidation\TestsValidation.php:114
+    110Ôûò             $message .= collect($errors->toArray())->map(function ($messages, $key) {
+    111Ôûò                 return '"'.$key.'" => ["'.implode('", "', $messages).'"]';
+    112Ôûò             })->implode(', ');
+    113Ôûò 
+  Ô×£ 114Ôûò             PHPUnit::assertTrue($errors->isEmpty(), $message);
+    115Ôûò 
+    116Ôûò             return $this;
+    117Ôûò         }
+    118Ôûò
+
+  1   vendor\livewire\livewire\src\Features\SupportValidation\TestsValidation.php:114
+  2   tests\Feature\Settings\ProfileUpdateTest.php:22
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILED  Tests\Feature\Settings\ProfileÔÇª   
+  Component has errors: "groupName" => ["El campo group name es obligatorio."]
+Failed asserting that false is true.
+
+  at vendor\livewire\livewire\src\Features\SupportValidation\TestsValidation.php:114
+    110Ôûò             $message .= collect($errors->toArray())->map(function ($messages, $key) {
+    111Ôûò                 return '"'.$key.'" => ["'.implode('", "', $messages).'"]';
+    112Ôûò             })->implode(', ');
+    113Ôûò 
+  Ô×£ 114Ôûò             PHPUnit::assertTrue($errors->isEmpty(), $message);
+    115Ôûò 
+    116Ôûò             return $this;
+    117Ôûò         }
+    118Ôûò
+
+  1   vendor\livewire\livewire\src\Features\SupportValidation\TestsValidation.php:114
+  2   tests\Feature\Settings\ProfileUpdateTest.php:41
+
+
+  Tests:    15 failed, 9 skipped, 39 passed (109 assertions)
+  Duration: 8.22s
+

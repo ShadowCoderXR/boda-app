@@ -1,4 +1,4 @@
-<x-layouts::auth :title="__('Registro')">
+<x-layouts.auth :title="__('Registro')">
     <div class="flex flex-col gap-6">
         <x-auth-header :title="__('Crea tu cuenta')" :description="__('Ingresa tus datos para comenzar a organizar tu boda')" />
 
@@ -64,4 +64,4 @@
             <flux:link :href="route('login')" class="text-gold-600 hover:text-gold-700" wire:navigate>{{ __('Inicia sesión') }}</flux:link>
         </div>
     </div>
-</x-layouts::auth>
+</x-layouts.auth>

@@ -3,27 +3,30 @@
 use Livewire\Volt\Component;
 use Livewire\WithFileUploads;
 use App\Models\InspirationItem;
+use App\Models\Category;
+use App\Services\LinkMetadataService;
+use Illuminate\Support\Str;
 
 new class extends Component {
     use WithFileUploads;
 
-    public $selectedCategory = '';
-    public $categories = []; // Computed dynamically from DB
+    public $selectedCategoryId = '';
 
     public $newImage;
 
     // Modal Form State
     public $newType = 'image';
-    public $newCategory = '';
+    public $newCategoryId = '';
     public $newDescription = '';
     public $newLink = '';
     public $newColors = [];
     public $currentColor = '#A3B18A';
+    public $categorySearch = '';
 
     // Editing State
     public $editingItem = null;
     public $editType = 'image';
-    public $editCategory = '';
+    public $editCategoryId = '';
     public $editDescription = '';
     public $editLink = '';
     public $editColors = [];
@@ -31,22 +34,37 @@ new class extends Component {
 
     public function with()
     {
-        // Fetch all categories used so far for the filter nav
-        $this->categories = InspirationItem::select('category')
-            ->whereNotNull('category')
-            ->distinct()
-            ->orderBy('category')
-            ->pluck('category')
-            ->toArray();
+        // One-time data migration check for items with string categories but no category_id
+        $itemsToMigrate = InspirationItem::whereNull('category_id')->whereNotNull('category_name')->get();
+        if ($itemsToMigrate->isNotEmpty()) {
+            foreach ($itemsToMigrate as $item) {
+                $category = Category::firstOrCreate(
+                    ['name' => $item->category_name, 'type' => 'inspiration', 'user_id' => $item->user_id],
+                    ['color' => 'sage']
+                );
+                $item->update(['category_id' => $category->id]);
+            }
+        }
 
-        $query = InspirationItem::orderBy('created_at', 'desc');
+        $query = InspirationItem::with('category')->orderBy('created_at', 'desc');
 
-        if (!empty($this->selectedCategory)) {
-            $query->where('category', $this->selectedCategory);
+        if (!empty($this->selectedCategoryId)) {
+            $query->where('category_id', $this->selectedCategoryId);
         }
 
         return [
-            'items' => $query->get()
+            'items' => $query->get(),
+            'categories' => Category::where('type', 'inspiration')
+                ->whereHas('inspirationItems')
+                ->orWhere('is_default', true)
+                ->where('type', 'inspiration')
+                ->orderBy('name')
+                ->get(),
+            'allInspirationCategories' => Category::where('type', 'inspiration')
+                ->where('user_id', auth()->id())
+                ->where('name', 'like', '%'.$this->categorySearch.'%')
+                ->orderBy('name')
+                ->get(),
         ];
     }
 
@@ -82,7 +100,7 @@ new class extends Component {
     {
         $this->editingItem = $item;
         $this->editType = $item->type;
-        $this->editCategory = $item->category;
+        $this->editCategoryId = $item->category_id;
         $this->editDescription = $item->description;
         
         if ($item->type === 'color') {
@@ -98,7 +116,7 @@ new class extends Component {
     {
         $this->validate([
             'editType' => 'required|in:image,color,link',
-            'editCategory' => 'nullable|string|max:100',
+            'editCategoryId' => 'required|string|max:100',
             'editDescription' => 'nullable|string|max:500',
             'editLink' => 'required_if:editType,link|nullable|url',
             'editColors' => 'exclude_unless:editType,color|array|min:1',
@@ -111,8 +129,11 @@ new class extends Component {
             $content = json_encode($this->editColors);
         } elseif ($this->editType === 'link') {
             $content = $this->editLink;
+            if ($this->editingItem->content !== $this->editLink) {
+                $service = new LinkMetadataService();
+                $this->editingItem->metadata = $service->getMetadata($this->editLink);
+            }
         } elseif ($this->editType === 'image' && $this->editImage) {
-            // Delete old image if exists
             if ($this->editingItem->type === 'image') {
                 \Illuminate\Support\Facades\Storage::disk('public')->delete(str_replace('/storage/', '', $this->editingItem->content));
             }
@@ -120,14 +141,27 @@ new class extends Component {
             $content = '/storage/' . $path;
         }
 
+        // Handle Category creation if needed
+        $actualCategoryId = $this->editCategoryId;
+        if (!empty($actualCategoryId) && !Str::isUuid($actualCategoryId)) {
+            $newCat = Category::create([
+                'name' => $actualCategoryId,
+                'type' => 'inspiration',
+                'user_id' => auth()->id(),
+                'color' => 'sage'
+            ]);
+            $actualCategoryId = $newCat->id;
+        }
+
         $this->editingItem->update([
             'type' => $this->editType,
-            'category' => $this->editCategory ?: 'Sin Categoría',
+            'category_id' => $actualCategoryId,
             'content' => $content,
             'description' => $this->editDescription,
+            'metadata' => $this->editingItem->metadata,
         ]);
 
-        $this->reset(['editingItem', 'editType', 'editCategory', 'editDescription', 'editLink', 'editColors', 'editImage']);
+        $this->reset(['editingItem', 'editType', 'editCategoryId', 'editDescription', 'editLink', 'editColors', 'editImage']);
         $this->js("Flux.modal('edit-idea').close()");
     }
 
@@ -135,37 +169,50 @@ new class extends Component {
     {
         $this->validate([
             'newType' => 'required|in:image,color,link',
-            'newCategory' => 'nullable|string|max:100',
+            'newCategoryId' => 'required|string|max:100',
             'newDescription' => 'nullable|string|max:500',
-            // Conditional validations
             'newLink' => 'required_if:newType,link|nullable|url',
             'newColors' => 'exclude_unless:newType,color|array|min:1',
             'newImage' => 'required_if:newType,image|nullable|image|max:10240',
         ]);
 
         $content = '';
-        $effectiveCategory = $this->newCategory ?: 'Sin Categoría';
 
         if ($this->newType === 'color') {
             $content = json_encode($this->newColors);
         } elseif ($this->newType === 'link') {
             $content = $this->newLink;
+            $service = new LinkMetadataService();
+            $metadata = $service->getMetadata($this->newLink);
         } elseif ($this->newType === 'image' && $this->newImage) {
             $path = $this->newImage->store('inspiration', 'public');
             $content = '/storage/' . $path;
         }
 
+        // Handle Category creation if needed
+        $actualCategoryId = $this->newCategoryId;
+        
+        // If it's not a numeric ID and not a UUID, we treat it as a new category name
+        if (!empty($actualCategoryId) && !is_numeric($actualCategoryId) && !Str::isUuid($actualCategoryId)) {
+            $newCat = Category::create([
+                'name' => $actualCategoryId,
+                'type' => 'inspiration',
+                'user_id' => auth()->id(),
+                'color' => 'sage'
+            ]);
+            $actualCategoryId = $newCat->id;
+        }
+
         InspirationItem::create([
             'type' => $this->newType,
-            'category' => $effectiveCategory,
+            'category_id' => $actualCategoryId,
             'content' => $content,
             'description' => $this->newDescription,
+            'metadata' => $metadata ?? null,
             'user_id' => auth()->id(),
         ]);
 
-        // Reset form
-        $this->reset(['newType', 'newCategory', 'newDescription', 'newLink', 'newColors', 'newImage']);
-        
+        $this->reset(['newType', 'newCategoryId', 'newDescription', 'newLink', 'newColors', 'newImage']);
         $this->js("Flux.modal('new-idea').close()");
     }
 }
@@ -175,15 +222,15 @@ new class extends Component {
     {{-- Filtering & Actions --}}
     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
         <div class="flex flex-wrap gap-2">
-            <flux:button size="sm" wire:click="$set('selectedCategory', '')" 
-                variant="{{ $selectedCategory === '' ? 'primary' : 'ghost' }}"
-                class="{{ $selectedCategory === '' ? 'bg-stone-800 text-white hover:bg-stone-900 border-0' : 'text-stone-600' }}">Todos</flux:button>
+            <flux:button size="sm" wire:click="$set('selectedCategoryId', '')" 
+                variant="{{ $selectedCategoryId === '' ? 'primary' : 'ghost' }}"
+                class="{{ $selectedCategoryId === '' ? 'bg-stone-800 text-white hover:bg-stone-900 border-0' : 'text-stone-600' }}">Todos</flux:button>
             
             @foreach($categories as $cat)
-                <flux:button size="sm" wire:click="$set('selectedCategory', '{{ $cat }}')"
-                    variant="{{ $selectedCategory === $cat ? 'primary' : 'ghost' }}"
-                    class="{{ $selectedCategory === $cat ? 'bg-stone-800 text-white hover:bg-stone-900 border-0' : 'text-stone-600' }}">
-                    {{ $cat }}
+                <flux:button size="sm" wire:click="$set('selectedCategoryId', '{{ $cat->id }}')"
+                    variant="{{ $selectedCategoryId == $cat->id ? 'primary' : 'ghost' }}"
+                    class="{{ $selectedCategoryId == $cat->id ? 'bg-stone-800 text-white hover:bg-stone-900 border-0' : 'text-stone-600' }}">
+                    {{ $cat->name }}
                 </flux:button>
             @endforeach
         </div>
@@ -198,7 +245,6 @@ new class extends Component {
         @forelse($items as $item)
             <div class="break-inside-avoid relative group rounded-2xl overflow-hidden shadow-sm border border-stone-100 dark:border-stone-800 bg-white dark:bg-zinc-900">
                 
-                {{-- Content Type Rendering --}}
                 @if($item->type === 'image')
                     <img src="{{ $item->content }}" alt="{{ $item->description }}" class="w-full h-auto object-cover">
                 @elseif($item->type === 'color')
@@ -211,16 +257,35 @@ new class extends Component {
                         @endforeach
                     </div>
                 @elseif($item->type === 'link')
-                    <a href="{{ $item->content }}" target="_blank" class="block w-full aspect-[4/3] bg-stone-50 dark:bg-stone-800 hover:bg-stone-100 transition-colors flex flex-col items-center justify-center p-6 text-center">
-                        @if(Str::contains($item->content, ['youtube.com', 'youtu.be']))
-                            <flux:icon.play class="w-10 h-10 text-red-500 mb-2" />
-                        @elseif(Str::contains($item->content, 'pinterest.com'))
-                            <flux:icon.hashtag class="w-10 h-10 text-red-600 mb-2" />
+                    <a href="{{ $item->content }}" target="_blank" class="block w-full group/link relative overflow-hidden bg-stone-50 dark:bg-stone-800 transition-colors">
+                        @if($item->getThumbnail())
+                            <div class="aspect-[4/3] w-full overflow-hidden relative">
+                                <img src="{{ $item->getThumbnail() }}" alt="{{ $item->getLinkTitle() }}" class="w-full h-full object-cover group-hover/link:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black/10 group-hover/link:bg-transparent transition-colors"></div>
+                                <div class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-black/60 backdrop-blur-md text-[10px] text-white font-bold uppercase tracking-wider">
+                                    {{ $item->metadata['provider'] ?? 'Link' }}
+                                </div>
+                            </div>
+                            @if($item->getLinkTitle())
+                                <div class="p-3 bg-white dark:bg-zinc-900 border-t border-stone-100 dark:border-stone-800">
+                                    <h4 class="text-xs font-semibold text-stone-700 dark:text-stone-300 line-clamp-2 leading-snug">{{ $item->getLinkTitle() }}</h4>
+                                </div>
+                            @endif
                         @else
-                            <flux:icon.link class="w-10 h-10 text-stone-400 mb-2" />
+                            <div class="aspect-[4/3] flex flex-col items-center justify-center p-6 text-center hover:bg-stone-100 dark:hover:bg-stone-700 transition-colors">
+                                @if(Str::contains($item->content, ['youtube.com', 'youtu.be']))
+                                    <flux:icon.play class="w-10 h-10 text-red-500 mb-2" />
+                                @elseif(Str::contains($item->content, 'pinterest.com'))
+                                    <flux:icon.hashtag class="w-10 h-10 text-red-600 mb-2" />
+                                @elseif(Str::contains($item->content, 'tiktok.com'))
+                                    <flux:icon.video-camera class="w-10 h-10 text-zinc-900 dark:text-white mb-2" />
+                                @else
+                                    <flux:icon.link class="w-10 h-10 text-stone-400 mb-2" />
+                                @endif
+                                <span class="text-sm font-medium text-stone-600 dark:text-stone-300 break-all line-clamp-2 uppercase tracking-wide text-xs">{{ $item->metadata['provider'] ?? parse_url($item->content, PHP_URL_HOST) }}</span>
+                                <span class="text-xs text-stone-400 mt-1 truncate w-full">{{ $item->content }}</span>
+                            </div>
                         @endif
-                        <span class="text-sm font-medium text-stone-600 dark:text-stone-300 break-all line-clamp-2 uppercase tracking-wide text-xs">{{ parse_url($item->content, PHP_URL_HOST) }}</span>
-                        <span class="text-xs text-stone-400 mt-1 truncate w-full">{{ $item->content }}</span>
                     </a>
                 @endif
 
@@ -232,7 +297,9 @@ new class extends Component {
                                 <p class="text-sm font-medium line-clamp-2 leading-tight drop-shadow-md mb-2">{{ $item->description }}</p>
                             @endif
                             <div class="flex items-center gap-2">
-                                <span class="text-[9px] bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full drop-shadow-md uppercase tracking-wider font-bold">{{ $item->category }}</span>
+                                <span class="text-[9px] bg-white/20 backdrop-blur-md px-2 py-0.5 rounded-full drop-shadow-md uppercase tracking-wider font-bold">
+                                    {{ $item->category?->name ?? 'General' }}
+                                </span>
                                 <button wire:click="toggleFavorite({{ $item->id }})" class="shrink-0 transition-transform active:scale-95">
                                     @if($item->is_favorite)
                                         <flux:icon.heart class="w-5 h-5 fill-red-500 text-red-500" />
@@ -243,7 +310,6 @@ new class extends Component {
                             </div>
                         </div>
                         
-                        {{-- Edit/Delete Button --}}
                         <flux:dropdown>
                             <flux:button variant="ghost" size="sm" icon="ellipsis-vertical" class="text-white hover:bg-white/20 p-1 rounded-full border-0" />
                             <flux:menu>
@@ -254,7 +320,6 @@ new class extends Component {
                     </div>
                 </div>
                 
-                {{-- Always show heart if favorite, even without hover --}}
                 @if($item->is_favorite)
                     <div class="absolute top-3 right-3 opacity-100 group-hover:opacity-0 transition-opacity">
                         <flux:icon.heart class="w-5 h-5 fill-red-500 text-red-500 drop-shadow-sm" />
@@ -285,16 +350,47 @@ new class extends Component {
             </flux:radio.group>
 
             <div class="space-y-4 pt-4 border-t border-stone-100 dark:border-stone-800">
-                <flux:select wire:model="newCategory" label="Categoría" placeholder="Elegir existente...">
-                    @foreach($categories as $cat)
-                        <flux:select.option value="{{ $cat }}">{{ $cat }}</flux:select.option>
-                    @endforeach
-                </flux:select>
-                <flux:input wire:model="newCategory" label="O Escribe Nueva" placeholder="Ej: Zapatos..." />
+                <div x-data="{ open: false }" class="relative" @click.away="open = false" wire:ignore.self>
+                    <flux:label>Categoría</flux:label>
+                    
+                    <div class="relative mt-1" @click="open = true">
+                        <input 
+                            type="text"
+                            wire:model.live.debounce.300ms="categorySearch" 
+                            @focus="open = true"
+                            placeholder="Buscar o crear..."
+                            autocomplete="off"
+                            class="w-full pl-3 pr-10 py-2 border border-stone-200 dark:border-stone-700 rounded-lg bg-white dark:bg-stone-800 text-sm focus:ring-2 focus:ring-sage-500/20 focus:border-sage-500 transition-all outline-none"
+                        />
+                        <div @click="open = !open" class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer text-stone-400 hover:text-stone-600">
+                            <flux:icon.chevron-down class="w-4 h-4" />
+                        </div>
+                    </div>
+                    
+                    <div x-show="open" 
+                         x-transition
+                         class="absolute z-[9999] w-full mt-1 bg-white dark:bg-stone-800 border-2 border-sage-500/50 rounded-lg shadow-2xl max-h-60 overflow-y-auto">
+                        <div class="p-1">
+                            @foreach($allInspirationCategories as $cat)
+                                <button type="button" wire:click="$set('newCategoryId', '{{ $cat->id }}'); $set('categorySearch', '{{ $cat->name }}'); open = false" class="w-full text-left p-2 hover:bg-stone-100 dark:hover:bg-stone-700 cursor-pointer rounded-md text-sm mb-1">
+                                    {{ $cat->name }}
+                                </button>
+                            @endforeach
+                            
+                            @if(!empty($categorySearch) && !$allInspirationCategories->where('name', $categorySearch)->count())
+                                <button type="button" wire:click="$set('newCategoryId', '{{ $categorySearch }}'); open = false" class="w-full text-left p-2 bg-sage-50 dark:bg-sage-900/20 text-sage-600 dark:text-sage-400 hover:bg-sage-100 dark:hover:bg-sage-900/40 cursor-pointer rounded-md text-sm font-medium border border-sage-200 dark:border-sage-800 mt-1">
+                                    <flux:icon.plus class="inline-block w-3 h-3 mr-1" />
+                                    Crear: "{{ $categorySearch }}"
+                                </button>
+                            @endif
+                        </div>
+                    </div>
+                </div>
                 
                 <flux:input wire:model="newDescription" label="Descripción (opcional)" />
 
                 @if($newType === 'color')
+                    {{-- Color palette construction --}}
                     <div class="pt-2">
                         <label class="block text-sm font-medium text-stone-700 dark:text-stone-300 mb-2">Construye tu Paleta (Max 5)</label>
                         <div class="flex flex-wrap items-center gap-2 mb-4">
@@ -306,7 +402,6 @@ new class extends Component {
                                     </button>
                                 </div>
                             @endforeach
-                            
                             @if(count($newColors) < 5)
                                 <div class="flex items-center gap-2">
                                     <input type="color" wire:model.live="currentColor" class="h-10 w-10 rounded cursor-pointer border-0 bg-stone-100 p-0.5">
@@ -320,11 +415,6 @@ new class extends Component {
                 @elseif($newType === 'image')
                     <div class="pt-2 flex flex-col items-start gap-4">
                         <input type="file" wire:model="newImage" accept="image/*" class="text-sm text-stone-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-sage-50 file:text-sage-700 hover:file:bg-sage-100 cursor-pointer">
-                        
-                        <div wire:loading wire:target="newImage" class="flex items-center gap-2 text-sage-600 text-sm">
-                            <flux:icon.arrow-path class="w-4 h-4 animate-spin" />
-                            <span>Procesando imagen...</span>
-                        </div>
                     </div>
                 @endif
             </div>
@@ -334,13 +424,11 @@ new class extends Component {
                 <flux:modal.close>
                     <flux:button variant="ghost">Cancelar</flux:button>
                 </flux:modal.close>
-                <flux:button type="submit" variant="primary" class="bg-sage-600 hover:bg-sage-700 border-0">
-                    <span wire:loading.remove wire:target="saveIdea">Guardar Idea</span>
-                    <span wire:loading wire:target="saveIdea">Guardando...</span>
-                </flux:button>
+                <flux:button type="submit" variant="primary" class="bg-sage-600 hover:bg-sage-700 border-0">Guardar Idea</flux:button>
             </div>
         </form>
     </flux:modal>
+
     {{-- Edit Modal --}}
     <flux:modal name="edit-idea" class="min-w-[24rem]">
         <form wire:submit="updateIdea" class="space-y-6">
@@ -356,12 +444,42 @@ new class extends Component {
             </flux:radio.group>
 
             <div class="space-y-4 pt-4 border-t border-stone-100 dark:border-stone-800">
-                <flux:select wire:model="editCategory" label="Categoría" placeholder="Elegir existente...">
-                    @foreach($categories as $cat)
-                        <flux:select.option value="{{ $cat }}">{{ $cat }}</flux:select.option>
-                    @endforeach
-                </flux:select>
-                <flux:input wire:model="editCategory" label="O Escribe Nueva" placeholder="Ej: Zapatos..." />
+                <div x-data="{ open: false }" class="relative" @click.away="open = false" wire:ignore.self>
+                    <flux:label>Categoría</flux:label>
+                    
+                    <div class="relative mt-1" @click="open = true">
+                        <input 
+                            type="text"
+                            wire:model.live.debounce.300ms="categorySearch" 
+                            @focus="open = true"
+                            placeholder="Buscar o crear..."
+                            autocomplete="off"
+                            class="w-full pl-3 pr-10 py-2 border border-stone-200 dark:border-stone-700 rounded-lg bg-white dark:bg-stone-800 text-sm focus:ring-2 focus:ring-sage-500/20 focus:border-sage-500 transition-all outline-none"
+                        />
+                        <div @click="open = !open" class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer text-stone-400 hover:text-stone-600">
+                            <flux:icon.chevron-down class="w-4 h-4" />
+                        </div>
+                    </div>
+                    
+                    <div x-show="open" 
+                         x-transition
+                         class="absolute z-[9999] w-full mt-1 bg-white dark:bg-stone-800 border-2 border-sage-500/50 rounded-lg shadow-2xl max-h-60 overflow-y-auto">
+                        <div class="p-1">
+                            @foreach($allInspirationCategories as $cat)
+                                <button type="button" wire:click="$set('editCategoryId', '{{ $cat->id }}'); $set('categorySearch', '{{ $cat->name }}'); open = false" class="w-full text-left p-2 hover:bg-stone-100 dark:hover:bg-stone-700 cursor-pointer rounded-md text-sm mb-1">
+                                    {{ $cat->name }}
+                                </button>
+                            @endforeach
+                            
+                            @if(!empty($categorySearch) && !$allInspirationCategories->where('name', $categorySearch)->count())
+                                <button type="button" wire:click="$set('editCategoryId', '{{ $categorySearch }}'); open = false" class="w-full text-left p-2 bg-sage-50 dark:bg-sage-900/20 text-sage-600 dark:text-sage-400 hover:bg-sage-100 dark:hover:bg-sage-900/40 cursor-pointer rounded-md text-sm font-medium border border-sage-200 dark:border-sage-800 mt-1">
+                                    <flux:icon.plus class="inline-block w-3 h-3 mr-1" />
+                                    Crear: "{{ $categorySearch }}"
+                                </button>
+                            @endif
+                        </div>
+                    </div>
+                </div>
                 
                 <flux:input wire:model="editDescription" label="Descripción (opcional)" />
 
@@ -377,7 +495,6 @@ new class extends Component {
                                     </button>
                                 </div>
                             @endforeach
-                            
                             @if(count($editColors) < 5)
                                 <div class="flex items-center gap-2">
                                     <input type="color" wire:model.live="currentColor" class="h-10 w-10 rounded cursor-pointer border-0 bg-stone-100 p-0.5">
@@ -387,19 +504,10 @@ new class extends Component {
                         </div>
                     </div>
                 @elseif($editType === 'link')
-                    <flux:input wire:model="editLink" type="url" label="URL del enlace" placeholder="https://pinterest.com/..." />
+                    <flux:input wire:model="editLink" type="url" label="URL del enlace" />
                 @elseif($editType === 'image')
                     <div class="pt-2 flex flex-col items-start gap-4">
-                        <input type="file" wire:model="editImage" accept="image/*" class="text-sm text-stone-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-sage-50 file:text-sage-700 hover:file:bg-sage-100 cursor-pointer">
-                        
-                        <div wire:loading wire:target="editImage" class="flex items-center gap-2 text-sage-600 text-sm">
-                            <flux:icon.arrow-path class="w-4 h-4 animate-spin" />
-                            <span>Procesando imagen...</span>
-                        </div>
-
-                        @if($editingItem && $editingItem->type === 'image' && !$editImage)
-                            <div class="mt-2 text-xs text-stone-400 italic">Imagen actual: {{ basename($editingItem->content) }}</div>
-                        @endif
+                        <input type="file" wire:model="editImage" accept="image/*" class="text-sm text-stone-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:font-semibold file:bg-sage-50 file:text-sage-700 hover:file:bg-sage-100 cursor-pointer">
                     </div>
                 @endif
             </div>
@@ -409,10 +517,7 @@ new class extends Component {
                 <flux:modal.close>
                     <flux:button variant="ghost">Cancelar</flux:button>
                 </flux:modal.close>
-                <flux:button type="submit" variant="primary" class="bg-sage-600 hover:bg-sage-700 border-0">
-                    <span wire:loading.remove wire:target="updateIdea">Actualizar Idea</span>
-                    <span wire:loading wire:target="updateIdea">Actualizando...</span>
-                </flux:button>
+                <flux:button type="submit" variant="primary" class="bg-sage-600 hover:bg-sage-700 border-0">Actualizar Idea</flux:button>
             </div>
         </form>
     </flux:modal>

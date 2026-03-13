@@ -1,0 +1,101 @@
+﻿
+   FAIL  Tests\Feature\SeatingModuleTest
+  Ô¿» auto-provisions 10 tables on firÔÇª 0.32s  
+  Ô¿» can add and delete tables         0.02s  
+  Ô¿» can assign a guest manually       0.02s  
+  Ô¿» auto-assigns unseated guests toÔÇª  0.02s  
+  Ô¿» can swap two guests successfully  0.01s  
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILED  Tests\FeatureÔÇª  QueryException   
+  SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username (Connection: sqlite, Database: :memory:, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "two_factor_secret", "two_factor_recovery_codes", "two_factor_confirmed_at", "updated_at", "created_at") values (Jany Robel Sr., luciano.parisian@example.com, 2026-03-12 18:53:44, $2y$04$mqhX5AgdjHNuRRRY/tmQl.fINKQpRFrofozkK5gCIiuPK1w.grQqq, ua91wFjGci, ?, ?, ?, 2026-03-12 18:53:44, 2026-03-12 18:53:44))
+
+  at vendor\laravel\framework\src\Illuminate\Database\Connection.php:584
+    580Ôûò             $this->bindValues($statement, $this->prepareBindings($bindings));
+    581Ôûò 
+    582Ôûò             $this->recordsHaveBeenModified();
+    583Ôûò 
+  Ô×£ 584Ôûò             return $statement->execute();
+    585Ôûò         });
+    586Ôûò     }
+    587Ôûò 
+    588Ôûò     /**
+
+  1   vendor\laravel\framework\src\Illuminate\Database\Connection.php:584
+  2   vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILED  Tests\FeatureÔÇª  QueryException   
+  SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username (Connection: sqlite, Database: :memory:, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "two_factor_secret", "two_factor_recovery_codes", "two_factor_confirmed_at", "updated_at", "created_at") values (Dr. Bridgette Dibbert IV, obalistreri@example.net, 2026-03-12 18:53:44, $2y$04$mqhX5AgdjHNuRRRY/tmQl.fINKQpRFrofozkK5gCIiuPK1w.grQqq, 5NbXuJErTl, ?, ?, ?, 2026-03-12 18:53:44, 2026-03-12 18:53:44))
+
+  at vendor\laravel\framework\src\Illuminate\Database\Connection.php:584
+    580Ôûò             $this->bindValues($statement, $this->prepareBindings($bindings));
+    581Ôûò 
+    582Ôûò             $this->recordsHaveBeenModified();
+    583Ôûò 
+  Ô×£ 584Ôûò             return $statement->execute();
+    585Ôûò         });
+    586Ôûò     }
+    587Ôûò 
+    588Ôûò     /**
+
+  1   vendor\laravel\framework\src\Illuminate\Database\Connection.php:584
+  2   vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILED  Tests\FeatureÔÇª  QueryException   
+  SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username (Connection: sqlite, Database: :memory:, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "two_factor_secret", "two_factor_recovery_codes", "two_factor_confirmed_at", "updated_at", "created_at") values (Emilia Schmeler, bgoldner@example.net, 2026-03-12 18:53:44, $2y$04$mqhX5AgdjHNuRRRY/tmQl.fINKQpRFrofozkK5gCIiuPK1w.grQqq, BTeC0aVPDn, ?, ?, ?, 2026-03-12 18:53:44, 2026-03-12 18:53:44))
+
+  at vendor\laravel\framework\src\Illuminate\Database\Connection.php:584
+    580Ôûò             $this->bindValues($statement, $this->prepareBindings($bindings));
+    581Ôûò 
+    582Ôûò             $this->recordsHaveBeenModified();
+    583Ôûò 
+  Ô×£ 584Ôûò             return $statement->execute();
+    585Ôûò         });
+    586Ôûò     }
+    587Ôûò 
+    588Ôûò     /**
+
+  1   vendor\laravel\framework\src\Illuminate\Database\Connection.php:584
+  2   vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILED  Tests\FeatureÔÇª  QueryException   
+  SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username (Connection: sqlite, Database: :memory:, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "two_factor_secret", "two_factor_recovery_codes", "two_factor_confirmed_at", "updated_at", "created_at") values (Prof. Cicero Hirthe, isom77@example.com, 2026-03-12 18:53:44, $2y$04$mqhX5AgdjHNuRRRY/tmQl.fINKQpRFrofozkK5gCIiuPK1w.grQqq, c7SKAma90c, ?, ?, ?, 2026-03-12 18:53:44, 2026-03-12 18:53:44))
+
+  at vendor\laravel\framework\src\Illuminate\Database\Connection.php:584
+    580Ôûò             $this->bindValues($statement, $this->prepareBindings($bindings));
+    581Ôûò 
+    582Ôûò             $this->recordsHaveBeenModified();
+    583Ôûò 
+  Ô×£ 584Ôûò             return $statement->execute();
+    585Ôûò         });
+    586Ôûò     }
+    587Ôûò 
+    588Ôûò     /**
+
+  1   vendor\laravel\framework\src\Illuminate\Database\Connection.php:584
+  2   vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+
+  ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ  
+   FAILED  Tests\FeatureÔÇª  QueryException   
+  SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: users.username (Connection: sqlite, Database: :memory:, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "two_factor_secret", "two_factor_recovery_codes", "two_factor_confirmed_at", "updated_at", "created_at") values (Dagmar Medhurst, xhane@example.com, 2026-03-12 18:53:44, $2y$04$mqhX5AgdjHNuRRRY/tmQl.fINKQpRFrofozkK5gCIiuPK1w.grQqq, cThu6xPGVF, ?, ?, ?, 2026-03-12 18:53:44, 2026-03-12 18:53:44))
+
+  at vendor\laravel\framework\src\Illuminate\Database\Connection.php:584
+    580Ôûò             $this->bindValues($statement, $this->prepareBindings($bindings));
+    581Ôûò 
+    582Ôûò             $this->recordsHaveBeenModified();
+    583Ôûò 
+  Ô×£ 584Ôûò             return $statement->execute();
+    585Ôûò         });
+    586Ôûò     }
+    587Ôûò 
+    588Ôûò     /**
+
+  1   vendor\laravel\framework\src\Illuminate\Database\Connection.php:584
+  2   vendor\laravel\framework\src\Illuminate\Database\Connection.php:827
+
+
+  Tests:    5 failed (0 assertions)
+  Duration: 0.53s
+

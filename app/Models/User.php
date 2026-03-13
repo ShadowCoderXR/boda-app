@@ -3,17 +3,17 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Enums\UserRole;
 use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
-use Laravel\Fortify\TwoFactorAuthenticatable;
 
 class User extends Authenticatable
 {
     /** @use HasFactory<UserFactory> */
-    use HasFactory, Notifiable, TwoFactorAuthenticatable;
+    use HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -22,9 +22,11 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'username',
         'email',
         'password',
         'role',
+        'temporary_password',
     ];
 
     /**
@@ -49,6 +51,7 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'role' => UserRole::class,
         ];
     }
 
@@ -66,19 +69,53 @@ class User extends Authenticatable
 
     public function isAdmin(): bool
     {
-        return $this->role === 'admin';
+        return $this->role === UserRole::Admin;
     }
 
-    public function isAyudante(): bool
+    public function isNovio(): bool
     {
-        return $this->role === 'ayudante';
+        return $this->role === UserRole::Novio;
     }
 
-    public function isInvitado(): bool
+    public function isNovia(): bool
     {
-        return $this->role === 'invitado';
+        return $this->role === UserRole::Novia;
     }
 
+    public function isPadrino(): bool
+    {
+        return in_array($this->role, [
+            UserRole::Padrino1,
+            UserRole::Padrino2,
+            UserRole::Padrino3,
+        ]);
+    }
+
+    public function isMadrina(): bool
+    {
+        return in_array($this->role, [
+            UserRole::Madrina1,
+            UserRole::Madrina2,
+            UserRole::Madrina3,
+        ]);
+    }
+
+    public function isColaborador(): bool
+    {
+        return $this->role === UserRole::Colaborador;
+    }
+
+    /**
+     * Get the primary guest record for this user
+     */
+    public function guest()
+    {
+        return $this->hasOne(Guest::class, 'user_id')->where('representative_id', null);
+    }
+
+    /**
+     * Get all guests managed by this user
+     */
     public function guests()
     {
         return $this->hasMany(Guest::class);

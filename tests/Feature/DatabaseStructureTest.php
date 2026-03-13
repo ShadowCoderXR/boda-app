@@ -24,20 +24,23 @@ test('guest uses uuid v7 for primary key', function () {
 });
 
 test('group hierarchy works correctly', function () {
-    $parentGroup = Group::create(['name' => 'Familia Silva']);
-    $childGroup = Group::create(['name' => 'Silva Fernandez', 'parent_id' => $parentGroup->id]);
+    $user = User::factory()->create();
+    $subgroup = \App\Models\Subgroup::create(['name' => 'Familia Silva', 'user_id' => $user->id]);
+    $group = Group::create(['name' => 'Silva Fernandez', 'subgroup_id' => $subgroup->id, 'user_id' => $user->id]);
 
-    expect($childGroup->parent->id)->toBe($parentGroup->id)
-        ->and($parentGroup->children()->count())->toBe(1)
-        ->and($parentGroup->children->first()->id)->toBe($childGroup->id);
+    expect($group->subgroup->id)->toBe($subgroup->id)
+        ->and($subgroup->groups()->count())->toBe(1)
+        ->and($subgroup->groups->first()->id)->toBe($group->id);
 });
 
 test('guest can be linked to a group', function () {
-    $group = Group::create(['name' => 'Amigos del Novio']);
+    $user = User::factory()->create();
+    $group = Group::create(['name' => 'Amigos del Novio', 'user_id' => $user->id]);
     $guest = Guest::create([
         'name' => 'Carlos Lopez',
         'slug' => 'carlos-lopez',
         'group_id' => $group->id,
+        'user_id' => $user->id,
     ]);
 
     expect($guest->group->id)->toBe($group->id)
@@ -79,12 +82,10 @@ test('guest uses rsvp_details as json array', function () {
 
 test('users can have multiple roles defined by string', function () {
     $admin = User::factory()->create(['role' => 'admin']);
-    $ayudante = User::factory()->create(['role' => 'ayudante']);
-    $invitado = User::factory()->create(['role' => 'invitado']);
+    $colaborador = User::factory()->create(['role' => 'colaborador']);
 
     expect($admin->isAdmin())->toBeTrue()
-        ->and($ayudante->isAyudante())->toBeTrue()
-        ->and($invitado->isInvitado())->toBeTrue();
+        ->and($colaborador->isColaborador())->toBeTrue();
 });
 
 test('inspiration items cast is_favorite and have helpers', function () {
