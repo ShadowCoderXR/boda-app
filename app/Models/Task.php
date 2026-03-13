@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Task extends Model
 {
     protected $fillable = [
-        'title', 'description', 'notes', 'due_date', 'priority', 'is_completed', 'sponsor_id', 'assigned_to_id', 'user_id', 'category_id',
+        'title', 'description', 'notes', 'due_date', 'priority', 'is_completed', 'sponsor_id', 'assigned_to_id', 'user_id', 'category_id', 'external_guest_id',
     ];
 
     protected function casts(): array
@@ -41,5 +41,10 @@ class Task extends Model
     public function comments()
     {
         return $this->hasMany(TaskComment::class)->orderBy('created_at', 'asc');
+    }
+
+    public function externalGuest()
+    {
+        return $this->belongsTo(Guest::class, 'external_guest_id');
     }
 }

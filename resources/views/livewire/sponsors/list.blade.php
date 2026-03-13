@@ -22,7 +22,7 @@ new class extends Component {
     public function with()
     {
         return [
-            'sponsors' => Sponsor::with(['guest', 'roleCategory'])->get(),
+            'sponsors' => Sponsor::with(['guest.tasks', 'roleCategory'])->get(),
             'availableGuests' => Guest::whereDoesntHave('sponsor')->orderBy('name')->get(),
             'roleCategories' => \App\Models\Category::where('type', 'sponsor')
                 ->where('user_id', auth()->id())
@@ -165,6 +165,20 @@ new class extends Component {
                         <flux:badge color="yellow" class="bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-500 border-0 text-xs shadow-sm">Tentativo</flux:badge>
                     @endif
                 </div>
+
+                @if($sponsor->guest->tasks->isNotEmpty())
+                    <div class="mt-4 pt-4 border-t border-stone-100 dark:border-stone-800">
+                        <p class="text-[10px] font-bold uppercase tracking-widest text-stone-400 mb-2">Tareas de Apoyo:</p>
+                        <div class="space-y-1.5">
+                            @foreach($sponsor->guest->tasks as $gtask)
+                                <div class="flex items-center gap-2 text-xs text-stone-600 dark:text-stone-400">
+                                    <flux:icon.check-circle class="w-3.5 h-3.5 {{ $gtask->is_completed ? 'text-sage-500' : 'text-stone-300' }}" />
+                                    <span class="{{ $gtask->is_completed ? 'line-through opacity-50' : '' }} truncate">{{ $gtask->title }}</span>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                @endif
             </flux:card>
         @empty
             <div class="col-span-full py-16 text-center text-stone-500 border-2 border-dashed border-stone-200 dark:border-stone-800 rounded-xl">

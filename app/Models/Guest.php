@@ -88,4 +88,9 @@ class Guest extends Model
         return $this->belongsTo(SeatingTable::class);
     }
 
+    public function tasks()
+    {
+        return $this->hasMany(Task::class, 'external_guest_id');
+    }
+
 }

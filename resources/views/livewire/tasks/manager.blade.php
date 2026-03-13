@@ -14,6 +14,7 @@ new class extends Component {
     public $newAssignedToId = '';
     public $newCategoryId = '';
     public $newCategorySearch = '';
+    public $newExternalGuestId = '';
 
     // Edit Form State
     public $title = '';
@@ -23,6 +24,7 @@ new class extends Component {
     public $assigned_to_id = '';
     public $category_id = '';
     public $categorySearch = '';
+    public $external_guest_id = '';
 
     public $editingTask = null;
     public $taskDeletingId = null;
@@ -57,6 +59,7 @@ new class extends Component {
 
         return [
             'tasks' => $query->orderBy('due_date', 'asc')->orderBy('priority', 'desc')->get(),
+            'allGuests' => \App\Models\Guest::orderBy('name')->get(),
             'teamMembers' => \App\Models\User::orderBy('name')->get(),
             'taskCategories' => \App\Models\Category::where('type', 'task')
                 ->where('user_id', auth()->id())
@@ -108,10 +111,11 @@ new class extends Component {
             'priority' => $this->newPriority,
             'assigned_to_id' => $this->newAssignedToId ?: null,
             'category_id' => $actualCategoryId ?: null,
+            'external_guest_id' => $this->newExternalGuestId ?: null,
             'user_id' => auth()->id(),
         ]);
 
-        $this->reset(['newTitle', 'newDescription', 'newDueDate', 'newPriority', 'newAssignedToId', 'newCategoryId', 'newCategorySearch']);
+        $this->reset(['newTitle', 'newDescription', 'newDueDate', 'newPriority', 'newAssignedToId', 'newCategoryId', 'newCategorySearch', 'newExternalGuestId']);
         Flux::toast('Tarea creada correctamente.');
     }
 
@@ -124,6 +128,7 @@ new class extends Component {
         $this->priority = $task->priority;
         $this->assigned_to_id = $task->assigned_to_id;
         $this->category_id = $task->category_id;
+        $this->external_guest_id = $task->external_guest_id;
 
         $this->modal('edit-task-modal')->show();
     }
@@ -160,6 +165,7 @@ new class extends Component {
             'priority' => $this->priority,
             'assigned_to_id' => $this->assigned_to_id ?: null,
             'category_id' => $actualCategoryId ?: null,
+            'external_guest_id' => $this->external_guest_id ?: null,
         ]);
 
         $this->resetForms();
@@ -168,7 +174,7 @@ new class extends Component {
 
     public function resetForms()
     {
-        $this->reset(['newTitle', 'newDescription', 'newDueDate', 'newPriority', 'newAssignedToId', 'newCategoryId', 'newCategorySearch', 'title', 'description', 'due_date', 'priority', 'assigned_to_id', 'category_id', 'categorySearch', 'editingTask', 'taskDeletingId']);
+        $this->reset(['newTitle', 'newDescription', 'newDueDate', 'newPriority', 'newAssignedToId', 'newCategoryId', 'newCategorySearch', 'newExternalGuestId', 'title', 'description', 'due_date', 'priority', 'assigned_to_id', 'category_id', 'categorySearch', 'external_guest_id', 'editingTask', 'taskDeletingId']);
         $this->modal('edit-task-modal')->close();
         $this->modal('confirm-delete-task')->close();
     }
@@ -339,6 +345,13 @@ new class extends Component {
                         @endforeach
                     </flux:select>
 
+                    <flux:select wire:model="newExternalGuestId" label="Ayuda externa (Invitado)" placeholder="Ninguno" searchable>
+                        <flux:select.option value="">Ninguno / Sólo equipo</flux:select.option>
+                        @foreach($allGuests as $guest)
+                            <flux:select.option value="{{ $guest->id }}">{{ $guest->name }}</flux:select.option>
+                        @endforeach
+                    </flux:select>
+
                     <flux:button type="submit" variant="primary" class="w-full bg-sage-600 hover:bg-sage-700 border-0">Crear Tarea</flux:button>
                 </form>
             </div>
@@ -378,6 +391,12 @@ new class extends Component {
                                 <span class="px-2 py-0.5 rounded bg-sky-100 text-sky-600 text-[10px] uppercase font-bold tracking-wider flex items-center gap-1">
                                     <flux:icon.user class="w-2 h-2" />
                                     {{ $task->assignedTo->name }}
+                                </span>
+                            @endif
+                            @if($task->externalGuest)
+                                <span class="px-2 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-100 text-[10px] uppercase font-bold tracking-wider flex items-center gap-1">
+                                    <flux:icon.hand-raised class="w-2.5 h-2.5" />
+                                    {{ $task->externalGuest->name }}
                                 </span>
                             @endif
                         </div>
@@ -513,6 +532,13 @@ new class extends Component {
                                 <flux:select.option value="">Global / Sin asignar</flux:select.option>
                                 @foreach($teamMembers as $member)
                                     <flux:select.option value="{{ $member->id }}">{{ $member->name }}</flux:select.option>
+                                @endforeach
+                            </flux:select>
+
+                            <flux:select wire:model="external_guest_id" label="Ayuda externa (Invitado)" placeholder="Ninguno" searchable class="shadow-sm">
+                                <flux:select.option value="">Ninguno / Sólo equipo</flux:select.option>
+                                @foreach($allGuests as $guest)
+                                    <flux:select.option value="{{ $guest->id }}">{{ $guest->name }}</flux:select.option>
                                 @endforeach
                             </flux:select>
                         </div>
