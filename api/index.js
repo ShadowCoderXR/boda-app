@@ -8,10 +8,10 @@ const crypto = require('crypto');
 
 // Configuración S3 para Cloudflare R2
 const s3Client = new S3Client({
-  endpoint: `https://${process.env.R2_ACCOUNT_ID}.r2.cloudflarestorage.com`,
+  endpoint: `https://${process.env.R2_ACCOUNT_ID || '9c99391deb793b7f62481855fdb1e7e8'}.r2.cloudflarestorage.com`,
   credentials: {
-    accessKeyId: process.env.R2_ACCESS_KEY_ID,
-    secretAccessKey: process.env.R2_SECRET_ACCESS_KEY,
+    accessKeyId: process.env.R2_ACCESS_KEY_ID || '15ec0fd64206c8cc438fd7e835cf6fec',
+    secretAccessKey: process.env.R2_SECRET_ACCESS_KEY || '730ba16679a20a845ffc272ce6a5ea4cbddfc93e76c4c7ae18ee231df0eb7480',
   },
   region: 'auto',
 });
@@ -810,7 +810,7 @@ app.get('/api/upload-url', async (req, res) => {
     const uniqueKey = `${crypto.randomUUID ? crypto.randomUUID() : crypto.randomBytes(16).toString('hex')}.${fileExtension}`;
 
     const command = new PutObjectCommand({
-      Bucket: process.env.R2_BUCKET_NAME,
+      Bucket: process.env.R2_BUCKET_NAME || 'fotos-boda-app',
       Key: uniqueKey,
       ContentType: contentType || 'image/jpeg',
     });
@@ -843,9 +843,10 @@ app.post('/api/photos', async (req, res) => {
     const db = await getDb();
     const id = crypto.randomUUID ? crypto.randomUUID() : crypto.randomBytes(16).toString('hex');
 
-    const publicUrlBase = process.env.R2_PUBLIC_URL.endsWith('/')
-      ? process.env.R2_PUBLIC_URL
-      : `${process.env.R2_PUBLIC_URL}/`;
+    const r2PublicUrl = process.env.R2_PUBLIC_URL || 'https://pub-004d3addf482478cb3f84f4564006678.r2.dev';
+    const publicUrlBase = r2PublicUrl.endsWith('/')
+      ? r2PublicUrl
+      : `${r2PublicUrl}/`;
     const imageUrl = `${publicUrlBase}${filename}`;
 
     await db.run(
