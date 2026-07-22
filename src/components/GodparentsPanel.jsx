@@ -260,6 +260,13 @@ function GodparentsPanel({ token, onUnauthorized, onLogout, navigateTo, darkMode
         >
           🎁 Padrinos
         </button>
+        <button 
+          type="button"
+          className="theme-toggle-btn"
+          onClick={() => navigateTo('/galeria')}
+        >
+          📸 Álbum
+        </button>
       </nav>
 
       {/* CONTROLES GLOBALES */}

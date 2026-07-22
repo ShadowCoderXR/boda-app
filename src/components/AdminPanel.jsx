@@ -605,6 +605,13 @@ function AdminPanel({ token, onUnauthorized, onLogout, navigateTo, darkMode, set
         >
           🎁 Padrinos
         </button>
+        <button 
+          type="button"
+          className="theme-toggle-btn"
+          onClick={() => navigateTo('/galeria')}
+        >
+          📸 Álbum
+        </button>
       </nav>
 
       {/* CONTROLES GLOBALES */}

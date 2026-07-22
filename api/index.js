@@ -2,6 +2,19 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const { getDb } = require('./database');
+const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3');
+const { getSignedUrl } = require('@aws-sdk/s3-request-presigner');
+const crypto = require('crypto');
+
+// Configuración S3 para Cloudflare R2
+const s3Client = new S3Client({
+  endpoint: `https://${process.env.R2_ACCOUNT_ID}.r2.cloudflarestorage.com`,
+  credentials: {
+    accessKeyId: process.env.R2_ACCESS_KEY_ID,
+    secretAccessKey: process.env.R2_SECRET_ACCESS_KEY,
+  },
+  region: 'auto',
+});
 
 const app = express();
 
@@ -762,6 +775,93 @@ app.delete('/api/godparents/:id', requireAdmin, async (req, res) => {
   } catch (error) {
     console.error('Error en DELETE /api/godparents/:id:', error);
     res.status(500).json({ error: 'Error al eliminar el padrino.' });
+  }
+});
+
+/**
+ * GET /api/photos
+ * Devuelve todas las fotos ordenadas por created_at descendente.
+ */
+app.get('/api/photos', async (req, res) => {
+  try {
+    const db = await getDb();
+    const photos = await db.all('SELECT * FROM photos ORDER BY created_at DESC');
+    res.json(photos);
+  } catch (error) {
+    console.error('Error en GET /api/photos:', error);
+    res.status(500).json({ error: 'Error al obtener las fotos.' });
+  }
+});
+
+/**
+ * GET /api/upload-url
+ * Recibe nombre y tipo de archivo por query parameters y devuelve presigned URL de R2.
+ */
+app.get('/api/upload-url', async (req, res) => {
+  const originalName = req.query.name || req.query.filename;
+  const contentType = req.query.type || req.query.fileType;
+
+  if (!originalName) {
+    return res.status(400).json({ error: 'El parámetro "name" o "filename" es requerido.' });
+  }
+
+  try {
+    const fileExtension = originalName.split('.').pop() || 'jpg';
+    const uniqueKey = `${crypto.randomUUID ? crypto.randomUUID() : crypto.randomBytes(16).toString('hex')}.${fileExtension}`;
+
+    const command = new PutObjectCommand({
+      Bucket: process.env.R2_BUCKET_NAME,
+      Key: uniqueKey,
+      ContentType: contentType || 'image/jpeg',
+    });
+
+    // URL firmada con validez de 5 minutos (300 segundos)
+    const uploadUrl = await getSignedUrl(s3Client, command, { expiresIn: 300 });
+
+    res.json({
+      uploadUrl,
+      filename: uniqueKey
+    });
+  } catch (error) {
+    console.error('Error en GET /api/upload-url:', error);
+    res.status(500).json({ error: 'Error al generar la URL de subida.' });
+  }
+});
+
+/**
+ * POST /api/photos
+ * Recibe guest_name y filename, guarda el registro de la foto en base de datos.
+ */
+app.post('/api/photos', async (req, res) => {
+  const { guest_name, filename } = req.body;
+
+  if (!guest_name || !filename) {
+    return res.status(400).json({ error: 'El nombre de invitado ("guest_name") y el nombre de archivo ("filename") son obligatorios.' });
+  }
+
+  try {
+    const db = await getDb();
+    const id = crypto.randomUUID ? crypto.randomUUID() : crypto.randomBytes(16).toString('hex');
+
+    const publicUrlBase = process.env.R2_PUBLIC_URL.endsWith('/')
+      ? process.env.R2_PUBLIC_URL
+      : `${process.env.R2_PUBLIC_URL}/`;
+    const imageUrl = `${publicUrlBase}${filename}`;
+
+    await db.run(
+      'INSERT INTO photos (id, guest_name, image_url) VALUES (?, ?, ?)',
+      [id, guest_name.trim(), imageUrl]
+    );
+
+    res.status(201).json({
+      id,
+      guest_name: guest_name.trim(),
+      image_url: imageUrl,
+      created_at: new Date().toISOString()
+    });
+  } catch (error) {
+    console.error('Error en POST /api/photos:', error);
+    res.status(500).json({ error: 'Error al guardar la foto en la base de datos.' });
   }
 });
 

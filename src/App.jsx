@@ -3,6 +3,7 @@ import LoginView from './components/LoginView';
 import AdminPanel from './components/AdminPanel';
 import GodparentsPanel from './components/GodparentsPanel';
 import InvitationView from './components/InvitationView';
+import GalleryView from './components/GalleryView';
 
 function App() {
   // Enrutamiento básico basado en la URL
@@ -15,6 +16,9 @@ function App() {
     if (path === '/padrinos') {
       return { page: 'padrinos' };
     }
+    if (path === '/galeria') {
+      return { page: 'galeria' };
+    }
     return { page: 'dashboard' };
   });
 
@@ -25,6 +29,8 @@ function App() {
       setRoute({ page: 'invitacion', id: m ? m[1] : null });
     } else if (path === '/padrinos') {
       setRoute({ page: 'padrinos' });
+    } else if (path === '/galeria') {
+      setRoute({ page: 'galeria' });
     } else {
       setRoute({ page: 'dashboard' });
     }
@@ -38,6 +44,8 @@ function App() {
         setRoute({ page: 'invitacion', id: m ? m[1] : null });
       } else if (path === '/padrinos') {
         setRoute({ page: 'padrinos' });
+      } else if (path === '/galeria') {
+        setRoute({ page: 'galeria' });
       } else {
         setRoute({ page: 'dashboard' });
       }
@@ -93,6 +101,17 @@ function App() {
       <InvitationView 
         id={route.id} 
         navigateTo={navigateTo} 
+      />
+    );
+  }
+
+  // 1b. Vista Pública de Galería (No requiere Login)
+  if (route.page === 'galeria') {
+    return (
+      <GalleryView 
+        navigateTo={navigateTo} 
+        darkMode={darkMode}
+        setDarkMode={setDarkMode}
       />
     );
   }
