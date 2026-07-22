@@ -1,0 +1,1217 @@
+/* ==========================================================================
+   ESTILOS PREMIUM RE-DISEÑADOS: APP DE BODA 💍
+   Diseño de Gala con Cormorant Garamond, Great Vibes y Glassmorphism
+   ========================================================================== */
+
+:root {
+  /* PALETA CLARA: Alabastro, Crema de Seda, Vino/Borgoña Profundo y Oro Champagne */
+  --bg-primary: #fcfbfa;      /* Blanco alabastro */
+  --bg-secondary: #ffffff;
+  --bg-cream: #f9f5f0;        /* Crema seda */
+  
+  --bg-glass: rgba(255, 255, 255, 0.65);
+  --border-glass: rgba(255, 255, 255, 0.4);
+  
+  --border-gold: rgba(212, 178, 125, 0.35); /* Oro Champagne */
+  --border-subtle: #ebdcd5;
+  
+  --text-primary: #1e0b0e;    /* Negro con matiz vino profundo */
+  --text-secondary: #665053;  /* Gris vino atenuado */
+  
+  --accent-gold: #c29f68;     /* Oro Champagne */
+  --accent-gold-light: #f5eedf;
+  --accent-gold-hover: #ad8a54;
+  
+  --accent-rose: #f9e8eb;     /* Rosa rubor muy tenue para blobs */
+  --accent-emerald: #6b1d2f;  /* Color Vino / Borgoña principal */
+  --accent-emerald-light: #fbebee;
+  --accent-emerald-hover: #4c101d;
+  
+  --accent-burgundy: #6b1d2f;
+  --accent-burgundy-light: #fbebee;
+
+  --color-confirmed: #2e7d32;
+  --color-confirmed-light: #eaf5eb;
+  --color-declined: #c62828;
+  --color-declined-light: #fdf0f0;
+  --color-pending: #df7a00;
+  --color-pending-light: #fef4e8;
+
+  --color-whatsapp: #1b7a3a;
+  --color-whatsapp-light: rgba(27, 122, 58, 0.05);
+  --color-whatsapp-hover: #125428;
+
+  --shadow-sm: 0 4px 20px rgba(30, 11, 14, 0.02);
+  --shadow-md: 0 12px 40px rgba(30, 11, 14, 0.05);
+  --shadow-lg: 0 30px 70px rgba(30, 11, 14, 0.1);
+  --shadow-gold: 0 15px 35px rgba(194, 159, 104, 0.15);
+
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-display: 'Playfair Display', serif;
+  --font-script: 'Great Vibes', cursive;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  --transition-smooth: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+}
+
+/* Modo Oscuro: Velvet Wine & Obsidian Gold */
+.dark-mode {
+  --bg-primary: #0a0405;      /* Negro obsidiana con fondo vino */
+  --bg-secondary: #130a0c;    /* Terciopelo negro vino */
+  --bg-cream: #1e1113;
+  
+  --bg-glass: rgba(19, 10, 12, 0.7);
+  --border-glass: rgba(255, 255, 255, 0.03);
+  
+  --border-gold: rgba(212, 178, 125, 0.2);
+  --border-subtle: #2b171a;
+  
+  --text-primary: #faedf0;    /* Crema de seda */
+  --text-secondary: #ab9597;  /* Gris vino */
+  
+  --accent-gold: #cfae7d;     /* Oro suave */
+  --accent-gold-light: #2d2417;
+  --accent-gold-hover: #e4c290;
+  
+  --accent-rose: #2d0d12;     /* Vino de fondo muy suave */
+  --accent-emerald: #8f293b;  /* Vino Borgoña suave en modo oscuro */
+  --accent-emerald-light: #2e0910;
+  --accent-emerald-hover: #a63247;
+  
+  --accent-burgundy: #8f293b;
+  --accent-burgundy-light: #2e0910;
+
+  --color-confirmed: #a3d9a5;        /* Verde pastel suave */
+  --color-confirmed-light: #122416;   /* Fondo verde muy oscuro y sutil */
+  --color-declined: #f1a3a1;         /* Rojo pastel suave */
+  --color-declined-light: #281313;    /* Fondo rojo muy oscuro y sutil */
+  --color-pending: #ffca80;          /* Naranja pastel suave */
+  --color-pending-light: #2c1a0e;     /* Fondo naranja muy oscuro y sutil */
+
+  --color-whatsapp: #76d295;          /* Verde pastel desaturado y elegante */
+  --color-whatsapp-light: rgba(118, 210, 149, 0.08);
+  --color-whatsapp-hover: #a1e2b6;
+
+  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 12px 40px rgba(0, 0, 0, 0.65);
+  --shadow-lg: 0 30px 70px rgba(0, 0, 0, 0.85);
+  --shadow-gold: 0 15px 35px rgba(212, 178, 125, 0.05);
+}
+
+/* ==========================================================================
+   RESETS Y ELEMENTOS BASE
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  line-height: 1.7;
+  transition: background-color 0.6s ease, color 0.6s ease;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Tipografías Especiales */
+.cursive-text {
+  font-family: var(--font-script);
+  font-size: 2.25rem;
+  color: var(--accent-gold);
+  line-height: 1.2;
+}
+
+.serif-title {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+h1 {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  font-size: 3.5rem;
+  line-height: 1.2;
+}
+
+h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* Blobs de Fondo Decorativos */
+.bg-blobs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -100;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.12;
+  transition: var(--transition-smooth);
+}
+
+.blob-1 {
+  top: -10%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--accent-gold) 0%, transparent 70%);
+}
+
+.blob-2 {
+  bottom: -10%;
+  left: -5%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, var(--accent-rose) 0%, transparent 70%);
+}
+
+.dark-mode .blob {
+  opacity: 0.06;
+}
+
+/* ==========================================================================
+   LAYOUT Y CONTAINER
+   ========================================================================== */
+
+.app-container {
+  max-width: 1440px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 6rem 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* HEADER ELEGANTE */
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.header h1 {
+  background: linear-gradient(135deg, var(--text-primary) 20%, var(--accent-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.25rem;
+}
+
+.header p {
+  font-family: var(--font-serif);
+  color: var(--text-secondary);
+  font-size: 1.35rem;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.header-decor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 1.5rem;
+}
+
+.header-decor::before, .header-decor::after {
+  content: '';
+  height: 1px;
+  width: 70px;
+  background: linear-gradient(to right, transparent, var(--accent-gold), transparent);
+}
+
+.header-decor span {
+  color: var(--accent-gold);
+  font-size: 1.3rem;
+  animation: pulse 3s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.15); opacity: 1; }
+}
+
+/* ==========================================================================
+   CONTROLES DE VISTA
+   ========================================================================== */
+
+.view-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.theme-toggle-btn {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-gold);
+  color: var(--text-primary);
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(8px);
+  transition: var(--transition-smooth);
+}
+
+.theme-toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+  border-color: var(--accent-gold);
+  background: var(--bg-secondary);
+}
+
+/* ==========================================================================
+   DASHBOARD DE ESTADÍSTICAS RE-DISEÑADO
+   ========================================================================== */
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.stat-card {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(12px);
+  position: relative;
+  transition: var(--transition-smooth);
+  z-index: 1;
+}
+
+.stat-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  pointer-events: none;
+  transition: var(--transition-smooth);
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-gold);
+}
+
+.stat-card:hover::after {
+  border-color: var(--accent-gold);
+}
+
+.stat-card.total { background: radial-gradient(100% 100% at top right, rgba(194,159,104,0.06), var(--bg-glass)); }
+.stat-card.confirmed { background: radial-gradient(100% 100% at top right, rgba(46,125,50,0.06), var(--bg-glass)); }
+.stat-card.confirmed-adults { background: radial-gradient(100% 100% at top right, rgba(22,62,43,0.06), var(--bg-glass)); }
+.stat-card.children { background: radial-gradient(100% 100% at top right, rgba(0,188,212,0.06), var(--bg-glass)); }
+.stat-card.pending { background: radial-gradient(100% 100% at top right, rgba(223,122,0,0.06), var(--bg-glass)); }
+.stat-card.declined { background: radial-gradient(100% 100% at top right, rgba(198,40,40,0.06), var(--bg-glass)); }
+
+.stat-value {
+  font-size: 2.75rem;
+  font-weight: 300;
+  font-family: var(--font-serif);
+  margin-top: 0.25rem;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   PANELES Y TARJETAS
+   ========================================================================== */
+
+.card-panel {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(15px);
+  position: relative;
+}
+
+/* Borde doble clásico para dar sensación de papel de tarjetería de gala */
+.card-panel::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border: 1px solid var(--border-gold);
+  border-radius: calc(var(--radius-lg) - 6px);
+  pointer-events: none;
+}
+
+.card-title {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.card-title::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--accent-gold);
+  margin-left: 10px;
+}
+
+.card-title::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--accent-gold);
+  margin-right: 10px;
+}
+
+/* ==========================================================================
+   FORMULARIOS Y BOTONES
+   ========================================================================== */
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.9rem 1.15rem;
+  border: 1px solid var(--border-subtle);
+  background-color: rgba(255, 255, 255, 0.5);
+  color: var(--text-primary);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  outline: none;
+  transition: var(--transition-smooth);
+}
+
+.dark-mode .form-input {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.form-input:focus {
+  border-color: var(--accent-gold);
+  background-color: var(--bg-secondary);
+  box-shadow: 0 0 0 4px var(--accent-gold-light);
+}
+
+/* Secciones Internas de Formularios */
+.form-guests-section {
+  background: rgba(194, 159, 104, 0.03);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-gold);
+  margin-bottom: 2rem;
+}
+
+.form-guests-section-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subguest-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px dashed var(--border-gold);
+}
+
+.subguest-row:last-child {
+  border-bottom: none;
+}
+
+/* Botones Premium */
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-emerald) 0%, var(--accent-emerald-hover) 100%);
+  color: #ffffff;
+  border: 1px solid transparent;
+  padding: 0.9rem 2rem;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(107, 29, 47, 0.25);
+  background: linear-gradient(135deg, var(--accent-emerald-hover) 0%, #1e0508 100%);
+}
+
+.dark-mode .btn-primary {
+  background: linear-gradient(135deg, var(--accent-emerald) 0%, var(--accent-emerald-hover) 100%);
+  color: #faedf0;
+  border: 1px solid var(--accent-gold);
+}
+
+.dark-mode .btn-primary:hover {
+  box-shadow: 0 8px 25px rgba(158, 42, 64, 0.35);
+  background: linear-gradient(135deg, var(--accent-emerald-hover) 0%, #380d14 100%);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--accent-gold);
+  border: 1px solid var(--accent-gold);
+  padding: 0.55rem 1.15rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-secondary:hover {
+  background-color: var(--accent-gold-light);
+  color: var(--accent-gold-hover);
+  border-color: var(--accent-gold-hover);
+}
+
+.dark-mode .btn-secondary:hover {
+  background-color: rgba(212, 178, 125, 0.05);
+}
+
+.btn-whatsapp {
+  background-color: transparent;
+  color: var(--color-whatsapp);
+  border: 1px solid var(--color-whatsapp);
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-whatsapp:hover {
+  background-color: var(--color-whatsapp-light);
+  color: var(--color-whatsapp-hover);
+  border-color: var(--color-whatsapp-hover);
+}
+
+
+
+/* ==========================================================================
+   LISTADO DE GRUPOS (TARJETAS DE INVITADOS)
+   ========================================================================== */
+
+.guest-list-controls {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.search-input-wrapper {
+  width: 100%;
+}
+
+.filter-select {
+  width: 100%;
+  padding: 0.75rem 0.5rem;
+  border: 1px solid var(--border-subtle);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border-radius: var(--radius-sm);
+  outline: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: var(--transition-smooth);
+}
+
+.filter-select:focus {
+  border-color: var(--accent-gold);
+}
+
+.guest-list-controls .form-input {
+  padding: 0.75rem 1rem 0.75rem 2.5rem !important;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 991px) {
+  .guest-list-controls {
+    grid-template-columns: 1fr 1fr;
+  }
+  .search-input-wrapper {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 576px) {
+  .guest-list-controls {
+    grid-template-columns: 1fr;
+  }
+  .search-input-wrapper {
+    grid-column: span 1;
+  }
+}
+
+.group-cards-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.group-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+.group-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-gold);
+}
+
+.group-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.group-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.group-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-icon {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  padding: 0.55rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: var(--transition-smooth);
+}
+
+.btn-icon:hover {
+  color: var(--text-primary);
+  border-color: var(--accent-gold);
+  background-color: var(--bg-secondary);
+}
+
+/* Tabla de Invitados Modernizada */
+.guests-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.guests-table th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.guests-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+  vertical-align: middle;
+}
+
+.group-card tr:last-child td {
+  border-bottom: none;
+}
+
+/* Badges e Identificadores */
+.guest-badge {
+  font-size: 0.72rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+
+.guest-badge.anonymous {
+  background-color: var(--accent-gold-light);
+  color: var(--accent-gold-hover);
+  border: 1px solid rgba(194, 159, 104, 0.4);
+}
+
+.dark-mode .guest-badge.anonymous {
+  background-color: rgba(212, 178, 125, 0.1);
+}
+
+/* Estatus de Invitados (Píldoras) */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-lg);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  border: 1px solid transparent;
+}
+
+.status-badge.pending {
+  background-color: var(--color-pending-light);
+  color: var(--color-pending);
+}
+.status-badge.confirmed {
+  background-color: var(--color-confirmed-light);
+  color: var(--color-confirmed);
+}
+.status-badge.declined {
+  background-color: var(--color-declined-light);
+  color: var(--color-declined);
+}
+
+.status-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Switch del menú de niños */
+.child-menu-switch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.switch-track {
+  width: 44px;
+  height: 22px;
+  background-color: var(--border-subtle);
+  border-radius: 11px;
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.switch-thumb {
+  width: 16px;
+  height: 16px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: var(--transition-smooth);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+.child-menu-switch.active .switch-track {
+  background-color: var(--accent-gold);
+}
+
+.child-menu-switch.active .switch-thumb {
+  left: 25px;
+}
+
+/* Estado de lista vacía */
+.empty-state {
+  text-align: center;
+  padding: 5rem 2rem;
+  color: var(--text-secondary);
+  background: rgba(30, 37, 34, 0.01);
+  border: 1px dashed var(--border-gold);
+  border-radius: var(--radius-md);
+}
+
+.empty-state-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.6;
+}
+
+/* ==========================================================================
+   VISTA DE INVITACIÓN DIGITAL 💌 (PÁGINA EXCLUSIVA)
+   ========================================================================== */
+
+.invite-envelope {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+/* Doble marco de gala con esquinas estilizadas */
+.invite-envelope::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 1px solid var(--accent-gold);
+  border-radius: calc(var(--radius-lg) - 8px);
+  pointer-events: none;
+}
+
+.invite-envelope::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border: 1px solid rgba(194, 159, 104, 0.2);
+  border-radius: calc(var(--radius-lg) - 12px);
+  pointer-events: none;
+}
+
+.invite-header-title {
+  font-family: var(--font-script);
+  font-size: 3.5rem;
+  color: var(--accent-gold);
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.invite-subtitle {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+/* Separador de Gala (Floral/Adorno) */
+.floral-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 2rem 0;
+  color: var(--accent-gold);
+}
+
+.floral-divider::before, .floral-divider::after {
+  content: '';
+  height: 1px;
+  width: 40px;
+  background: linear-gradient(to right, transparent, var(--accent-gold), transparent);
+}
+
+.floral-divider span {
+  font-size: 1.25rem;
+}
+
+.invite-guest-card {
+  background: var(--bg-cream);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: var(--transition-smooth);
+}
+
+.invite-guest-card:hover {
+  transform: scale(1.01);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ==========================================================================
+   MODALES Y CAPAS SUPERPUESTAS
+   ========================================================================== */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(11, 15, 13, 0.7);
+  backdrop-filter: blur(12px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1.5rem;
+}
+
+.modal-content {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 520px;
+  padding: 3rem 2.5rem;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  animation: modalAppear 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.modal-content::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border: 1px solid var(--border-gold);
+  border-radius: calc(var(--radius-lg) - 6px);
+  pointer-events: none;
+}
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 2rem;
+}
+
+.modal-actions button {
+  width: auto;
+}
+
+/* ==========================================================================
+   DISEÑO GRID Y COLUMNA DERECHA PEGAJOSA (STICKY)
+   ========================================================================== */
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (min-width: 992px) {
+  .main-content {
+    grid-template-columns: 1.25fr 0.75fr;
+  }
+  
+  /* Hace que la sección de formulario se quede fija de forma natural al scroll */
+  .main-content > section:last-child {
+    position: sticky;
+    top: 2rem;
+    bottom: 2rem;
+    z-index: 10;
+  }
+}
+
+/* ==========================================================================
+   AJUSTES FINOS DE RESPONSIVIDAD (MÓVIL) 📱
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.25rem;
+  }
+  .header p {
+    font-size: 1.05rem;
+  }
+  .cursive-text {
+    font-size: 1.85rem;
+  }
+  .app-container {
+    padding: 1.5rem 1rem 4rem 1rem;
+  }
+  .card-panel {
+    padding: 1.5rem 1.25rem;
+  }
+  .card-panel::before {
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+  }
+  .view-controls {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* Grilla de Dashboard en Móvil */
+@media (max-width: 576px) {
+  .dashboard {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+  .stat-card {
+    padding: 1rem 0.5rem;
+    border-radius: var(--radius-sm);
+  }
+  .stat-value {
+    font-size: 1.85rem;
+  }
+  .stat-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.04em;
+  }
+  .stat-card.priorities-card {
+    padding: 1rem 0.75rem;
+  }
+  .stat-card.priorities-card > div:first-child {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  .stat-card.priorities-card > div:last-child {
+    justify-content: center;
+    width: 100%;
+    gap: 1rem !important;
+  }
+}
+
+/* Transformar tablas de invitados en filas flex adaptables en móvil */
+@media (max-width: 576px) {
+  .guests-table, 
+  .guests-table thead, 
+  .guests-table tbody, 
+  .guests-table th, 
+  .guests-table td, 
+  .guests-table tr {
+    display: block;
+  }
+  
+  .guests-table thead {
+    display: none;
+  }
+  
+  .guests-table tr {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--border-subtle);
+    gap: 8px;
+  }
+  
+  .guests-table tr:last-child {
+    border-bottom: none;
+  }
+  
+  .guests-table td {
+    padding: 0;
+    border-bottom: none;
+    background: transparent;
+  }
+  
+  .guests-table td:first-child {
+    width: 100%;
+    font-size: 1.05rem;
+  }
+  
+  .guest-name-cell {
+    width: 100%;
+  }
+
+  .guests-table td:nth-child(2),
+  .guests-table td:nth-child(3),
+  .guests-table td:nth-child(4) {
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* Modales adaptados a pantallas pequeñas */
+@media (max-width: 576px) {
+  .modal-overlay {
+    padding: 0.75rem;
+  }
+  .modal-content {
+    padding: 1.75rem 1.25rem;
+  }
+  .modal-content::before {
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+  }
+  .modal-actions {
+    margin-top: 1.5rem;
+    flex-direction: column-reverse;
+  }
+  .modal-actions button {
+    width: 100% !important;
+  }
+}
+
+/* Estilo para los botones de pestañas del contenido móvil */
+.mobile-tabs {
+  display: none;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 991px) {
+  .mobile-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    background: var(--bg-glass);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    padding: 4px;
+  }
+  .mobile-tab-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    padding: 0.65rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: calc(var(--radius-sm) - 2px);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+  }
+  .mobile-tab-btn.active {
+    background: var(--accent-gold);
+    color: #ffffff;
+  }
+  .dark-mode .mobile-tab-btn.active {
+    color: var(--bg-primary);
+  }
+
+  .mobile-hidden {
+    display: none !important;
+  }
+  .mobile-visible {
+    display: block !important;
+  }
+}
+
+/* Contenedor de botones RSVP en Invitaciones */
+.rsvp-buttons-container {
+  display: flex;
+  gap: 12px;
+}
+
+@media (max-width: 576px) {
+  .rsvp-buttons-container {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .rsvp-buttons-container button {
+    width: 100%;
+  }
+}
